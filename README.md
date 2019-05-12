@@ -1,125 +1,71 @@
 # Inorganic Chemistry Knowledge Base
-База знаний проекта по химии "0-zone"
+База знаний проекта по химии 0-zone
 
-### Содержание  
+### Содержание
+
 1. [Инструкция по созданию своей копии базы](#instruction)
 2. [Установка системы](#installing)
 3. [Запуск системы](#start)
-4. [Клонирование базы (ТОЛЬКО НА ПУСТОЙ OSTIS)](#emptycloning)
-4. [Клонирование базы (rebase)](#cloning)
-5. [Отправка изменений (с ветки master)](#pushing)
-6. [Получение изменений (merge)](#pulling)
-6. [Получение изменений (rebase)](#rebasing)
-7. [Основные ссылки](#links)
-8. [TODO файл](#todo)
-9. [Краткая информация о содержимом](#content)
+4. [Клонирование базы](#emptycloning)
+6. [Отправка изменений](#pushing)
+7. [Получение изменений](#pulling)
+11. [Краткая информация о содержимом](#content)
 
 ### <a name="instruction"></a> Инструкция по созданию своей копии базы
-- Форкнуть себе репозиторий (вверху есть кнопка Fork)
+- Форкнуть себе репозиторий
 
 ### <a name="installing"></a> Установка системы
-Установка осуществляется с системы ubuntu через терминал
-```sh
-$ git clone https://github.com/ShunkevichDV/ostis [название папки]
-```
-Если не ввести название папки, то она будет называться ostis
-```sh
-$ cd [название папки]/scripts
+Для установки нужен Ubuntu-like линукс. В терминале:
+```bash
+$ git clone https://github.com/ShunkevichDV/ostis
+$ cd ostis/scripts
 $ ./prepare.sh
 ```
-Если что-то спросит, то соглашаемся, вводим пароль, когда запросит и т.д.
+Везде, где просит, соглашаемся, вводим пароль и т.д.
 
 ### <a name="start"></a> Запуск системы
 Открываем терминал
-```sh
+```bash
 $ cd [название папки]/scripts
 $ ./restart_sctp.sh
 ```
 Открываем новую вкладку (CTRL + SHIFT + T)
-```sh
+```bash
 $ ./run_scweb.sh
 ```
 Открываем браузер и вводим адрес
-```sh
+```bash
 localhost:8000
 ```
 
-### <a name="emptycloning"></a> Клонирование базы (ТОЛЬКО НА ПУСТОЙ OSTIS)
+### <a name="emptycloning"></a> Клонирование базы
 Открываем терминал
 ```sh
 $ cd [название папки]
 ```
-ВНИМАНИЕ!!! Следующая команда удалит папку kb (совсем, полностью, без возможности восстановления, но вы и так должны это знать)
+ВНИМАНИЕ!!! Следующая команда удалит папку kb со всем её содержимым
 ```sh
-$ rm -f -R  kb
-$ git clone [ссылка на Вашу копию репозитория] kb
+$ rm -rf  kb
+$ git clone [ссылка на ваш форк] kb
 $ cd kb
-$ git remote add mainRepository https://github.com/Maribo27/chemistry_kb
-$ git fetch mainRepository
-$ git checkout -b main mainRepository/master
-$ git checkout master
+$ git remote add base https://github.com/ARtoriouSs/chemistry-kb
 ```
 
-### <a name="cloning"></a> Клонирование базы (НЕ ПРОВЕРЕНО)
-Открываем терминал
-```sh
-$ cd [название папки]/kb
-$ git init
-$ git remote add origin [ссылка на Вашу копию репозитория]
-$ git add --all
-$ git commit -m "Your commit"
-$ git fetch
-$ git rebase origin/master
-```
-В случае, если вы не хотели коммитить предыдущие изменения, то можно прописать следующую команду
-```sh
-$ git reset origin/master
-```
-Она откатит коммит
-```sh
-$ git remote add mainRepository https://github.com/Maribo27/chemistry_kb
-$ git fetch mainRepository
-$ git checkout -b main mainRepository/master
-$ git checkout master
-```
+### <a name="pushing"></a> Отправка изменений
+Тру химчата умеют пушить на ремоут -_-
 
-### <a name="pushing"></a> Отправка изменений (с ветки master)
-- Закоммитить и залить на свой репозиторий локальные изменения
-```sh
-$ git checkout master
-$ git add --all
-$ git commit -m "commit description"
-$ git push
-```
-- Настоятельно рекомендую ознакомиться с [данной](https://htmlacademy.ru/blog/27-how-to-squash-commits-and-why-it-is-needed) статьёй: много маленьких коммитов это, конечно, хорошо, но склеивайте хотя бы такие коммиты, как:
-> Merge pull request
-> Merge remote-tracking branch 'upstream/master' 
-- Создать пуллреквест c комментарием в формате: 
+- Создать пуллреквест c комментарием в формате:
 > [Имя Фамилия] Комментарий.
-- Отметить в [Trello]
 
-### <a name="pulling"></a> Получение изменений (1 способ)
+### <a name="pulling"></a> Получение изменений
 - Изменения на ветке master должны быть закомичены и, желательно, приняты мной
 ```sh
-$ git checkout main
-$ git pull
 $ git checkout master
-$ git merge main
+$ git pull origin master
+$ git checkout [ваша ветка]
+$ git rebase master
 ```
-
-### <a name="rebasing"></a> Получение изменений (2 способ, НЕ ПРОВЕРЕНО)
-```sh
-$ git checkout master
-$ git fetch
-$ git rebase main/master
-```
-
-### <a name="links"></a> Основные ссылки
-- [Google Doc] - у каждого курса свой лист
-- [Trello]
-
-### <a name="todo"></a> TODO файл
-Если берете файлы на формализацию, из этого списка, то помечаете это в гугл доке и на трелло и отписываете [мне](https://vk.com/id8930868)
+Если есть конфликты, аккуратно решаем так чтобы ничего не сломать.
 
 ### <a name="content"></a> Краткая информация о содержимом
 - Agents - папка с агентами
@@ -153,7 +99,6 @@ $ git rebase main/master
     - format.scs - описание форматов для компонентов
     - update_[название компонента].sh - скрипт для обновления конкретного компонента
     - update_components.sh - скрипт для обновления всех компонентов (менять не нужно)
-- [README.md](https://github.com/Maribo27/chemistry_kb/blob/master/README.md) - read me файл
 - TODO - понятия, которых нет в базе, но на них есть ссылки
 - concepts.scs - абсолютные понятия и идентификаторы, которых нет в базе, но на них есть ссылки (если берете их на формализацию, то помечаете это в гугл доке и на трелло)
 - nrels.scs - относительные понятия и идентификаторы, которых нет в базе, но на них есть ссылки (если берете их на формализацию, то помечаете это в гугл доке и на трелло)
@@ -162,7 +107,5 @@ $ git rebase main/master
 [//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
 
 
-   [Google Doc]: <https://docs.google.com/spreadsheets/d/1DVwCNw2nb2aefu-T6yScImUMZA8cTb8-BI2HRelRXDs>
-   [Trello]: <https://trello.com/b/KkpDPDcI/%D1%85%D0%B8%D0%BC%D0%B8%D1%8F>
    [OSTIS]: <https://github.com/ShunkevichDV/ostis>
    [База Знаний IMS]: <https://github.com/ShunkevichDV/ims.ostis.kb>
