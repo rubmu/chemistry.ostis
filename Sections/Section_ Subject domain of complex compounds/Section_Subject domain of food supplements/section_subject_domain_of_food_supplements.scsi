@@ -265,7 +265,7 @@ synthesized_food_supplement
 
 food_colourant
 <- sc_node_not_relation;
-=> nrel_main_idtf:[краситель](* <- lang_ru;; *);
+=> nrel_main_idtf:[пищевой краситель](* <- lang_ru;; *);
 => nrel_main_idtf:[food_colourant](* <- lang_en;; *);
 
 
@@ -273,7 +273,7 @@ food_colourant
 (*
 	<- definition;;
 	=> nrel_main_idtf:
-		[Опр. (краситель)](* <- lang_ru;; *);
+		[Опр. (пищевой краситель)](* <- lang_ru;; *);
 		[Def. (food_colourant)](* <- lang_en;; *);;
 	<= nrel_using_constants:...
 	(*
