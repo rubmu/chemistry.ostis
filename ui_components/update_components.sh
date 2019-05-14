@@ -76,9 +76,11 @@ append_js $sc_web_path/templates/components.html components/js/chemistry_compone
 # append_js $sc_web_path/templates/components.html components/js/chemistry_components/wavelength_ui_component.js
 append_js $sc_web_path/templates/components.html components/js/chemistry_components/solubility_table.js
 # append_js $sc_web_path/templates/components.html components/js/chemistry_components/drFormula.js
+append_js $sc_web_path/templates/components.html components/js/chemistry_components/indicator_table.js
 
 append_css $sc_web_path/templates/components.html components/css/chemistry_components/solubility_table.css
 append_css $sc_web_path/templates/components.html components/css/chemistry_components/ui_periodic_table.css
+append_css $sc_web_path/templates/components.html components/css/chemistry_components/ui_indicator_table.css
 
 cd ../../sc-web/scripts
 ./install_deps_ubuntu.sh
