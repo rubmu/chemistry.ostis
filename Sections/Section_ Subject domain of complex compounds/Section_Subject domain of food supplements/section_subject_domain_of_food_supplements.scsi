@@ -72,7 +72,7 @@ Definition_of_food_supplement
 	<= nrel_sc_text_translation:...
 	(*
 		-> rrel_example:[<b><sc_element sys_idtf="food_supplement">Пищевая добавка</sc_element></b> - <b><sc_element sys_idtf="chemical_substance">вещества</sc_element></b>, добавляемые в технологических целях в пищевые продукты в процессе производства, упаковки, транспортировки или хранения для придания им желаемых свойств, например, определённого аромата, цвета, длительности хранения, вкуса, консистенции и так далее.](* <- lang_ru;; => nrel_format: format_html;; *);;
-		-> rrel_example:[<b><sc_element sys_idtf="food_supplement">food supplement</sc_element></b> - <b><sc_element sys_idtf="chemical_substance">substance</sc_element></b> added to food to preserve flavor or enhance its taste, appearance, or other qualities. ](* <- lang_en;; => nrel_format: format_html;; *);;
+		-> rrel_example:[<b><sc_element sys_idtf="food_supplement">Food supplement</sc_element></b> - <b><sc_element sys_idtf="chemical_substance">substance</sc_element></b> added to food to preserve flavor or enhance its taste, appearance, or other qualities. ](* <- lang_en;; => nrel_format: format_html;; *);;
 	*);;
 *);
 
@@ -282,7 +282,7 @@ food_colourant
 	<= nrel_sc_text_translation:...
 		(*
 			-> rrel_example:[<b><sc_element sys_idtf="food_colourant">Краситель</sc_element></b> - <b><sc_element sys_idtf="food_supplement">пищевая добавка</sc_element></b>, придающая продуктам цвет.](* <- lang_ru;; => nrel_format: format_html;;*);;
-			-> rrel_example:[<b><sc_element sys_idtf="food_colourant">food_colourant</sc_element></b> - <b><sc_element sys_idtf="food_supplement">food supplement</sc_element></b> that gives colour to the food.](* <- lang_en;; => nrel_format: format_html;;*);;
+			-> rrel_example:[<b><sc_element sys_idtf="food_colourant">Food colourant</sc_element></b> - <b><sc_element sys_idtf="food_supplement">food supplement</sc_element></b> that gives colour to the food.](* <- lang_en;; => nrel_format: format_html;;*);;
 		*);;
 *);;
 
@@ -475,8 +475,8 @@ curcumin
 	*);;
 	<= nrel_sc_text_translation:...
 		(*
-			-> rrel_example:[<b><sc_element sys_idtf="curcumin">куркумин</sc_element></b> - ярко-желтые натуральные красители, получаемые из растения куркумы (Curcuma longa).](* <- lang_ru;; => nrel_format: format_html;;*);;
-			-> rrel_example:[<b><sc_element sys_idtf="curcumin">curcumin</sc_element></b> - bright yellow natural food_colourants derived from the turmeric plant (Curcuma longa).](* <- lang_en;; => nrel_format: format_html;;*);;
+			-> rrel_example:[<b><sc_element sys_idtf="curcumin">Куркумин</sc_element></b> - ярко-желтые натуральные красители, получаемые из растения куркумы (Curcuma longa).](* <- lang_ru;; => nrel_format: format_html;;*);;
+			-> rrel_example:[<b><sc_element sys_idtf="curcumin">Curcumin</sc_element></b> - bright yellow natural food colourant derived from the turmeric plant (Curcuma longa).](* <- lang_en;; => nrel_format: format_html;;*);;
 		*);;
 *);;
 
@@ -523,8 +523,8 @@ riboflavin
 	*);;
 	<= nrel_sc_text_translation:...
 		(*
-			-> rrel_example:[<b><sc_element sys_idtf="riboflavin">рибофлавин</sc_element></b> - один из важнейших витаминов, являющийся коферментом многих биологических процессов.](* <- lang_ru;; => nrel_format: format_html;;*);;
-			-> rrel_example:[<b><sc_element sys_idtf="riboflavin">riboflavin</sc_element></b> - one of the most important vitamins, which is a coenzyme of many biological processes.](* <- lang_en;; => nrel_format: format_html;;*);;
+			-> rrel_example:[<b><sc_element sys_idtf="riboflavin">Рибофлавин</sc_element></b> - один из важнейших витаминов, являющийся коферментом многих биологических процессов.](* <- lang_ru;; => nrel_format: format_html;;*);;
+			-> rrel_example:[<b><sc_element sys_idtf="riboflavin">Riboflavin</sc_element></b> - one of the most important vitamins, which is a coenzyme of many biological processes.](* <- lang_en;; => nrel_format: format_html;;*);;
 		*);;
 *);;
 
@@ -939,7 +939,7 @@ orange_GGN
 	<= nrel_sc_text_translation:...
 		(*
 			-> rrel_example:[<b><sc_element sys_idtf="orange_GGN">Оранжевый GGN</sc_element></b> - краситель оранжевого цвета.](* <- lang_ru;; => nrel_format: format_html;;*);;
-			-> rrel_example:[<b><sc_element sys_idtf="orange_GGN">Orange GGN</sc_element></b> - food_colourant of orange colour.](* <- lang_en;; => nrel_format: format_html;;*);;
+			-> rrel_example:[<b><sc_element sys_idtf="orange_GGN">Orange GGN</sc_element></b> - food colourant of orange colour.](* <- lang_en;; => nrel_format: format_html;;*);;
 		*);;
 *);;
 
@@ -968,7 +968,7 @@ carmine
 	<= nrel_sc_text_translation:...
 		(*
 			-> rrel_example:[<b><sc_element sys_idtf="carmine">Кармин</sc_element></b> - красящее вещество красновато-пурпурного цвета.](* <- lang_ru;; => nrel_format: format_html;;*);;
-			-> rrel_example:[<b><sc_element sys_idtf="carmine">Carmine</sc_element></b> - food_colourant reddish-purple.](* <- lang_en;; => nrel_format: format_html;;*);;
+			-> rrel_example:[<b><sc_element sys_idtf="carmine">Carmine</sc_element></b> - food colourant reddish-purple.](* <- lang_en;; => nrel_format: format_html;;*);;
 		*);;
 *);;
 
@@ -1457,7 +1457,7 @@ fast_green
 	<= nrel_sc_text_translation:...
 		(*
 			-> rrel_example:[<b><sc_element sys_idtf="fast_green">Быстрый зеленый</sc_element></b> - это краситель бирюзового цвета.](* <- lang_ru;; => nrel_format: format_html;;*);;
-			-> rrel_example:[<b><sc_element sys_idtf="fast_green">fast green</sc_element></b> - turquoise dye.](* <- lang_en;; => nrel_format: format_html;;*);;
+			-> rrel_example:[<b><sc_element sys_idtf="fast_green">Fast green</sc_element></b> - turquoise dye.](* <- lang_en;; => nrel_format: format_html;;*);;
 		*);;
 *);;
 
@@ -1512,8 +1512,8 @@ chlorophyll
 	*);;
 	<= nrel_sc_text_translation:...
 		(*
-			-> rrel_example:[<b><sc_element sys_idtf="chlorophyll">хлорофилл</sc_element></b> - натуральный краситель, обладающий зеленым цветом.](* <- lang_ru;; => nrel_format: format_html;;*);;
-			-> rrel_example:[<b><sc_element sys_idtf="chlorophyll">chlorophyll</sc_element></b> - natural dye with green color.](* <- lang_en;; => nrel_format: format_html;;*);;
+			-> rrel_example:[<b><sc_element sys_idtf="chlorophyll">Хлорофилл</sc_element></b> - натуральный краситель, обладающий зеленым цветом.](* <- lang_ru;; => nrel_format: format_html;;*);;
+			-> rrel_example:[<b><sc_element sys_idtf="chlorophyll">Chlorophyll</sc_element></b> - natural dye with green color.](* <- lang_en;; => nrel_format: format_html;;*);;
 		*);;
 *);;
 
@@ -1642,8 +1642,8 @@ plain_caramel
 	*);;
 	<= nrel_sc_text_translation:...
 		(*
-			-> rrel_example:[<b><sc_element sys_idtf="plain_caramel">сахарный колер</sc_element></b> - более известная в обиходе как карамель или жженый сахар – является водорастворимым пищевым красителем.](* <- lang_ru;; => nrel_format: format_html;;*);;
-			-> rrel_example:[<b><sc_element sys_idtf="plain_caramel">plain_caramel</sc_element></b> - more commonly known as caramel or burnt sugar - is a water-soluble food coloring.](* <- lang_en;; => nrel_format: format_html;;*);;
+			-> rrel_example:[<b><sc_element sys_idtf="plain_caramel">Сахарный колер</sc_element></b> - более известная в обиходе как карамель или жженый сахар – является водорастворимым пищевым красителем.](* <- lang_ru;; => nrel_format: format_html;;*);;
+			-> rrel_example:[<b><sc_element sys_idtf="plain_caramel">Plain caramel</sc_element></b> - more commonly known as caramel or burnt sugar - is a water-soluble food coloring.](* <- lang_en;; => nrel_format: format_html;;*);;
 		*);;
 *);;
 
@@ -1691,8 +1691,8 @@ black_7984
 	*);;
 	<= nrel_sc_text_translation:...
 		(*
-			-> rrel_example:[<b><sc_element sys_idtf="black_7984">уголь</sc_element></b> - синтетический краситель от коричневого до черного цвета.](* <- lang_ru;; => nrel_format: format_html;;*);;
-			-> rrel_example:[<b><sc_element sys_idtf="black_7984">black_7984</sc_element></b> - synthetic dye from brown to black.](* <- lang_en;; => nrel_format: format_html;;*);;
+			-> rrel_example:[<b><sc_element sys_idtf="black_7984">Уголь</sc_element></b> - синтетический краситель от коричневого до черного цвета.](* <- lang_ru;; => nrel_format: format_html;;*);;
+			-> rrel_example:[<b><sc_element sys_idtf="black_7984">Black 7984</sc_element></b> - synthetic dye from brown to black.](* <- lang_en;; => nrel_format: format_html;;*);;
 		*);;
 *);;
 
@@ -1727,8 +1727,8 @@ carbon_black
 	*);;
 	<= nrel_sc_text_translation:...
 		(*
-			-> rrel_example:[<b><sc_element sys_idtf="carbon_black">уголь растительный</sc_element></b> - ископаемое органическое вещество, которое образуется под землей из древних растений.](* <- lang_ru;; => nrel_format: format_html;;*);;
-			-> rrel_example:[<b><sc_element sys_idtf="carbon_black">carbon_black</sc_element></b> - fossil organic matter that is formed underground from ancient plants.](* <- lang_en;; => nrel_format: format_html;;*);;
+			-> rrel_example:[<b><sc_element sys_idtf="carbon_black">Уголь растительный</sc_element></b> - ископаемое органическое вещество, которое образуется под землей из древних растений.](* <- lang_ru;; => nrel_format: format_html;;*);;
+			-> rrel_example:[<b><sc_element sys_idtf="carbon_black">Carbon black</sc_element></b> - fossil organic matter that is formed underground from ancient plants.](* <- lang_en;; => nrel_format: format_html;;*);;
 		*);;
 *);;
 
