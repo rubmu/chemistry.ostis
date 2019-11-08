@@ -1,15 +1,22 @@
-ui_menu_find_discovery_year <- ui_user_command_class_atom; ui_user_command_class_view_kb;
+ui_menu_find_discovery_year
+<- ui_user_command_class_atom; ui_user_command_class_view_kb;
+=> nrel_main_idtf:
+	[Какой год открытия данного элемента?]
+	(* <- lang_ru;;*);
+	[What is the discovery year of this element?]
+	(* <- lang_en;;*);;
 
-=> nrel_main_idtf: [Найти год открытия данного вещества] (* <- lang_ru;;*);
-=> nrel_main_idtf: [Find discovery year of given substance] (* <- lang_en;;*);;
-ui_menu_find_discovery_year => ui_nrel_command_template:
+ui_menu_find_discovery_year
+=> ui_nrel_command_template:
 	[*
 		action_find_discovery_year _-> ._action_find_discovery_year_instance
-		(*
+			(*
 			_-> ui_arg_1;;
-		*);;
+			*);;
 		._action_find_discovery_year_instance _<- question;;
 	*];;
 
-ui_menu_find_discovery_year => ui_nrel_command_lang_template: [Найти год открытия данного элемента: $ui_arg_1] (* <- lang_ru;;*);;
-ui_menu_find_discovery_year => ui_nrel_command_lang_template: [Find discovery year of given element: $ui_arg_1] (* <- lang_en;;*);;
+ui_menu_find_discovery_year
+=> ui_nrel_command_lang_template:
+	[Поиск года открытия $ui_arg_1] (* <- lang_ru;;*);
+	[Search discovery year of $ui_arg_1] (* <- lang_en;;*);;
