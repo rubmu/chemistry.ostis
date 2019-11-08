@@ -1,0 +1,155 @@
+no => nrel_main_idtf:
+    [Нет, элемент не является радиоактивным] (* <- lang_ru;; *);
+	[No, element isn't redioactive] (* <- lang_en;; *);;
+yes => nrel_main_idtf:
+    [Да, элемент  является радиоактивным] (* <- lang_ru;; *);
+	[Yes, element is redioactive] (* <- lang_en;; *);;
+agent_determine_is_element_radioactive
+=>nrel_main_idtf:
+    [агентная scp-программа поиска периода полураспада заданного элемента] (* <- lang_ru;; *);
+	[agent scp-program search half life of given element] (* <- lang_en;; *);
+	<- agent_scp_program;;
+
+scp_program -> agent_determine_is_element_radioactive 
+	(*
+	-> rrel_params: .agent_determine_is_element_radioactive_params 
+		(*
+		-> rrel_1: rrel_in: _event;;
+		-> rrel_2: rrel_in: _input_arc;;
+		*);;
+
+	-> rrel_operators: .agent_determine_is_element_radioactive_operator_set 
+		(*
+		-> rrel_init: .agent_determine_is_element_radioactive_operator1A 
+			(*
+			<- searchElStr3;;
+
+			-> rrel_1: rrel_assign: rrel_scp_var: _temp;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _input_arc;;
+			-> rrel_3: rrel_assign: rrel_scp_var: _quest;;
+
+			=> nrel_goto: .agent_determine_is_element_radioactive_operator1B;;
+			*);;
+
+		-> .agent_determine_is_element_radioactive_operator1B
+			(*
+			<- searchElStr3;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_const: action_determine_is_element_radioactive;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc1;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _quest;;
+
+			=> nrel_then: .agent_determine_is_element_radioactive_operator1C;;
+			=> nrel_else: .agent_determine_is_element_radioactive_operator_return;;
+			*);;
+
+		-> .agent_determine_is_element_radioactive_operator1C
+			(*
+			<- searchElStr3;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _quest;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc2;;
+			-> rrel_3: rrel_assign: rrel_scp_var: _pattern;;										
+
+			=> nrel_then: .agent_determine_is_element_radioactive_operator_gen_answer;;
+			=> nrel_else: .agent_determine_is_element_radioactive_operator_message;;
+			*);;
+
+
+		-> .agent_determine_is_element_radioactive_operator_gen_answer//начало
+			(*
+			<- genEl;;
+
+			-> rrel_1: rrel_assign: rrel_node: rrel_const: rrel_scp_var: _answer_for_checking_domains_of_relation;;
+
+			=> nrel_goto: .agent_determine_is_element_radioactive_operator_1;;
+			*);;
+
+		-> .agent_determine_is_element_radioactive_operator_1
+			(*
+			<- searchElStr3;;
+			
+			-> rrel_1: rrel_fixed: rrel_scp_const: radioactive_element;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc1;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _pattern;;
+
+
+			=> nrel_then: .agent_determine_is_element_radioactive_operator_answer_yes;;
+			=> nrel_else: .agent_determine_is_element_radioactive_operator_answer_no;;
+			*);;
+
+		-> .agent_determine_is_element_radioactive_operator_answer_yes
+		(*
+			<- genElStr3;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _answer_for_checking_domains_of_relation;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc1;;
+			-> rrel_3: rrel_fixed: rrel_scp_const: yes;;
+			
+			=> nrel_goto: .agent_determine_is_element_radioactive_operator_answer;;
+		*);;
+
+		-> .agent_determine_is_element_radioactive_operator_answer_no
+		(*
+			<- genElStr3;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _answer_for_checking_domains_of_relation;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc1;;
+			-> rrel_3: rrel_fixed: rrel_scp_const: no;;
+			
+			=> nrel_goto: .agent_determine_is_element_radioactive_operator_answer;;
+		*);;
+
+
+		-> .agent_determine_is_element_radioactive_operator_answer
+			(*
+			<- genElStr5;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _quest;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_common: _arc1;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _answer_for_checking_domains_of_relation;;							
+			-> rrel_4: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc2;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: nrel_answer;;
+
+			=> nrel_goto: .agent_determine_is_element_radioactive_operator_success;;
+			*);;
+
+		-> .agent_determine_is_element_radioactive_operator_success
+			(*
+			<- genElStr3;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_const: question_finished_successfully;;
+			-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc1;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _quest;;
+
+			=> nrel_goto: .agent_determine_is_element_radioactive_operator_return;;
+			*);;
+			
+		-> .agent_determine_is_element_radioactive_operator_message
+			(*
+			<- call;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_const: proc_of_adding_validating_message;;
+			-> rrel_2: rrel_fixed: rrel_scp_const: .agent_determine_is_element_radioactive_operator_message_params 
+				(*
+				-> rrel_1: rrel_fixed: rrel_scp_var: _quest;;
+				-> rrel_2: rrel_fixed: rrel_scp_const: [Wrong first parameter! It must be a structure(rrel_struct).];;
+				*);;
+			-> rrel_3: rrel_assign: rrel_scp_var: _descr1;;
+
+			=> nrel_goto: .agent_determine_is_element_radioactive_operator_message_wait;;
+			*);;
+
+		-> .agent_determine_is_element_radioactive_operator_message_wait
+			(*
+			<- waitReturn;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _descr1;;
+
+			=> nrel_goto: .agent_determine_is_element_radioactive_operator_return;;
+			*);;
+
+		-> .agent_determine_is_element_radioactive_operator_return
+			(*
+			<- return;;
+			*);;
+		*);;
+	*);;

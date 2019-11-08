@@ -1,0 +1,52 @@
+sc_agent_determine_is_element_radioactive
+=> nrel_main_idtf:	
+	[sc-агент определения является ли элемент радиоактивным]
+	(* <- lang_ru;; *);
+	[sc-agent determine is element radioactive]
+	(* <- lang_en;; *);
+	
+<- abstract_sc_agent;
+
+=> nrel_primary_initiation_condition: 
+	(sc_event_add_output_arc => question_initiated);
+	
+=> nrel_initiation_condition_and_result: 
+	(..sc_agent_determine_is_element_radioactive_condition => ..sc_agent_determine_is_element_radioactive_result);
+	
+<= nrel_sc_agent_key_sc_elements: 
+	{
+	question_initiated;
+	question;
+	action_determine_is_element_radioactive
+	};
+	
+=> nrel_inclusion: 
+	.platform_independent_realization_of_sc_agent_determine_is_element_radioactive
+	(*
+	<- platform_independent_abstract_sc_agent;;
+	<= nrel_sc_agent_program: 
+		{
+		agent_determine_is_element_radioactive
+		};;
+		
+	-> sc_agent_determine_is_element_radioactive 
+		(* <- active_sc_agent;; *);;
+	*);;
+
+..sc_agent_determine_is_element_radioactive_condition
+= [*
+	action_determine_is_element_radioactive _-> .._question;;
+	question_initiated _-> .._question;;
+	question _-> .._question;;
+	.._question _-> .._parameter1;;
+*];;
+
+..sc_agent_determine_is_element_radioactive_result
+= [*
+	action_determine_is_element_radioactive _-> .._question;;
+	question_finished _-> .._question;;
+	question _-> .._question;;
+	.._question _=> nrel_answer:: .._answer_for_checking_domains_of_relation;;
+	.._question _-> .._parameter1;;
+	
+*];;
