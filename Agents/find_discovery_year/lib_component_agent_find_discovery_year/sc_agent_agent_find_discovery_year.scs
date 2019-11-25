@@ -1,7 +1,7 @@
 sc_agent_find_discovery_year
 => nrel_main_idtf:
-	[sc-агент поиска года открытия данного элемента] (* <- lang_ru;; *);
-	[sc-agent search discovery year of given element] (* <- lang_en;; *);
+	[sc-агент поиска элементов по году открытия] (* <- lang_ru;; *);
+	[sc-agent search element by discovery year] (* <- lang_en;; *);
 
 <- abstract_sc_agent;
 

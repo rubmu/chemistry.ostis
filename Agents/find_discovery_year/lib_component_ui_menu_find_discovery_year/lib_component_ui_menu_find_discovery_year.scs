@@ -1,8 +1,8 @@
 lib_component_ui_menu_find_discovery_year
 => nrel_main_idtf:
-	[Компонент библиотеки. Команда пользовательского интерфейса для поиска года открытия данного элемента]
+	[Компонент библиотеки. Команда пользовательского интерфейса для поиска элементов по году открытия]
 	(* <- lang_ru;; *);
-	[Library component. User interface command for searching discovery year of given element]
+	[Library component. User interface command for searching elements by discovery year]
 	(* <- lang_en;; *);
 
 <- library_of_platform_independent_reusable_components;

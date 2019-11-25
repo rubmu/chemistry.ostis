@@ -1,8 +1,8 @@
 lib_component_agent_find_discovery_year
 => nrel_main_idtf:
-	[Компонент библиотеки. sc-агент поиска года открытия данного элемента]
+	[Компонент библиотеки. sc-агент поиска элемента по году открытия]
 	(* <- lang_ru;; *);
-	[Library component. sc-agent search discovery year of given element]
+	[Library component. sc-agent search element by discovery year]
 	(* <- lang_en;; *);
 
 <- library_of_platform_independent_reusable_components;
@@ -30,7 +30,7 @@ lib_component_agent_find_discovery_year
 sc_node_not_relation -> action_find_discovery_year;;
 
 action_find_discovery_year => nrel_main_idtf:
-	[действие. Поиск года открытия данного элемента]
+	[действие. Поиска элемента по году открытия]
 	(* <- lang_ru;;	*);
-	[action. Search discovery year of given element]
+	[action. Search element by discovery year]
 	(* <- lang_en;;	*);;

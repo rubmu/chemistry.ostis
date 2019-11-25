@@ -1,9 +1,9 @@
 ui_menu_find_discovery_year
 <- ui_user_command_class_atom; ui_user_command_class_view_kb;
 => nrel_main_idtf:
-	[Какой год открытия данного элемента?]
+	[Какие элементы были открыты в этом году?]
 	(* <- lang_ru;;*);
-	[What is the discovery year of this element?]
+	[Which elements was discovered this year?]
 	(* <- lang_en;;*);;
 
 ui_menu_find_discovery_year
@@ -18,5 +18,5 @@ ui_menu_find_discovery_year
 
 ui_menu_find_discovery_year
 => ui_nrel_command_lang_template:
-	[Поиск года открытия $ui_arg_1] (* <- lang_ru;;*);
-	[Search discovery year of $ui_arg_1] (* <- lang_en;;*);;
+	[Поиск элементов открытых в $ui_arg_1] (* <- lang_ru;;*);
+	[Search elements discovered in $ui_arg_1] (* <- lang_en;;*);;
