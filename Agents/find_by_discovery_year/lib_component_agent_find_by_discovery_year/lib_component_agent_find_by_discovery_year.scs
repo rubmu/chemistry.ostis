@@ -1,4 +1,4 @@
-lib_component_agent_find_discovery_year
+lib_component_agent_find_by_discovery_year
 => nrel_main_idtf:
 	[Компонент библиотеки. sc-агент поиска элемента по году открытия]
 	(* <- lang_ru;; *);
@@ -9,10 +9,10 @@ lib_component_agent_find_discovery_year
 <- library_of_atomic_reusable_components;
 
 => nrel_attendant_component:
-	lib_component_ui_menu_find_discovery_year;
+	lib_component_ui_menu_find_by_discovery_year;
 
 -> rrel_key_sc_element:
-	.platform_independent_realization_of_sc_agent_find_discovery_year;
+	.platform_independent_realization_of_sc_agent_find_by_discovery_year;
 
 <- rrel_key_sc_element:
 	...
@@ -27,9 +27,9 @@ lib_component_agent_find_discovery_year
 		*);;
 	*);;
 
-sc_node_not_relation -> action_find_discovery_year;;
+sc_node_not_relation -> action_find_by_discovery_year;;
 
-action_find_discovery_year => nrel_main_idtf:
+action_find_by_discovery_year => nrel_main_idtf:
 	[действие. Поиска элемента по году открытия]
 	(* <- lang_ru;;	*);
 	[action. Search element by discovery year]

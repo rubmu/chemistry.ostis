@@ -1,4 +1,4 @@
-lib_component_ui_menu_find_discovery_year
+lib_component_ui_menu_find_by_discovery_year
 => nrel_main_idtf:
 	[Компонент библиотеки. Команда пользовательского интерфейса для поиска элементов по году открытия]
 	(* <- lang_ru;; *);
@@ -22,4 +22,4 @@ lib_component_ui_menu_find_discovery_year
 		*);;
 	*);;
 
-lib_component_ui_menu_find_discovery_year  = [*^"file://ui_menu_find_discovery_year.scsi"*];;
+lib_component_ui_menu_find_by_discovery_year  = [*^"file://ui_menu_find_by_discovery_year.scsi"*];;
