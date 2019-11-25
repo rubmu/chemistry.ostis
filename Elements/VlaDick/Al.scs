@@ -21,7 +21,7 @@ elem_Al
 <- group_thirteen;
 <- period_three;
 => nrel_periodic_number: thirteen;
-=> nrel_discovery_year: 1825 (* <- number;; *);
+<= nrel_discovery_year: 1825 (* <- year;; *);
 
 <- metal;
 

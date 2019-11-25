@@ -34,7 +34,7 @@ elem_P
 <- pnictogen;
 
 => nrel_periodic_number: fifteen;
-=> nrel_discovery_year: 1669 (* <- number;; *);
+<= nrel_discovery_year: 1669 (* <- year;; *);
 <- group_fifteen;
 <- period_three;
 

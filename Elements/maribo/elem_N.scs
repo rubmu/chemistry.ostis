@@ -39,7 +39,7 @@ elem_N
 <- valence_three; valence_two; valence_four; valence_five;
 
 => nrel_biological_significance: life_support;
-=> nrel_discovery_year: 1772 (* <- number;; *);
+<= nrel_discovery_year: 1772 (* <- year;; *);
 
 => nrel_being_in_body: ...
 (*

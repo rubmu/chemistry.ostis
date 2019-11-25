@@ -21,7 +21,7 @@ elem_Na
 <- group_one;
 <- period_three;
 => nrel_periodic_number: eleven;
-=> nrel_discovery_year: 1807 (* <- number;; *);
+<= nrel_discovery_year: 1807 (* <- year;; *);
 
 <- metal;
 

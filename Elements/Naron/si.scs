@@ -23,7 +23,7 @@ elem_Si
 <- group_fourteen;
 <- period_three;
 => nrel_periodic_number: fourteen;
-=> nrel_discovery_year: 1823 (* <- number;; *);
+<= nrel_discovery_year: 1823 (* <- year;; *);
 
 <- nonmetal;
 
