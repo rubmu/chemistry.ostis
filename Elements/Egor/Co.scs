@@ -4,11 +4,11 @@ elem_Co
 	[атом кобальта](*<- lang_ru;;*);
 <- rrel_key_sc_element:
 	Definition_of_cobaltum
-	(* 
+	(*
 	<- explanation;;
 	<= nrel_sc_text_translation:
 		...
-		(* 
+		(*
 		-> rrel_example:"file://htmls/Co.html" (* <-lang_ru;; *);;
 		*);;
 	<= nrel_using_constants:...
@@ -16,13 +16,14 @@ elem_Co
 				->chemical_element;;
 				->period;;
 				->nrel_group;;
-				
+
 			*);;
 	*);
 
 <- group_nine;
 <- period_four;
 => nrel_periodic_number: twenty_seven;
+<= nrel_discovery_year: 1735 (* <- year;; *);
 
 <- metal;
 
@@ -65,7 +66,7 @@ elem_Co
 <- rrel_key_sc_element: electron_configuration_Co
 	(*
 		<- explanation;;
-		=> nrel_main_idtf: 
+		=> nrel_main_idtf:
 			[Утв. (атом кобальта, электронная конфигурация*)](*<- lang_ru;;*);;
 		<= nrel_sc_text_translation:...
 		(*

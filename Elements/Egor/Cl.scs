@@ -4,11 +4,11 @@ elem_Cl
 	[атом хлора](*<- lang_ru;;*);
 <- rrel_key_sc_element:
 	Definition_of_chlorine
-	(* 
+	(*
 	<- explanation;;
 	<= nrel_sc_text_translation:
 		...
-		(* 
+		(*
 		-> rrel_example:"file://htmls/Cl.html" (* <-lang_ru;; *);;
 		*);;
 	<= nrel_using_constants:...
@@ -16,14 +16,14 @@ elem_Cl
 				->chemical_element;;
 				->period;;
 				->nrel_group;;
-				
+
 			*);;
 	*);
 
 <- group_seventeen;
 <- period_three;
 => nrel_periodic_number: seventeen;
-
+<= nrel_discovery_year: 1774 (* <- year;; *);
 
 <- nonmetal;
 
@@ -67,7 +67,7 @@ elem_Cl
 <- rrel_key_sc_element: electron_configuration_Cl
 	(*
 		<- explanation;;
-		=> nrel_main_idtf: 
+		=> nrel_main_idtf:
 			[Утв. (атом хлора, электронная конфигурация*)](*<- lang_ru;;*);;
 		<= nrel_sc_text_translation:...
 		(*

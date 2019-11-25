@@ -1,5 +1,5 @@
 elem_Mn
-	=> nrel_main_idtf: 
+	=> nrel_main_idtf:
 		[manganum atom] (* <-lang_en;;*);
 		[атом марганца] (* <-lang_ru;;*);
 	=> nrel_idtf: [atom Mn] (* <-lang_en;;*);
@@ -7,13 +7,13 @@ elem_Mn
 <- chemical_element;
 <- sc_node_not_relation;
 <- rrel_key_sc_element: definition_of_Manganum
-(* 
+(*
 	=> nrel_main_idtf: [Опр. (атом марганца)] (* <- lang_ru;; *);;
 	<- definition;;
 	<= nrel_sc_text_translation:...
 	(*
 		-> rrel_example:
-			[<p><b>Марганец</b> - <sc_element sys_idtf  = "chemical_element">химический элемент</sc_element>    седьмой   <sc_element sys_idtf  = "periodic_group">группы</sc_element>, 4-го <sc_element sys_idtf  = "period">периода</sc_element>  периодической системы химических элементов. </p>] 
+			[<p><b>Марганец</b> - <sc_element sys_idtf  = "chemical_element">химический элемент</sc_element>    седьмой   <sc_element sys_idtf  = "periodic_group">группы</sc_element>, 4-го <sc_element sys_idtf  = "period">периода</sc_element>  периодической системы химических элементов. </p>]
 			(*
 				<-lang_ru;;
 				=> nrel_format: format_html;;
@@ -28,6 +28,7 @@ elem_Mn
 *);
 
 => nrel_periodic_number: twenty_five;
+<= nrel_discovery_year: 1774 (* <- year;; *);
 
 <- transition_metal;
 <- siderophile;
@@ -94,7 +95,7 @@ elem_Mn
 <- rrel_key_sc_element: electron_configuration_Mn
 (*
 	<- explanation;;
-	=> nrel_main_idtf: 
+	=> nrel_main_idtf:
 		[Утв. (атом марганца, электронная конфигурация*)](*<- lang_ru;;*);;
 	<= nrel_sc_text_translation:...
 	(*

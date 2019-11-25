@@ -1,5 +1,5 @@
 elem_Ne
-	=> nrel_main_idtf: 
+	=> nrel_main_idtf:
 		[neon atom] (* <-lang_en;;*);
 		[атом неона] (* <-lang_ru;;*);
 	=> nrel_idtf: [atom Ne] (* <-lang_en;;*);
@@ -7,13 +7,13 @@ elem_Ne
 <- chemical_element;
 <- sc_node_not_relation;
 <- rrel_key_sc_element: definition_of_Neon
-(* 
+(*
 	=> nrel_main_idtf: [Опр. (атом неона)] (* <- lang_ru;; *);;
 	<- definition;;
 	<= nrel_sc_text_translation: ...
 	(*
 		-> rrel_example:
-			[<p><b>Неон</b> - <sc_element sys_idtf  = "chemical_element">химический элемент</sc_element>    восемнадцатой   <sc_element sys_idtf  = "periodic_group">группы</sc_element>  , 2-го <sc_element sys_idtf  = "period">периода</sc_element>  периодической системы химических элементов. </p>] 
+			[<p><b>Неон</b> - <sc_element sys_idtf  = "chemical_element">химический элемент</sc_element>    восемнадцатой   <sc_element sys_idtf  = "periodic_group">группы</sc_element>  , 2-го <sc_element sys_idtf  = "period">периода</sc_element>  периодической системы химических элементов. </p>]
 			(*
 				<-lang_ru;;
 				=> nrel_format: format_html;;
@@ -28,6 +28,7 @@ elem_Ne
 *);
 
 => nrel_periodic_number: ten;
+<= nrel_discovery_year: 1898 (* <- year;; *);
 
 <- nonmetal;
 <- atmophile;
@@ -95,7 +96,7 @@ elem_Ne
 <- rrel_key_sc_element: electron_configuration_Ne
 (*
 	<- explanation;;
-	=> nrel_main_idtf: 
+	=> nrel_main_idtf:
 		[Утв. (атом неона, электронная конфигурация*)](*<- lang_ru;;*);;
 	<= nrel_sc_text_translation:...
 	(*

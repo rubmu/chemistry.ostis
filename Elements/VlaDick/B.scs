@@ -2,11 +2,11 @@ elem_B
 <- sc_node_not_relation;
 <- rrel_key_sc_element:
 	Definition_of_borum
-	(* 
+	(*
 	<- definition;;
 	<= nrel_sc_text_translation:
 		...
-		(* 
+		(*
 		-> rrel_example:"file://htmls/B.html" (* <-lang_ru;; *);;
 		*);;
 	<= nrel_using_constants:
@@ -22,11 +22,12 @@ elem_B
 <- group_thirteen;
 <- period_two;
 => nrel_periodic_number: five;
+<= nrel_discovery_year: 1808 (* <- year;; *);
 
 <- nonmetal;
 
 
-<= nrel_inclusion: oxidation_state_plus_three; 
+<= nrel_inclusion: oxidation_state_plus_three;
 <= nrel_inclusion: valence_three; valence_four;
 
 
@@ -64,11 +65,11 @@ elem_B
 <- rrel_key_sc_element: electron_configuration_B
 	(*
 		<- explanation;;
-		=> nrel_main_idtf: 
+		=> nrel_main_idtf:
 			[Утв. (бор, электронная конфигурация*)](*<- lang_ru;;*);;
 		<= nrel_sc_text_translation:...
 		(*
-			-> rrel_example:[ [B] 1s<sup>2</sup> 2s<sup>2</sup>p<sup>1</sup>] 
+			-> rrel_example:[ [B] 1s<sup>2</sup> 2s<sup>2</sup>p<sup>1</sup>]
 			(*<- lang_ru;; => nrel_format: format_html;;*);;
 		*);;
 	*);

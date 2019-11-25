@@ -1,5 +1,5 @@
 elem_O
-	=> nrel_main_idtf: 
+	=> nrel_main_idtf:
 		[oxygen atom] (* <-lang_en;;*);
 		[атом кислорода] (* <-lang_ru;;*);
 	=> nrel_idtf: [atom O] (* <-lang_en;;*);
@@ -7,13 +7,13 @@ elem_O
 <- chemical_element;
 <- sc_node_not_relation;
 <- rrel_key_sc_element: definition_of_Oxygen
-(* 
+(*
 	=> nrel_main_idtf: [Опр. (атом кислорода)] (* <- lang_ru;; *);;
 	<- definition;;
 	<= nrel_sc_text_translation: ...
 	(*
 		-> rrel_example:
-			[<p><b>Кислород</b> - <sc_element sys_idtf  = "chemical_element">химический элемент</sc_element>    шестнадцатой   <sc_element sys_idtf  = "periodic_group">группы</sc_element>  , 2-го <sc_element sys_idtf  = "period">периода</sc_element>  периодической системы химических элементов. </p>] 
+			[<p><b>Кислород</b> - <sc_element sys_idtf  = "chemical_element">химический элемент</sc_element>    шестнадцатой   <sc_element sys_idtf  = "periodic_group">группы</sc_element>  , 2-го <sc_element sys_idtf  = "period">периода</sc_element>  периодической системы химических элементов. </p>]
 			(*
 				<-lang_ru;;
 				=> nrel_format: format_html;;
@@ -28,6 +28,7 @@ elem_O
 *);
 
 => nrel_periodic_number: eight;
+<= nrel_discovery_year: 1774 (* <- year;; *);
 
 <- gas;
 <- chalcogens;
@@ -97,7 +98,7 @@ elem_O
 <- rrel_key_sc_element: electron_configuration_O
 (*
 	<- explanation;;
-	=> nrel_main_idtf: 
+	=> nrel_main_idtf:
 		[Утв. (атом кислорода, электронная конфигурация*)](*<- lang_ru;;*);;
 	<= nrel_sc_text_translation:...
 	(*

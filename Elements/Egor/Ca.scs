@@ -4,11 +4,11 @@ elem_Ca
 	[атом кальция](*<- lang_ru;;*);
 <- rrel_key_sc_element:
 	Definition_of_calcium
-	(* 
+	(*
 	<- explanation;;
 	<= nrel_sc_text_translation:
 		...
-		(* 
+		(*
 		-> rrel_example:"file://htmls/Ca.html" (* <-lang_ru;; *);;
 		*);;
 	<= nrel_using_constants:...
@@ -16,13 +16,14 @@ elem_Ca
 				->chemical_element;;
 				->period;;
 				->nrel_group;;
-				
+
 			*);;
 	*);
 
 <- group_two;
 <- period_four;
 => nrel_periodic_number: twenty;
+<= nrel_discovery_year: 1808 (* <- year;; *);
 
 <- metal;
 
@@ -65,7 +66,7 @@ elem_Ca
 <- rrel_key_sc_element: electron_configuration_Ca
 	(*
 		<- explanation;;
-		=> nrel_main_idtf: 
+		=> nrel_main_idtf:
 			[Утв. (атом кальция, электронная конфигурация*)](*<- lang_ru;;*);;
 		<= nrel_sc_text_translation:...
 		(*

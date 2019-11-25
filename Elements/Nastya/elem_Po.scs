@@ -8,13 +8,13 @@ elem_Po
 => nrel_idtf: [atom Po] (* <-lang_en;;*);
 
 <- rrel_key_sc_element: definition_of_elem_Po
-(* 
+(*
 	=> nrel_main_idtf: [Опр.(Атом полония)] (* <- lang_ru;; *);;
 	<- definition;;
 	<= nrel_sc_text_translation: ...
 	(*
 		-> rrel_example:
-			[<p><b><sc_element sys_idtf  = "elem_Po">Полоний</sc_element></b> - <sc_element sys_idtf  = "chemical_element">химический элемент</sc_element>   шестнадцатой  <sc_element sys_idtf  = "periodic_group">группы</sc_element>, 6-го <sc_element sys_idtf  = "period">периода</sc_element>  периодической системы химических элементов.</p>] 
+			[<p><b><sc_element sys_idtf  = "elem_Po">Полоний</sc_element></b> - <sc_element sys_idtf  = "chemical_element">химический элемент</sc_element>   шестнадцатой  <sc_element sys_idtf  = "periodic_group">группы</sc_element>, 6-го <sc_element sys_idtf  = "period">периода</sc_element>  периодической системы химических элементов.</p>]
 			(*
 				<-lang_ru;;
 				=> nrel_format: format_html;;
@@ -35,6 +35,7 @@ elem_Po
 <- chalcogen;
 
 => nrel_periodic_number: eighty_four;
+<= nrel_discovery_year: 1898 (* <- year;; *);
 <- group_sixteen;
 <- period_six;
 
@@ -94,7 +95,7 @@ elem_Po
 <- rrel_key_sc_element: electron_configuration_Po
 (*
 	<- explanation;;
-	=> nrel_main_idtf: 
+	=> nrel_main_idtf:
 		[Утв.(атом полония, электронная конфигурация*)](*<- lang_ru;;*);;
 	<= nrel_sc_text_translation:...
 	(*
@@ -125,5 +126,3 @@ atomic_mass_Po <- number;
 => nrel_main_idtf:[208,9824](*<-lang_ru;; <- lang_en;;*);;
 electronegativity_Po <- number;
 => nrel_main_idtf:[2,3](*<-lang_ru;; <- lang_en;;*);;
-
-
