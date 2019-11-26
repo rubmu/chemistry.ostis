@@ -36,7 +36,7 @@ elem_Rh
 <- platinoid;
 
 => nrel_periodic_number: forty_five;
-<= nrel_discovery_year: 1804 (* <- year;; *);
+<= nrel_discovery_year: 1804;
 <- group_nine;
 <- period_five;
 

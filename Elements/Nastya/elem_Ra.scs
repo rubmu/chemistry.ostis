@@ -33,7 +33,7 @@ elem_Ra
 <- alkaline_earth_metal;
 
 => nrel_periodic_number: eighty_eight;
-<= nrel_discovery_year: 1898 (* <- year;; *);
+<= nrel_discovery_year: 1898;
 <- group_two;
 <- period_seven;
 

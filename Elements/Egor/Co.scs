@@ -23,7 +23,7 @@ elem_Co
 <- group_nine;
 <- period_four;
 => nrel_periodic_number: twenty_seven;
-<= nrel_discovery_year: 1735 (* <- year;; *);
+<= nrel_discovery_year: 1735;
 
 <- metal;
 

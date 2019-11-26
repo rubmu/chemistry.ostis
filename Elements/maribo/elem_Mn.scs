@@ -28,7 +28,7 @@ elem_Mn
 *);
 
 => nrel_periodic_number: twenty_five;
-<= nrel_discovery_year: 1774 (* <- year;; *);
+<= nrel_discovery_year: 1774;
 
 <- transition_metal;
 <- siderophile;

@@ -35,7 +35,7 @@ elem_Po
 <- chalcogen;
 
 => nrel_periodic_number: eighty_four;
-<= nrel_discovery_year: 1898 (* <- year;; *);
+<= nrel_discovery_year: 1898;
 <- group_sixteen;
 <- period_six;
 

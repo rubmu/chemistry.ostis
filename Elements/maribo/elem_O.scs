@@ -28,7 +28,7 @@ elem_O
 *);
 
 => nrel_periodic_number: eight;
-<= nrel_discovery_year: 1774 (* <- year;; *);
+<= nrel_discovery_year: 1774;
 
 <- gas;
 <- chalcogens;

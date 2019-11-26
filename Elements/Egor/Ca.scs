@@ -23,7 +23,7 @@ elem_Ca
 <- group_two;
 <- period_four;
 => nrel_periodic_number: twenty;
-<= nrel_discovery_year: 1808 (* <- year;; *);
+<= nrel_discovery_year: 1808;
 
 <- metal;
 

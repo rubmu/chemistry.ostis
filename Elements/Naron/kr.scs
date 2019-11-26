@@ -24,7 +24,7 @@ elem_Kr
 <- group_eighteen;
 <- period_four;
 => nrel_periodic_number: thirty_six;
-<= nrel_discovery_year: 1898 (* <- year;; *);
+<= nrel_discovery_year: 1898;
 
 <- nonmetal;
 

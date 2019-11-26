@@ -23,7 +23,7 @@ elem_Xe
 <- group_eighteen;
 <- period_five;
 => nrel_periodic_number: fifty_four;
-<= nrel_discovery_year: 1898 (* <- year;; *);
+<= nrel_discovery_year: 1898;
 
 <- nonmetal;
 

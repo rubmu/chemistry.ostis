@@ -28,7 +28,7 @@ elem_Os
 *);
 
 => nrel_periodic_number: seventy_six;
-<= nrel_discovery_year: 1804 (* <- year;; *);
+<= nrel_discovery_year: 1804;
 
 <- transition_metal;
 <- platinoid;

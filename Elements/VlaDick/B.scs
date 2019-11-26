@@ -22,7 +22,7 @@ elem_B
 <- group_thirteen;
 <- period_two;
 => nrel_periodic_number: five;
-<= nrel_discovery_year: 1808 (* <- year;; *);
+<= nrel_discovery_year: 1808;
 
 <- nonmetal;
 

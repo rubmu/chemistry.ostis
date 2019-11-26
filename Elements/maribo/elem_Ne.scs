@@ -28,7 +28,7 @@ elem_Ne
 *);
 
 => nrel_periodic_number: ten;
-<= nrel_discovery_year: 1898 (* <- year;; *);
+<= nrel_discovery_year: 1898;
 
 <- nonmetal;
 <- atmophile;

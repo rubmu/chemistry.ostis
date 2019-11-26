@@ -21,7 +21,7 @@ elem_Ba
 <- group_two;
 <- period_six;
 => nrel_periodic_number: fifty_six;
-<= nrel_discovery_year: 1774 (* <- year;; *);
+<= nrel_discovery_year: 1774;
 
 <- metal;
 

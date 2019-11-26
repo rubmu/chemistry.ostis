@@ -35,7 +35,7 @@ elem_Pt
 <- platinoid;
 <- nickel_group;
 
-<= nrel_discovery_year: 1735 (* <- year;; *);
+<= nrel_discovery_year: 1735;
 => nrel_periodic_number: seventy_eight;
 <- group_ten;
 <- period_six;

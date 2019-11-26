@@ -27,7 +27,7 @@ elem_Mg
 	*);;
 *);
 
-<= nrel_discovery_year: 1808 (* <- year;; *);
+<= nrel_discovery_year: 1808;
 => nrel_being_in_body: tissue;
 
 <- rrel_key_sc_element:...

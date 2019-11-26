@@ -23,7 +23,7 @@ elem_Cl
 <- group_seventeen;
 <- period_three;
 => nrel_periodic_number: seventeen;
-<= nrel_discovery_year: 1774 (* <- year;; *);
+<= nrel_discovery_year: 1774;
 
 <- nonmetal;
 
