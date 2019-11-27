@@ -5,10 +5,11 @@ ui_menu_determine_is_reaction_possible => ui_nrel_command_template:
 	[*
 		action_determine_is_reaction_possible _-> ._action_determine_is_reaction_possible_instance
 			(*
-			_-> ui_arg_1;;
+			  _-> rrel_1:: ui_arg_1;;
+			  _-> rrel_2:: ui_arg_2;;
 			*);;
 		._action_determine_is_reaction_possible_instance _<- question;;
 	*];;
 
-ui_menu_determine_is_reaction_possible => ui_nrel_command_lang_template: [Возможна ли реакция между веществами: $ui_arg_1] (* <- lang_ru;;*);;
-ui_menu_determine_is_reaction_possible => ui_nrel_command_lang_template: [Is reaction possible between substances: $ui_arg_1] (* <- lang_en;;*);;
+ui_menu_determine_is_reaction_possible => ui_nrel_command_lang_template: [Возможна ли реакция между веществами $ui_arg_1 и $ui_arg_2] (* <- lang_ru;;*);;
+ui_menu_determine_is_reaction_possible => ui_nrel_command_lang_template: [Is reaction possible between substances $ui_arg_1 and $ui_arg_2] (* <- lang_en;;*);;

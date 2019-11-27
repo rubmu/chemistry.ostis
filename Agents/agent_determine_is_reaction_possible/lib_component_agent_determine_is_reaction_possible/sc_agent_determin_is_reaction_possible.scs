@@ -29,7 +29,7 @@ sc_agent_determine_is_reaction_possible
 		agent_determine_is_reaction_possible
 		};;
 		
-	-> sc_agent_determine_is_reaction_possible 
+	-> sc_agent_determine_is_reaction_possible_scp 
 		(* <- active_sc_agent;; *);;
 	*);;
 
@@ -38,7 +38,8 @@ sc_agent_determine_is_reaction_possible
 	action_determine_is_reaction_possible _-> .._question;;
 	question_initiated _-> .._question;;
 	question _-> .._question;;
-	.._question _-> .._parameter1;;
+	.._question _-> rrel_1: .._parameter_1;;
+	.._question _-> rrel_2: .._parameter_2;;
 *];;
 
 ..sc_agent_determine_is_reaction_possible_result
@@ -46,7 +47,7 @@ sc_agent_determine_is_reaction_possible
 	action_determine_is_reaction_possible _-> .._question;;
 	question_finished _-> .._question;;
 	question _-> .._question;;
-	.._question _=> nrel_answer:: .._answer_for_checking_domains_of_relation;;
-	.._question _-> .._parameter1;;
-	
+	.._question _=> nrel_answer:: .._answer;;
+	.._question _-> rrel_1: .._parameter_1;;
+	.._question _-> rrel_2: .._parameter_2;;
 *];;
