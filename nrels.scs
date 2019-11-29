@@ -33,6 +33,12 @@ nrel_molar_mass
 	=> nrel_first_domain: chemical_element;
 	=> nrel_second_domain: number;;
 
+nrel_density_of_gas
+  => nrel_main_idtf: [плотность газа*](* <- lang_ru;; *);
+	<- sc_node_norole_relation;
+	=> nrel_first_domain: chemical_element;
+	=> nrel_second_domain: number;;
+
 nrel_solvation
 <- sc_node_norole_relation;
 => nrel_main_idtf:
