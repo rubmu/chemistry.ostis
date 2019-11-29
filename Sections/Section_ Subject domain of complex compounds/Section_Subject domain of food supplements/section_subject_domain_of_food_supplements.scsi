@@ -447,6 +447,7 @@ curcumin
 => nrel_main_idtf:[куркумин](* <- lang_ru;; *);
 => nrel_main_idtf:[curcumin](* <- lang_en;; *);
 => nrel_label:[e100](* <- lang_en;; *);
+<= nrel_color: color_yellow;
 
 
 <- rrel_key_sc_element:...
@@ -493,6 +494,7 @@ riboflavin
 => nrel_main_idtf:[рибофлавин](* <- lang_ru;; *);
 => nrel_main_idtf:[riboflavin](* <- lang_en;; *);
 => nrel_label:[e101](* <- lang_en;; *);
+<= nrel_color: color_yellow;
 
 
 
@@ -546,6 +548,7 @@ tartrazine
 => nrel_main_idtf:[тартразин](* <- lang_ru;; *);
 => nrel_main_idtf:[tartrazine](* <- lang_en;; *);
 => nrel_label:[e102](* <- lang_en;; *);
+<= nrel_color: color_yellow;
 
 
 
@@ -595,6 +598,7 @@ alkanine
 => nrel_main_idtf:[алканин](* <- lang_ru;; *);
 => nrel_main_idtf:[alkanine](* <- lang_en;; *);
 => nrel_label:[e103](* <- lang_en;; *);
+<= nrel_color: color_red;
 
 
 
@@ -646,6 +650,7 @@ yellow_quinoline
 => nrel_main_idtf:[желтый хиолиновый](* <- lang_ru;; *);
 => nrel_main_idtf:[yellow_quinoline](* <- lang_en;; *);
 => nrel_label:[e104](* <- lang_en;; *);
+<= nrel_color: color_yellow;
 
 
 
@@ -693,6 +698,7 @@ AB_yellow
 => nrel_main_idtf:[желтый прочный AB](* <- lang_ru;; *);
 => nrel_main_idtf:[AB_yellow](* <- lang_en;; *);
 => nrel_label:[e105](* <- lang_en;; *);
+<= nrel_color: color_yellow;
 
 
 
@@ -745,6 +751,7 @@ flavin_mononucleotide_sodium_salt
 => nrel_main_idtf:[натриевая соль рибофлавин-5′-фосфата](* <- lang_ru;; *);
 => nrel_main_idtf:[flavin mononucleotide sodium salt](* <- lang_en;; *);
 => nrel_label:[e106](* <- lang_en;; *);
+<= nrel_color: color_yellow;
 
 
 
@@ -802,6 +809,7 @@ yellow_2G
 => nrel_main_idtf:[жёлтый 2G](* <- lang_ru;; *);
 => nrel_main_idtf:[yellow 2G](* <- lang_en;; *);
 => nrel_label:[e107](* <- lang_en;; *);
+<= nrel_color: color_yellow;
 
 
 
@@ -859,6 +867,7 @@ sunset_yellow_FCF
 => nrel_main_idtf:[жёлтый «солнечный закат»](* <- lang_ru;; *);
 => nrel_main_idtf:[Sunset Yellow FCF](* <- lang_en;; *);
 => nrel_label:[e110](* <- lang_en;; *);
+<= nrel_color: color_yellow;
 
 
 
@@ -908,6 +917,7 @@ orange_GGN
 => nrel_main_idtf:[Оранжевый GGN](* <- lang_ru;; *);
 => nrel_main_idtf:[Orange GGN](* <- lang_en;; *);
 => nrel_label:[e111](* <- lang_en;; *);
+<= nrel_color: color_orange;
 
 
 
@@ -953,6 +963,7 @@ carmine
 => nrel_main_idtf:[кармин](* <- lang_ru;; *);
 => nrel_main_idtf:[carmine](* <- lang_en;; *);
 => nrel_label:[e120](* <- lang_en;; *);
+<= nrel_color: color_red;
 
 
 <- rrel_key_sc_element:...
@@ -984,6 +995,7 @@ azorubine
 => nrel_main_idtf:[азорубин](* <- lang_ru;; *);
 => nrel_main_idtf:[azorubine](* <- lang_en;; *);
 => nrel_label:[e122](* <- lang_en;; *);
+<= nrel_color: color_red;
 
 
 
@@ -1042,6 +1054,7 @@ amaranth
 => nrel_main_idtf:[амарант](* <- lang_ru;; *);
 => nrel_main_idtf:[amaranth](* <- lang_en;; *);
 => nrel_label:[e123](* <- lang_en;; *);
+<= nrel_color: color_red;
 
 
 
@@ -1100,6 +1113,7 @@ ponceau_4R
 => nrel_main_idtf:[пунцовый 4R](* <- lang_ru;; *);
 => nrel_main_idtf:[ponceau 4R](* <- lang_en;; *);
 => nrel_label:[e124](* <- lang_en;; *);
+<= nrel_color: color_pink;
 
 
 
@@ -1158,6 +1172,7 @@ ponceau_6R
 => nrel_main_idtf:[понсо 6R](* <- lang_ru;; *);
 => nrel_main_idtf:[ponceau 6R](* <- lang_en;; *);
 => nrel_label:[e126](* <- lang_en;; *);
+<= nrel_color: color_red;
 
 
 
@@ -1208,6 +1223,7 @@ allura_red_AC
 => nrel_main_idtf:[Красный очаровательный АС](* <- lang_ru;; *);
 => nrel_main_idtf:[Allura Red AC](* <- lang_en;; *);
 => nrel_label:[e129](* <- lang_en;; *);
+<= nrel_color: color_red;
 
 
 
@@ -1270,6 +1286,7 @@ patent_blue_V
 => nrel_main_idtf:[Синий патентованный V](* <- lang_ru;; *);
 => nrel_main_idtf:[Patent Blue V](* <- lang_en;; *);
 => nrel_label:[e131](* <- lang_en;; *);
+<= nrel_color: color_blue;
 
 
 
@@ -1324,6 +1341,7 @@ indigo_carmine
 => nrel_main_idtf:[Индигокармин](* <- lang_ru;; *);
 => nrel_main_idtf:[Indigo carmine](* <- lang_en;; *);
 => nrel_label:[e132](* <- lang_en;; *);
+<= nrel_color: color_blue;
 
 
 
@@ -1385,6 +1403,7 @@ brilliant_blue_FCF
 => nrel_main_idtf:[Синий блестящий FCF](* <- lang_ru;; *);
 => nrel_main_idtf:[brilliant blue FCF](* <- lang_en;; *);
 => nrel_label:[e133](* <- lang_en;; *);
+<= nrel_color: color_blue;
 
 
 
@@ -1483,6 +1502,7 @@ chlorophyll
 => nrel_main_idtf:[хлорофилл](* <- lang_ru;; *);
 => nrel_main_idtf:[chlorophyll](* <- lang_en;; *);
 => nrel_label:[e140](* <- lang_en;; *);
+<= nrel_color: color_green;
 
 
 
@@ -1547,6 +1567,7 @@ chlorophyll_copper_complex
 => nrel_main_idtf:[хлорофилла медные комплексы](* <- lang_ru;; *);
 => nrel_main_idtf:[chlorophyll_copper_complex](* <- lang_en;; *);
 => nrel_label:[e141](* <- lang_en;; *);
+<= nrel_color: color_green;
 
 
 <- rrel_key_sc_element:...
@@ -1584,6 +1605,7 @@ green_S
 => nrel_main_idtf:[зеленый S](* <- lang_ru;; *);
 => nrel_main_idtf:[green S](* <- lang_en;; *);
 => nrel_label:[e142](* <- lang_en;; *);
+<= nrel_color: color_green;
 
 
 <- rrel_key_sc_element:...
@@ -1629,6 +1651,7 @@ plain_caramel
 => nrel_main_idtf:[сахарный колер](* <- lang_ru;; *);
 => nrel_main_idtf:[Plain caramel](* <- lang_en;; *);
 => nrel_label:[e150](* <- lang_en;; *);
+<= nrel_color: color_orange;
 
 
 <- rrel_key_sc_element:...
@@ -1663,6 +1686,7 @@ black_7984
 => nrel_main_idtf:[уголь](* <- lang_ru;; *);
 => nrel_main_idtf:[Black 7984](* <- lang_en;; *);
 => nrel_label:[e152](* <- lang_en;; *);
+<= nrel_color: color_black;
 
 
 <- rrel_key_sc_element:...
@@ -1715,6 +1739,7 @@ carbon_black
 => nrel_main_idtf:[уголь растительный](* <- lang_ru;; *);
 => nrel_main_idtf:[carbon black](* <- lang_en;; *);
 => nrel_label:[e153](* <- lang_en;; *);
+<= nrel_color: color_black;
 
 <- rrel_key_sc_element:...
 (*
