@@ -1,0 +1,116 @@
+scp_program -> proc_find_class     
+	(*
+	-> rrel_params: .proc_find_class_params
+		(*
+		-> rrel_1: rrel_in: _unknown_class;;
+		-> rrel_2: rrel_in: _class;;
+		-> rrel_3: rrel_in: _set;;
+		*);;
+
+	-> rrel_operators: .proc_find_class_operators
+		(*
+		-> rrel_init: .proc_find_class_operator1A
+			(*
+			<- searchElStr5;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _class;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_common: _arc1;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _unknown_class;;
+			-> rrel_4: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc2;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: nrel_strict_inclusion;;
+
+			=> nrel_then: .proc_find_class_operator1E;; 
+			=> nrel_else: .proc_find_class_operator1B;;
+			*);;
+
+		-> .proc_find_class_operator1B
+			(*
+			<- searchSetStr5;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _class;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_common: _arc1;;
+			-> rrel_3: rrel_assign: rrel_scp_var: rrel_not_ralation: _class1;;
+			-> rrel_4: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc2;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: nrel_strict_inclusion;;
+
+			-> rrel_set_3: rrel_assign: rrel_scp_var: rrel_set: _set_of_classes;;
+
+			=> nrel_then: .proc_find_class_operator1C;;
+			=> nrel_else: .proc_find_class_operator_return;;   
+			*);;
+
+
+		-> .proc_find_class_operator1C
+			(*
+			<- searchElStr3;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _set_of_classes;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc1;;
+			-> rrel_3: rrel_assign: rrel_scp_var: _class1;;
+
+			=> nrel_then: .proc_find_class_operator1D;;
+			=> nrel_else: .proc_find_class_operator1H;; 
+			*);; 
+
+		-> .proc_find_class_operator1D
+			(*
+			<- eraseEl;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: rrel_erase: _arc1;;
+
+			=> nrel_goto: .proc_find_class_operator1F;;
+			*);;
+
+
+		-> .proc_find_class_operator1E      
+			(*
+			<- genElStr3;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _set;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc1;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _unknown_class;;
+
+			=> nrel_goto: .proc_find_class_operator_return;; 
+			*);;
+
+		-> .proc_find_class_operator1F  
+			(*
+			<- call;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_const: proc_find_class;;
+			-> rrel_2: rrel_fixed: rrel_scp_const: .proc_find_class_operator1F_params
+				(*
+				-> rrel_1: rrel_fixed: rrel_scp_var: _unknown_class;;
+				-> rrel_2: rrel_fixed: rrel_scp_var: _class1;;
+				-> rrel_3: rrel_fixed: rrel_scp_var: _set;;
+				*);;
+			-> rrel_3: rrel_assign: rrel_scp_var: _descr;;
+
+			=> nrel_goto: .proc_find_class_operator1G;; 
+			*);;
+
+		-> .proc_find_class_operator1G  
+			(*
+			<- waitReturn;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _descr;;
+
+			=> nrel_goto: .proc_find_class_operator1C;; 
+			*);;
+	
+
+		-> .proc_find_class_operator1H   
+			(*
+			<- eraseEl;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: rrel_erase: _set_of_classes;;
+
+			=> nrel_goto: .proc_find_class_operator_return ;;
+			*);;
+
+		-> .proc_find_class_operator_return
+			(*
+			<- return;;
+			*);;
+		*);;
+	*);;
