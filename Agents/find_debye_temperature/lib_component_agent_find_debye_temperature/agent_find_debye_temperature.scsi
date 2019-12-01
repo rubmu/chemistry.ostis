@@ -81,9 +81,29 @@ scp_program -> agent_find_debye_temperature
 				-> rrel_3: rrel_fixed: rrel_scp_var: _pattern;;
 
 				=> nrel_then: .generate_then;;
-				=> nrel_else: .generate_else;;
+				=> nrel_else: .check_salt;;
 			*);;
 
+		-> .check_salt
+			(*
+				<- searchElStr3;;
+
+				-> rrel_1: rrel_fixed: rrel_scp_const: rrel_node: concept_salt;;
+				-> rrel_2: rrel_assign: rrel_scp_var : rrel_pos_const_perm : _arc3;;
+				-> rrel_3: rrel_fixed: rrel_scp_var: _pattern;;
+
+				=> nrel_then: .generate_else;;
+				=> nrel_else: .generate_other;;
+			*);;
+
+		-> .generate_other
+		(*
+			<- contAssign ;;
+
+			-> rrel_1 : rrel_assign : rrel_scp_var : rrel_link : _metal ;;
+			-> rrel_2 : rrel_fixed : rrel_scp_const : rrel_link : [пока непонятно] ;;
+			=> nrel_goto: .gen_const;;
+		*);;
 
 		-> .generate_then
 			(*
@@ -100,7 +120,7 @@ scp_program -> agent_find_debye_temperature
 				<- contAssign ;;
 
 				-> rrel_1 : rrel_assign : rrel_scp_var : rrel_link : _metal ;;
-				-> rrel_2 : rrel_fixed : rrel_scp_const : rrel_link : [0] ;;
+				-> rrel_2 : rrel_fixed : rrel_scp_const : rrel_link : [соль + кислота] ;;
 				=> nrel_goto: .gen_const;;
 			*);;
 

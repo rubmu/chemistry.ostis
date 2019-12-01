@@ -1,9 +1,9 @@
 ui_menu_find_debye_temperature
 <- ui_user_command_class_atom; ui_user_command_class_view_kb;
 => nrel_main_idtf:
-	[Какая температура Дебая данного элемента?]
+	[Что будет, если добавить к этому веществу кислоту?]
 	(* <- lang_ru;;*);
-	[What is the Debye temperature of this element?]
+	[What will happen if I add acid to this substance?]
 	(* <- lang_en;;*);;
 
 ui_menu_find_debye_temperature
@@ -18,5 +18,5 @@ ui_menu_find_debye_temperature
 
 ui_menu_find_debye_temperature
 => ui_nrel_command_lang_template:
-	[Поиск температуры Дебая $ui_arg_1] (* <- lang_ru;;*);
-	[Search Debye temperature of $ui_arg_1] (* <- lang_en;;*);;
+	[Узнаем, что будет, если добавить к $ui_arg_1 кислоту] (* <- lang_ru;;*);
+	[Finding out what's goin to happen if I add acid to $ui_arg_1] (* <- lang_en;;*);;
