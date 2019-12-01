@@ -5,10 +5,11 @@ ui_menu_find_half_life_of_chemical_element => ui_nrel_command_template:
 	[*
 		action_find_half_life_of_chemical_element _-> ._action_find_half_life_of_chemical_element_instance
 			(*
-			_-> ui_arg_1;;
+			  _-> rrel_1:: ui_arg_1;;
+			  _-> rrel_2:: ui_arg_2;;
 			*);;
 		._action_find_half_life_of_chemical_element_instance _<- question;;
 	*];;
 
-ui_menu_find_half_life_of_chemical_element => ui_nrel_command_lang_template: [Какой период полураспада имеет заданный химический элемент: $ui_arg_1] (* <- lang_ru;;*);;
-ui_menu_find_half_life_of_chemical_element => ui_nrel_command_lang_template: [What is the half life of given chemical element: $ui_arg_1] (* <- lang_en;;*);;
+ui_menu_find_half_life_of_chemical_element => ui_nrel_command_lang_template: [Через сколько времени распадется $ui_arg_1 таких атомов как $ui_arg_2] (* <- lang_ru;;*);;
+ui_menu_find_half_life_of_chemical_element => ui_nrel_command_lang_template: [After how much time $ui_arg_1 atoms like $ui_arg_2 will decay] (* <- lang_en;;*);;
