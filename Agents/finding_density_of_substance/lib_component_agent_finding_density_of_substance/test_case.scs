@@ -1,0 +1,12 @@
+concept_metal
+=> nrel_main_idtf:
+	[метал](* <- lang_ru;; *);
+	[metal](* <- lang_en;; *);
+=>nrel_idtf:
+	[метал](* <-lang_ru;; *);;
+
+concept_salt
+=> nrel_main_idtf: [соль](* <- lang_ru;; *);
+=> nrel_idtf: [соль](* <- lang_ru;; *);;
+
+concept_metal -> elem_Fe;;
