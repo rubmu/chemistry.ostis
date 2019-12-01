@@ -1,0 +1,16 @@
+ui_menu_file_for_calculating_molar_mass_of_substance <- ui_user_command_class_atom; ui_user_command_class_view_kb; ui_one_argument_command_class;;
+
+ui_menu_file_for_calculating_molar_mass_of_substance => nrel_main_idtf: [Вычислить молярную массу данного вещества] (* <- lang_ru;; *);;
+ui_menu_file_for_calculating_molar_mass_of_substance => nrel_main_idtf: [Сalculate molar mass of substance] (* <- lang_en;; *);;
+	
+ui_menu_file_for_calculating_molar_mass_of_substance => ui_nrel_command_template:
+	[*
+		action_of_calculating_molar_mass_of_substance _-> ._action_of_calculating_molar_mass_of_substance_instance
+			(*
+			_-> ui_arg_1;;
+			*);;
+		._action_of_calculating_molar_mass_of_substance_instance _<- question;;
+	*];;
+
+ui_menu_file_for_calculating_molar_mass_of_substance => ui_nrel_command_lang_template: [Найти молярную массу $ui_arg_1] (* <- lang_ru;; *);;
+ui_menu_file_for_calculating_molar_mass_of_substance => ui_nrel_command_lang_template: [Сalculate molar mass of $ui_arg_1] (* <- lang_en;; *);;

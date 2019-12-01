@@ -45,17 +45,8 @@ scp_program -> agent_of_calculating_number_of_particles
 			-> rrel_2: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc1;;
 			-> rrel_3: rrel_assign: rrel_scp_var: _param;;
 
-			=> nrel_then: .agent_of_calculating_number_of_particles_operator2Aa;;
+			=> nrel_then: .agent_of_calculating_number_of_particles_operator2A;;
 			=> nrel_else: .agent_of_calculating_number_of_particles_operator_return;;
-			*);;
-
-		-> .agent_of_calculating_number_of_particles_operator2Aa            
-			(*
-			<- printNl;;
-
-			-> rrel_1: rrel_fixed: rrel_scp_const: [------------------------BEGIN!------------------------];;    
-
-			=> nrel_goto: .agent_of_calculating_number_of_particles_operator2A;;   
 			*);;
 
 		-> .agent_of_calculating_number_of_particles_operator2A            
@@ -67,7 +58,7 @@ scp_program -> agent_of_calculating_number_of_particles
 			-> rrel_3: rrel_fixed: rrel_scp_var: _param;;
 
 			=> nrel_then: .agent_of_calculating_number_of_particles_operator2B;;
-			=> nrel_else: .agent_of_calculating_number_of_particles_operatorCC;;    
+			=> nrel_else: .agent_of_calculating_number_of_particles_operator_error2A;;    
 			*);;
 
 		-> .agent_of_calculating_number_of_particles_operator2B            
@@ -133,7 +124,7 @@ scp_program -> agent_of_calculating_number_of_particles
 			-> rrel_3: rrel_fixed: rrel_scp_var: _unknown_class;;
 	
 			=> nrel_then: .agent_of_calculating_number_of_particles_operator6A;;  
-			=> nrel_else: .agent_of_calculating_number_of_particles_operatorCC;;	
+			=> nrel_else: .agent_of_calculating_number_of_particles_operator_error2A;;	
 			*);;
 
 		-> .agent_of_calculating_number_of_particles_operator6A			
@@ -172,7 +163,7 @@ scp_program -> agent_of_calculating_number_of_particles
 			-> rrel_5: rrel_fixed: rrel_scp_const: nrel_molar_mass;;
 
 			=> nrel_then: .agent_of_calculating_number_of_particles_operator8A;;
-			=> nrel_else: .agent_of_calculating_number_of_particles_operatorYY;;      
+			=> nrel_else: .agent_of_calculating_number_of_particles_operator_error3A;;      
 			*);;
 // проход по цепочке для M
 		-> .agent_of_calculating_number_of_particles_operator8A
@@ -184,7 +175,7 @@ scp_program -> agent_of_calculating_number_of_particles
 			-> rrel_3: rrel_fixed: rrel_scp_var: _node_molar_mass;;
 
 			=> nrel_then: .agent_of_calculating_number_of_particles_operator8B;;		
-			=> nrel_else: .agent_of_calculating_number_of_particles_operatorXX;;      
+			=> nrel_else: .agent_of_calculating_number_of_particles_operator_error1A;;      
 			*);;
 
 		-> .agent_of_calculating_number_of_particles_operator8B
@@ -198,7 +189,7 @@ scp_program -> agent_of_calculating_number_of_particles
 			-> rrel_5: rrel_fixed: rrel_scp_const: nrel_measurement;;
 
 			=> nrel_then: .agent_of_calculating_number_of_particles_operator8C;;		
-			=> nrel_else: .agent_of_calculating_number_of_particles_operatorXX;;      
+			=> nrel_else: .agent_of_calculating_number_of_particles_operator_error1A;;      
 			*);;
 
 		-> .agent_of_calculating_number_of_particles_operator8C
@@ -212,7 +203,7 @@ scp_program -> agent_of_calculating_number_of_particles
 			-> rrel_5: rrel_assign: rrel_scp_var: rrel_role_relation: _node_measure;;
 
 			=> nrel_then: .agent_of_calculating_number_of_particles_operator8D;;		
-			=> nrel_else: .agent_of_calculating_number_of_particles_operatorXX;;      
+			=> nrel_else: .agent_of_calculating_number_of_particles_operator_error1A;;      
 			*);;
 
 		-> .agent_of_calculating_number_of_particles_operator8D
@@ -224,7 +215,7 @@ scp_program -> agent_of_calculating_number_of_particles
 			-> rrel_3: rrel_fixed: rrel_scp_var: _node_number;;
 
 			=> nrel_then: .agent_of_calculating_number_of_particles_operator8E;;		
-			=> nrel_else: .agent_of_calculating_number_of_particles_operatorXX;;      
+			=> nrel_else: .agent_of_calculating_number_of_particles_operator_error1A;;      
 			*);;
 
 		-> .agent_of_calculating_number_of_particles_operator8E
@@ -238,7 +229,7 @@ scp_program -> agent_of_calculating_number_of_particles
 			-> rrel_5: rrel_fixed: rrel_scp_const: nrel_idtf;;
 
 			=> nrel_then: .agent_of_calculating_number_of_particles_operator8F;;		
-			=> nrel_else: .agent_of_calculating_number_of_particles_operatorXX;;      
+			=> nrel_else: .agent_of_calculating_number_of_particles_operator_error1A;;      
 			*);;
 
 		-> .agent_of_calculating_number_of_particles_operator8F
@@ -250,7 +241,7 @@ scp_program -> agent_of_calculating_number_of_particles
 			-> rrel_3: rrel_fixed: rrel_scp_var: _link_molar_mass;;
 
 			=> nrel_then: .agent_of_calculating_number_of_particles_operator9A;;		
-			=> nrel_else: .agent_of_calculating_number_of_particles_operatorXX;;      
+			=> nrel_else: .agent_of_calculating_number_of_particles_operator_error1A;;      
 			*);;
 
 		-> .agent_of_calculating_number_of_particles_operator9A
@@ -262,7 +253,7 @@ scp_program -> agent_of_calculating_number_of_particles
 			-> rrel_3: rrel_fixed: rrel_scp_var: _node_mass;;
 
 			=> nrel_then: .agent_of_calculating_number_of_particles_operator9B;;		
-			=> nrel_else: .agent_of_calculating_number_of_particles_operatorXX;;      
+			=> nrel_else: .agent_of_calculating_number_of_particles_operator_error1A;;      
 			*);;
 
 		-> .agent_of_calculating_number_of_particles_operator9B
@@ -276,7 +267,7 @@ scp_program -> agent_of_calculating_number_of_particles
 			-> rrel_5: rrel_fixed: rrel_scp_const: nrel_measurement;;
 
 			=> nrel_then: .agent_of_calculating_number_of_particles_operator9C;;		
-			=> nrel_else: .agent_of_calculating_number_of_particles_operatorXX;;      
+			=> nrel_else: .agent_of_calculating_number_of_particles_operator_error1A;;      
 			*);;
 
 		-> .agent_of_calculating_number_of_particles_operator9C
@@ -290,7 +281,7 @@ scp_program -> agent_of_calculating_number_of_particles
 			-> rrel_5: rrel_assign: rrel_scp_var: rrel_role_relation: _node_measure;;
 
 			=> nrel_then: .agent_of_calculating_number_of_particles_operator9D;;		
-			=> nrel_else: .agent_of_calculating_number_of_particles_operatorXX;;      
+			=> nrel_else: .agent_of_calculating_number_of_particles_operator_error1A;;      
 			*);;
 
 		-> .agent_of_calculating_number_of_particles_operator9D
@@ -302,7 +293,7 @@ scp_program -> agent_of_calculating_number_of_particles
 			-> rrel_3: rrel_fixed: rrel_scp_var: _node_number;;
 
 			=> nrel_then: .agent_of_calculating_number_of_particles_operator9E;;		
-			=> nrel_else: .agent_of_calculating_number_of_particles_operatorXX;;      
+			=> nrel_else: .agent_of_calculating_number_of_particles_operator_error1A;;      
 			*);;
 
 		-> .agent_of_calculating_number_of_particles_operator9E
@@ -316,7 +307,7 @@ scp_program -> agent_of_calculating_number_of_particles
 			-> rrel_5: rrel_fixed: rrel_scp_const: nrel_idtf;;
 
 			=> nrel_then: .agent_of_calculating_number_of_particles_operator9F;;		
-			=> nrel_else: .agent_of_calculating_number_of_particles_operatorXX;;      
+			=> nrel_else: .agent_of_calculating_number_of_particles_operator_error1A;;      
 			*);;
 
 			-> .agent_of_calculating_number_of_particles_operator9F
@@ -328,7 +319,7 @@ scp_program -> agent_of_calculating_number_of_particles
 			-> rrel_3: rrel_fixed: rrel_scp_var: _link_mass;;
 
 			=> nrel_then: .agent_of_calculating_number_of_particles_operator10A;;		
-			=> nrel_else: .agent_of_calculating_number_of_particles_operatorXX;;      
+			=> nrel_else: .agent_of_calculating_number_of_particles_operator_error1A;;      
 			*);;	
 
 		-> .agent_of_calculating_number_of_particles_operator10A      
@@ -361,7 +352,7 @@ scp_program -> agent_of_calculating_number_of_particles
 			-> rrel_2: rrel_fixed: rrel_scp_var: _link_m_M_Na;;
 			-> rrel_3: rrel_fixed: rrel_scp_const: [ * 10^23];; 
 
-			=> nrel_goto: .agent_of_calculating_number_of_particles_operatorPREANSWER1;;
+			=> nrel_goto: .agent_of_calculating_number_of_particles_operator_preanswer1;;
 			*);;
 // Поиск n.
 // Случай N = Na * n.		
@@ -388,7 +379,7 @@ scp_program -> agent_of_calculating_number_of_particles
 			-> rrel_3: rrel_fixed: rrel_scp_var: _node_chemical_amount;;
 
 			=> nrel_then: .agent_of_calculating_number_of_particles_operator12B;;		
-			=> nrel_else: .agent_of_calculating_number_of_particles_operatorXX;;      
+			=> nrel_else: .agent_of_calculating_number_of_particles_operator_error1A;;      
 			*);;
 
 		-> .agent_of_calculating_number_of_particles_operator12B
@@ -402,7 +393,7 @@ scp_program -> agent_of_calculating_number_of_particles
 			-> rrel_5: rrel_fixed: rrel_scp_const: nrel_measurement;;
 
 			=> nrel_then: .agent_of_calculating_number_of_particles_operator12C;;		
-			=> nrel_else: .agent_of_calculating_number_of_particles_operatorXX;;      
+			=> nrel_else: .agent_of_calculating_number_of_particles_operator_error1A;;      
 			*);;
 
 		-> .agent_of_calculating_number_of_particles_operator12C
@@ -416,7 +407,7 @@ scp_program -> agent_of_calculating_number_of_particles
 			-> rrel_5: rrel_assign: rrel_scp_var: rrel_role_relation: _node_measure;;
 
 			=> nrel_then: .agent_of_calculating_number_of_particles_operator12D;;		
-			=> nrel_else: .agent_of_calculating_number_of_particles_operatorXX;;      
+			=> nrel_else: .agent_of_calculating_number_of_particles_operator_error1A;;      
 			*);;
 
 		-> .agent_of_calculating_number_of_particles_operator12D
@@ -428,7 +419,7 @@ scp_program -> agent_of_calculating_number_of_particles
 			-> rrel_3: rrel_fixed: rrel_scp_var: _node_number;;
 
 			=> nrel_then: .agent_of_calculating_number_of_particles_operator12E;;		
-			=> nrel_else: .agent_of_calculating_number_of_particles_operatorXX;;      
+			=> nrel_else: .agent_of_calculating_number_of_particles_operator_error1A;;      
 			*);;
 
 		-> .agent_of_calculating_number_of_particles_operator12E
@@ -442,7 +433,7 @@ scp_program -> agent_of_calculating_number_of_particles
 			-> rrel_5: rrel_fixed: rrel_scp_const: nrel_idtf;;
 
 			=> nrel_then: .agent_of_calculating_number_of_particles_operator12F;;		
-			=> nrel_else: .agent_of_calculating_number_of_particles_operatorXX;;      
+			=> nrel_else: .agent_of_calculating_number_of_particles_operator_error1A;;      
 			*);;
 
 			-> .agent_of_calculating_number_of_particles_operator12F
@@ -454,7 +445,7 @@ scp_program -> agent_of_calculating_number_of_particles
 			-> rrel_3: rrel_fixed: rrel_scp_var: _link_chemical_amount;;
 
 			=> nrel_then: .agent_of_calculating_number_of_particles_operator13A;;		
-			=> nrel_else: .agent_of_calculating_number_of_particles_operatorXX;;      
+			=> nrel_else: .agent_of_calculating_number_of_particles_operator_error1A;;      
 			*);;
 
 		-> .agent_of_calculating_number_of_particles_operator13A    
@@ -476,7 +467,7 @@ scp_program -> agent_of_calculating_number_of_particles
 			-> rrel_2: rrel_fixed: rrel_scp_var: _link_n_Na;;
 			-> rrel_3: rrel_fixed: rrel_scp_const: [ * 10^23];; 
 
-			=> nrel_goto: .agent_of_calculating_number_of_particles_operatorPREANSWER1;;
+			=> nrel_goto: .agent_of_calculating_number_of_particles_operator_preanswer1;;
 			*);;
 // Случай N = Na * V/Vm.		
 		-> .agent_of_calculating_number_of_particles_operator14A	
@@ -490,7 +481,7 @@ scp_program -> agent_of_calculating_number_of_particles
 			-> rrel_5: rrel_fixed: rrel_scp_const: nrel_amount;;
 
 			=> nrel_then: .agent_of_calculating_number_of_particles_operator15A;;
-			=> nrel_else: .agent_of_calculating_number_of_particles_operatorYY;;       
+			=> nrel_else: .agent_of_calculating_number_of_particles_operator_error3A;;       
 			*);;
 // Проход по цепочке для V
 		-> .agent_of_calculating_number_of_particles_operator15A
@@ -502,7 +493,7 @@ scp_program -> agent_of_calculating_number_of_particles
 			-> rrel_3: rrel_fixed: rrel_scp_var: _node_amount;;
 
 			=> nrel_then: .agent_of_calculating_number_of_particles_operator15B;;		
-			=> nrel_else: .agent_of_calculating_number_of_particles_operatorXX;;      
+			=> nrel_else: .agent_of_calculating_number_of_particles_operator_error1A;;      
 			*);;
 
 		-> .agent_of_calculating_number_of_particles_operator15B
@@ -516,7 +507,7 @@ scp_program -> agent_of_calculating_number_of_particles
 			-> rrel_5: rrel_fixed: rrel_scp_const: nrel_measurement;;
 
 			=> nrel_then: .agent_of_calculating_number_of_particles_operator15C;;		
-			=> nrel_else: .agent_of_calculating_number_of_particles_operatorXX;;      
+			=> nrel_else: .agent_of_calculating_number_of_particles_operator_error1A;;      
 			*);;
 
 		-> .agent_of_calculating_number_of_particles_operator15C
@@ -530,7 +521,7 @@ scp_program -> agent_of_calculating_number_of_particles
 			-> rrel_5: rrel_assign: rrel_scp_var: rrel_role_relation: _node_measure;;
 
 			=> nrel_then: .agent_of_calculating_number_of_particles_operator15D;;		
-			=> nrel_else: .agent_of_calculating_number_of_particles_operatorXX;;      
+			=> nrel_else: .agent_of_calculating_number_of_particles_operator_error1A;;      
 			*);;
 
 		-> .agent_of_calculating_number_of_particles_operator15D
@@ -542,7 +533,7 @@ scp_program -> agent_of_calculating_number_of_particles
 			-> rrel_3: rrel_fixed: rrel_scp_var: _node_number;;
 
 			=> nrel_then: .agent_of_calculating_number_of_particles_operator15E;;		
-			=> nrel_else: .agent_of_calculating_number_of_particles_operatorXX;;      
+			=> nrel_else: .agent_of_calculating_number_of_particles_operator_error1A;;      
 			*);;
 
 		-> .agent_of_calculating_number_of_particles_operator15E
@@ -556,7 +547,7 @@ scp_program -> agent_of_calculating_number_of_particles
 			-> rrel_5: rrel_fixed: rrel_scp_const: nrel_idtf;;
 
 			=> nrel_then: .agent_of_calculating_number_of_particles_operator15F;;		
-			=> nrel_else: .agent_of_calculating_number_of_particles_operatorXX;;      
+			=> nrel_else: .agent_of_calculating_number_of_particles_operator_error1A;;      
 			*);;
 
 			-> .agent_of_calculating_number_of_particles_operator15F
@@ -568,7 +559,7 @@ scp_program -> agent_of_calculating_number_of_particles
 			-> rrel_3: rrel_fixed: rrel_scp_var: _link_amount;;
 
 			=> nrel_then: .agent_of_calculating_number_of_particles_operator16A;;		
-			=> nrel_else: .agent_of_calculating_number_of_particles_operatorXX;;      
+			=> nrel_else: .agent_of_calculating_number_of_particles_operator_error1A;;      
 			*);;
 
 		-> .agent_of_calculating_number_of_particles_operator16A    
@@ -601,10 +592,10 @@ scp_program -> agent_of_calculating_number_of_particles
 			-> rrel_2: rrel_fixed: rrel_scp_var: _link_v_vm_na;;
 			-> rrel_3: rrel_fixed: rrel_scp_const: [ * 10^23];; 
 
-			=> nrel_goto: .agent_of_calculating_number_of_particles_operatorPREANSWER1;;
+			=> nrel_goto: .agent_of_calculating_number_of_particles_operator_preanswer1;;
 			*);;
 
-		-> .agent_of_calculating_number_of_particles_operatorPREANSWER1
+		-> .agent_of_calculating_number_of_particles_operator_preanswer1
 			(*
 			<- genElStr3;;
 
@@ -612,10 +603,10 @@ scp_program -> agent_of_calculating_number_of_particles
 			-> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc1;;
 			-> rrel_3: rrel_fixed: rrel_scp_var: _param;;
 
-			=> nrel_goto: .agent_of_calculating_number_of_particles_operatorPREANSWER2;;
+			=> nrel_goto: .agent_of_calculating_number_of_particles_operator_preanswer2;;
 			*);;
 
-		-> .agent_of_calculating_number_of_particles_operatorPREANSWER2
+		-> .agent_of_calculating_number_of_particles_operator_preanswer2
 			(*
 			<- genElStr3;;
 
@@ -623,10 +614,10 @@ scp_program -> agent_of_calculating_number_of_particles
 			-> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc1;;
 			-> rrel_3: rrel_fixed: rrel_scp_const: nrel_idtf;;
 
-			=> nrel_goto: .agent_of_calculating_number_of_particles_operatorANSWER1;;
+			=> nrel_goto: .agent_of_calculating_number_of_particles_operator_answer1;;
 			*);;
 
-		-> .agent_of_calculating_number_of_particles_operatorANSWER1
+		-> .agent_of_calculating_number_of_particles_operator_answer1
 			(*
 			<- genElStr5;;
 
@@ -636,10 +627,10 @@ scp_program -> agent_of_calculating_number_of_particles
 			-> rrel_4: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc2;;
 			-> rrel_5: rrel_fixed: rrel_scp_const: nrel_idtf;;
 
-			=> nrel_goto: .agent_of_calculating_number_of_particles_operatorANSWER1a;;
+			=> nrel_goto: .agent_of_calculating_number_of_particles_operator_answer1a;;
 			*);;
 
-		-> .agent_of_calculating_number_of_particles_operatorANSWER1a
+		-> .agent_of_calculating_number_of_particles_operator_answer1a
 			(*
 			<- searchSetStr5;;
 
@@ -652,10 +643,10 @@ scp_program -> agent_of_calculating_number_of_particles
 			-> rrel_set_2: rrel_fixed: rrel_scp_var: rrel_set: _answer;;
 			-> rrel_set_4: rrel_fixed: rrel_scp_var: rrel_set: _answer;;
 
-			=> nrel_goto: .agent_of_calculating_number_of_particles_operatorANSWER1b;;
+			=> nrel_goto: .agent_of_calculating_number_of_particles_operator_answer1b;;
 			*);;
 
-		-> .agent_of_calculating_number_of_particles_operatorANSWER1b
+		-> .agent_of_calculating_number_of_particles_operator_answer1b
 			(*
 			<- genElStr3;;
 
@@ -663,10 +654,10 @@ scp_program -> agent_of_calculating_number_of_particles
 			-> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc1;;
 			-> rrel_3: rrel_fixed: rrel_scp_var: _link_num_of_particles;;
 
-			=> nrel_goto: .agent_of_calculating_number_of_particles_operatorANSWER2;;
+			=> nrel_goto: .agent_of_calculating_number_of_particles_operator_answer2;;
 			*);;
 
-		-> .agent_of_calculating_number_of_particles_operatorANSWER2
+		-> .agent_of_calculating_number_of_particles_operator_answer2
 			(*
 			<- genElStr3;;
 
@@ -674,10 +665,10 @@ scp_program -> agent_of_calculating_number_of_particles
 			-> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc1;;
 			-> rrel_3: rrel_fixed: rrel_scp_var: _new_node_number;;
 
-			=> nrel_goto: .agent_of_calculating_number_of_particles_operatorANSWER2a;;
+			=> nrel_goto: .agent_of_calculating_number_of_particles_operator_answer2a;;
 			*);;
 
-		-> .agent_of_calculating_number_of_particles_operatorANSWER2a
+		-> .agent_of_calculating_number_of_particles_operator_answer2a
 			(*
 			<- searchSetStr3;;
 
@@ -687,10 +678,10 @@ scp_program -> agent_of_calculating_number_of_particles
 
 			-> rrel_set_2: rrel_fixed: rrel_scp_var: rrel_set: _answer;;
 
-			=> nrel_goto: .agent_of_calculating_number_of_particles_operatorANSWER2b;;
+			=> nrel_goto: .agent_of_calculating_number_of_particles_operator_answer2b;;
 			*);;
 		
-		-> .agent_of_calculating_number_of_particles_operatorANSWER2b
+		-> .agent_of_calculating_number_of_particles_operator_answer2b
 			(*
 			<- genElStr3;;
 
@@ -698,10 +689,10 @@ scp_program -> agent_of_calculating_number_of_particles
 			-> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc1;;
 			-> rrel_3: rrel_fixed: rrel_scp_const: number;;
 
-			=> nrel_goto: .agent_of_calculating_number_of_particles_operatorANSWER2c;;
+			=> nrel_goto: .agent_of_calculating_number_of_particles_operator_answer2c;;
 			*);;
 
-		-> .agent_of_calculating_number_of_particles_operatorANSWER2c
+		-> .agent_of_calculating_number_of_particles_operator_answer2c
 			(*
 			<- genElStr3;;
 
@@ -709,10 +700,10 @@ scp_program -> agent_of_calculating_number_of_particles
 			-> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc1;;
 			-> rrel_3: rrel_fixed: rrel_scp_var: _new_node_number;;
 
-			=> nrel_goto: .agent_of_calculating_number_of_particles_operatorANSWER3;;
+			=> nrel_goto: .agent_of_calculating_number_of_particles_operator_answer3;;
 			*);;
 
-		-> .agent_of_calculating_number_of_particles_operatorANSWER3
+		-> .agent_of_calculating_number_of_particles_operator_answer3
 			(*
 			<- genElStr3;;
 
@@ -720,10 +711,10 @@ scp_program -> agent_of_calculating_number_of_particles
 			-> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc1;;
 			-> rrel_3: rrel_fixed: rrel_scp_var: _new_node_number;;
 
-			=> nrel_goto: .agent_of_calculating_number_of_particles_operatorANSWER3a;;
+			=> nrel_goto: .agent_of_calculating_number_of_particles_operator_answer3a;;
 			*);;
 
-		-> .agent_of_calculating_number_of_particles_operatorANSWER3a
+		-> .agent_of_calculating_number_of_particles_operator_answer3a
 			(*
 			<- searchSetStr3;;
 
@@ -733,10 +724,10 @@ scp_program -> agent_of_calculating_number_of_particles
 
 			-> rrel_set_2: rrel_fixed: rrel_scp_var: rrel_set: _answer;;
 
-			=> nrel_goto: .agent_of_calculating_number_of_particles_operatorANSWER3b;;
+			=> nrel_goto: .agent_of_calculating_number_of_particles_operator_answer3b;;
 			*);;
 
-		-> .agent_of_calculating_number_of_particles_operatorANSWER3b
+		-> .agent_of_calculating_number_of_particles_operator_answer3b
 			(*
 			<- genElStr3;;
 
@@ -744,10 +735,10 @@ scp_program -> agent_of_calculating_number_of_particles
 			-> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc1;;
 			-> rrel_3: rrel_fixed: rrel_scp_var: _new_node_liter;;
 
-			=> nrel_goto: .agent_of_calculating_number_of_particles_operatorANSWER4;;
+			=> nrel_goto: .agent_of_calculating_number_of_particles_operator_answer4;;
 			*);;
 
-		-> .agent_of_calculating_number_of_particles_operatorANSWER4
+		-> .agent_of_calculating_number_of_particles_operator_answer4
 			(*
 			<- genElStr5;;
 
@@ -757,10 +748,10 @@ scp_program -> agent_of_calculating_number_of_particles
 			-> rrel_4: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc2;;
 			-> rrel_5: rrel_fixed: rrel_scp_const: nrel_measurement;;
 
-			=> nrel_goto: .agent_of_calculating_number_of_particles_operatorANSWER4a;;
+			=> nrel_goto: .agent_of_calculating_number_of_particles_operator_answer4a;;
 			*);;
 
-		-> .agent_of_calculating_number_of_particles_operatorANSWER4a
+		-> .agent_of_calculating_number_of_particles_operator_answer4a
 			(*
 			<- searchSetStr5;;
 
@@ -773,10 +764,10 @@ scp_program -> agent_of_calculating_number_of_particles
 			-> rrel_set_2: rrel_fixed: rrel_scp_var: rrel_set: _answer;;
 			-> rrel_set_4: rrel_fixed: rrel_scp_var: rrel_set: _answer;;
 
-			=> nrel_goto: .agent_of_calculating_number_of_particles_operatorANSWER4b;;
+			=> nrel_goto: .agent_of_calculating_number_of_particles_operator_answer4b;;
 			*);;
 
-		-> .agent_of_calculating_number_of_particles_operatorANSWER4b
+		-> .agent_of_calculating_number_of_particles_operator_answer4b
 			(*
 			<- genElStr3;;
 
@@ -784,10 +775,10 @@ scp_program -> agent_of_calculating_number_of_particles
 			-> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc1;;
 			-> rrel_3: rrel_fixed: rrel_scp_const: nrel_measurement;;
 
-			=> nrel_goto: .agent_of_calculating_number_of_particles_operatorANSWER4c;;
+			=> nrel_goto: .agent_of_calculating_number_of_particles_operator_answer4c;;
 			*);;
 
-		-> .agent_of_calculating_number_of_particles_operatorANSWER4c
+		-> .agent_of_calculating_number_of_particles_operator_answer4c
 			(*
 			<- genElStr3;;
 
@@ -795,10 +786,10 @@ scp_program -> agent_of_calculating_number_of_particles
 			-> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc1;;
 			-> rrel_3: rrel_fixed: rrel_scp_var: _node_num_of_particles;;
 
-			=> nrel_goto: .agent_of_calculating_number_of_particles_operatorANSWER5;;
+			=> nrel_goto: .agent_of_calculating_number_of_particles_operator_answer5;;
 			*);;
 
-		-> .agent_of_calculating_number_of_particles_operatorANSWER5
+		-> .agent_of_calculating_number_of_particles_operator_answer5
 			(*
 			<- genElStr3;;
 
@@ -806,10 +797,10 @@ scp_program -> agent_of_calculating_number_of_particles
 			-> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc_quant;;
 			-> rrel_3: rrel_fixed: rrel_scp_var: _node_num_of_particles;;
 
-			=> nrel_goto: .agent_of_calculating_number_of_particles_operatorANSWER5a;;
+			=> nrel_goto: .agent_of_calculating_number_of_particles_operator_answer5a;;
 			*);;
 
-		-> .agent_of_calculating_number_of_particles_operatorANSWER5a
+		-> .agent_of_calculating_number_of_particles_operator_answer5a
 			(*
 			<- genElStr3;;
 
@@ -817,10 +808,10 @@ scp_program -> agent_of_calculating_number_of_particles
 			-> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc1;;
 			-> rrel_3: rrel_fixed: rrel_scp_const: value;;
 
-			=> nrel_goto: .agent_of_calculating_number_of_particles_operatorANSWER5b;;
+			=> nrel_goto: .agent_of_calculating_number_of_particles_operator_answer5b;;
 			*);;
 
-		-> .agent_of_calculating_number_of_particles_operatorANSWER5b
+		-> .agent_of_calculating_number_of_particles_operator_answer5b
 			(*
 			<- genElStr3;;
 
@@ -828,10 +819,10 @@ scp_program -> agent_of_calculating_number_of_particles
 			-> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc1;;
 			-> rrel_3: rrel_fixed: rrel_scp_var: _arc_quant;;
 
-			=> nrel_goto: .agent_of_calculating_number_of_particles_operatorANSWER6;;
+			=> nrel_goto: .agent_of_calculating_number_of_particles_operator_answer6;;
 			*);;
 
-		-> .agent_of_calculating_number_of_particles_operatorANSWER6
+		-> .agent_of_calculating_number_of_particles_operator_answer6
 			(*
 			<- genElStr5;;
 
@@ -841,10 +832,10 @@ scp_program -> agent_of_calculating_number_of_particles
 			-> rrel_4: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc2;;
 			-> rrel_5: rrel_fixed: rrel_scp_const: nrel_N;;
 
-			=> nrel_goto: .agent_of_calculating_number_of_particles_operatorANSWER6a;;
+			=> nrel_goto: .agent_of_calculating_number_of_particles_operator_answer6a;;
 			*);;
 
-		-> .agent_of_calculating_number_of_particles_operatorANSWER6a
+		-> .agent_of_calculating_number_of_particles_operator_answer6a
 			(*
 			<- searchSetStr5;;
 
@@ -857,10 +848,10 @@ scp_program -> agent_of_calculating_number_of_particles
 			-> rrel_set_2: rrel_fixed: rrel_scp_var: rrel_set: _answer;;
 			-> rrel_set_4: rrel_fixed: rrel_scp_var: rrel_set: _answer;;
 
-			=> nrel_goto: .agent_of_calculating_number_of_particles_operatorANSWER6b;;
+			=> nrel_goto: .agent_of_calculating_number_of_particles_operator_answer6b;;
 			*);;
 
-		-> .agent_of_calculating_number_of_particles_operatorANSWER6b
+		-> .agent_of_calculating_number_of_particles_operator_answer6b
 			(*
 			<- genElStr3;;
 
@@ -868,10 +859,10 @@ scp_program -> agent_of_calculating_number_of_particles
 			-> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc1;;
 			-> rrel_3: rrel_fixed: rrel_scp_const: nrel_N;;
 
-			=> nrel_goto: .agent_of_calculating_number_of_particles_operatorANSWER7a;;
+			=> nrel_goto: .agent_of_calculating_number_of_particles_operator_answer7a;;
 			*);;
 
-		-> .agent_of_calculating_number_of_particles_operatorANSWER7a
+		-> .agent_of_calculating_number_of_particles_operator_answer7a
 			(*
 			<- genElStr3;;
 
@@ -879,10 +870,10 @@ scp_program -> agent_of_calculating_number_of_particles
 			-> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc1;;
 			-> rrel_3: rrel_fixed: rrel_scp_var: _unknown_class;;
 
-			=> nrel_goto: .agent_of_calculating_number_of_particles_operatorANSWER7b;;
+			=> nrel_goto: .agent_of_calculating_number_of_particles_operator_answer7b;;
 			*);;
 
-			-> .agent_of_calculating_number_of_particles_operatorANSWER7b
+			-> .agent_of_calculating_number_of_particles_operator_answer7b
 			(*
 			<- genElStr3;;
 
@@ -890,10 +881,10 @@ scp_program -> agent_of_calculating_number_of_particles
 			-> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc1;;
 			-> rrel_3: rrel_fixed: rrel_scp_var: _arc_class;;
 
-			=> nrel_goto: .agent_of_calculating_number_of_particles_operatorANSWER8;;
+			=> nrel_goto: .agent_of_calculating_number_of_particles_operator_answer8;;
 			*);;
 
-		-> .agent_of_calculating_number_of_particles_operatorANSWER8
+		-> .agent_of_calculating_number_of_particles_operator_answer8
 			(*
 			<- genElStr5;;
 
@@ -903,10 +894,10 @@ scp_program -> agent_of_calculating_number_of_particles
 		  	-> rrel_4: rrel_assign: rrel_const: rrel_pos_const_perm: rrel_scp_var: _arc2;;
 		  	-> rrel_5: rrel_fixed: rrel_scp_const: nrel_answer;;
 
-			=> nrel_goto: .agent_of_calculating_number_of_particles_operatorANSWER9;;
+			=> nrel_goto: .agent_of_calculating_number_of_particles_operator_answer9;;
 			*);;
 
-		-> .agent_of_calculating_number_of_particles_operatorANSWER9			
+		-> .agent_of_calculating_number_of_particles_operator_answer9			
 			(*
 			<- genElStr3;;
 
@@ -917,22 +908,22 @@ scp_program -> agent_of_calculating_number_of_particles
 			=> nrel_goto: .agent_of_calculating_number_of_particles_operator_return;;   
 			*);;
 
-		-> .agent_of_calculating_number_of_particles_operatorXX			
+		-> .agent_of_calculating_number_of_particles_operator_error1A			
 			(*
 			<- call;;
 
 			-> rrel_1: rrel_fixed: rrel_scp_const: proc_of_adding_validating_message;;    
-			-> rrel_2: rrel_fixed: rrel_scp_const: .agent_of_calculating_number_of_particles_operatorXX_params
+			-> rrel_2: rrel_fixed: rrel_scp_const: .agent_of_calculating_number_of_particles_operator_error1A_params
 				(*
 				-> rrel_1: rrel_fixed: rrel_scp_var: _quest;;
 				-> rrel_2: rrel_fixed: rrel_scp_const: [Ошибка! Цепочка величин не полная!];; 
 				*);;
 			-> rrel_3: rrel_assign: rrel_scp_var: _descr;;
 
-			=> nrel_goto: .agent_of_calculating_number_of_particles_operatorXXa;;  
+			=> nrel_goto: .agent_of_calculating_number_of_particles_operator_error1B;;  
 			*);;
 
-			-> .agent_of_calculating_number_of_particles_operatorXXa		
+			-> .agent_of_calculating_number_of_particles_operator_error1B		
 			(*
 			<- waitReturn;;
 
@@ -941,22 +932,22 @@ scp_program -> agent_of_calculating_number_of_particles
 			=> nrel_goto: .agent_of_calculating_number_of_particles_operator_return;;
 			*);;
 
-		-> .agent_of_calculating_number_of_particles_operatorCC			
+		-> .agent_of_calculating_number_of_particles_operator_error2A			
 			(*
 			<- call;;
 
 			-> rrel_1: rrel_fixed: rrel_scp_const: proc_of_adding_validating_message;;    
-			-> rrel_2: rrel_fixed: rrel_scp_const: .agent_of_calculating_number_of_particles_operatorCC_params
+			-> rrel_2: rrel_fixed: rrel_scp_const: .agent_of_calculating_number_of_particles_operator_error2A_params
 				(*
 				-> rrel_1: rrel_fixed: rrel_scp_var: _quest;;
 				-> rrel_2: rrel_fixed: rrel_scp_const: [Ошибка! Поданный на вход параметр не является веществом или отсутствует его принадлежность к какому-либо классу!];;  
 				*);;
 			-> rrel_3: rrel_assign: rrel_scp_var: _descr;;
 
-			=> nrel_goto: .agent_of_calculating_number_of_particles_operatorCCa;;  
+			=> nrel_goto: .agent_of_calculating_number_of_particles_operator_error2B;;  
 			*);;
 
-		-> .agent_of_calculating_number_of_particles_operatorCCa		
+		-> .agent_of_calculating_number_of_particles_operator_error2B		
 			(*
 			<- waitReturn;;
 
@@ -965,22 +956,22 @@ scp_program -> agent_of_calculating_number_of_particles
 			=> nrel_goto: .agent_of_calculating_number_of_particles_operator_return;;
 			*);;
 
-		-> .agent_of_calculating_number_of_particles_operatorYY			
+		-> .agent_of_calculating_number_of_particles_operator_error3A			
 			(*
 			<- call;;
 
 			-> rrel_1: rrel_fixed: rrel_scp_const: proc_of_adding_validating_message;;    
-			-> rrel_2: rrel_fixed: rrel_scp_const: .agent_of_calculating_number_of_particles_operatorYY_params
+			-> rrel_2: rrel_fixed: rrel_scp_const: .agent_of_calculating_number_of_particles_operator_error3A_params
 				(*
 				-> rrel_1: rrel_fixed: rrel_scp_var: _quest;;
 				-> rrel_2: rrel_fixed: rrel_scp_const: [Ошибка! Не достаточно данных!];;  
 				*);;
 			-> rrel_3: rrel_assign: rrel_scp_var: _descr;;
 
-			=> nrel_goto: .agent_of_calculating_number_of_particles_operatorYYa;;  
+			=> nrel_goto: .agent_of_calculating_number_of_particles_operator_error3B;;  
 			*);;
 
-		-> .agent_of_calculating_number_of_particles_operatorYYa		
+		-> .agent_of_calculating_number_of_particles_operator_error3B		
 			(*
 			<- waitReturn;;
 

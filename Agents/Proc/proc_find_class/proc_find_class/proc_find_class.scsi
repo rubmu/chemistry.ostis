@@ -17,7 +17,7 @@ scp_program -> proc_find_class
 			-> rrel_2: rrel_assign: rrel_scp_var: rrel_common: _arc1;;
 			-> rrel_3: rrel_fixed: rrel_scp_var: _unknown_class;;
 			-> rrel_4: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc2;;
-			-> rrel_5: rrel_fixed: rrel_scp_const: nrel_strict_inclusion;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: nrel_inclusion;;
 
 			=> nrel_then: .proc_find_class_operator1E;; 
 			=> nrel_else: .proc_find_class_operator1B;;
@@ -31,7 +31,7 @@ scp_program -> proc_find_class
 			-> rrel_2: rrel_assign: rrel_scp_var: rrel_common: _arc1;;
 			-> rrel_3: rrel_assign: rrel_scp_var: rrel_not_ralation: _class1;;
 			-> rrel_4: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc2;;
-			-> rrel_5: rrel_fixed: rrel_scp_const: nrel_strict_inclusion;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: nrel_inclusion;;
 
 			-> rrel_set_3: rrel_assign: rrel_scp_var: rrel_set: _set_of_classes;;
 
