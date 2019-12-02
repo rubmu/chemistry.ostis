@@ -1,0 +1,6 @@
+sc_text_agent_add_acid
+-> rrel_key_sc_element:
+	agent_add_acid;
+<- scp_program_sc_text;;
+
+sc_text_of_agent_add_acid = [*^"file://agent_add_acid.scsi"*];;
