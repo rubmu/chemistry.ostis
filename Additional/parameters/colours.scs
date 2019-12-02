@@ -1,4 +1,4 @@
-nrel_color_of_the_flame_during_combustion 
+nrel_color_of_the_flame_during_combustion
 	=> nrel_main_idtf: [цвет пламени во время горения] (*<-lang_ru;;*);
 	<- sc_node_norole_relation;;
 
@@ -9,8 +9,14 @@ color_yellow <= nrel_color_of_the_flame_during_combustion:NaCl;;
 
 
 color_red
-	=> nrel_main_idtf: 
+	=> nrel_main_idtf:
 		[красный цвет] (*<-lang_ru;;*);
+	<- color;
+	<- sc_node_not_relation;;
+
+color_pink
+	=> nrel_main_idtf:
+		[розовый цвет] (*<-lang_ru;;*);
 	<- color;
 	<- sc_node_not_relation;;
 
@@ -28,7 +34,7 @@ color_reddish_brown
 		[reddish-brown color](* <- lang_en;; *);
 	<- color;
 	<- sc_node_not_relation;;
-	
+
 color_light_green
 	=> nrel_main_idtf:
 		[светло-зеленный цвет](* <- lang_ru;; *);
@@ -36,8 +42,8 @@ color_light_green
 	<- color;
 	<- sc_node_not_relation;;
 
-color_green 
-	=> nrel_main_idtf: 
+color_green
+	=> nrel_main_idtf:
 		[зелёный цвет] (*<-lang_ru;;*);
 		[green color](* <- lang_en;; *);
 	<- color;
@@ -55,19 +61,19 @@ color_yellow
 	<- color;
 	<- sc_node_not_relation;;
 
-color_white_blue 
-	=> nrel_main_idtf: 
+color_white_blue
+	=> nrel_main_idtf:
 		[бело-голубой цвет](* <- lang_ru;; *);
 	<- color;
 	<- sc_node_not_relation;;
 
-color_silver_grey 
-	=> nrel_main_idtf: 
+color_silver_grey
+	=> nrel_main_idtf:
 		[серебристо-серый цвет](* <- lang_ru;; *);
 	<- color;
 	<- sc_node_not_relation;;
 
-color_white_silver 
+color_white_silver
 	=> nrel_main_idtf: [серебристо-белый цвет](* <- lang_ru;; *);
 	<- color;
 	<- sc_node_not_relation;;
@@ -112,7 +118,7 @@ color_silver
 	<- color;
 	<- sc_node_not_relation;;
 
-no_color 
+no_color
 	=> nrel_main_idtf: [бесцветный](*<- lang_ru;;*);
 	<- color;
 	<- sc_node_not_relation;;
@@ -120,7 +126,7 @@ no_color
 steel_color => nrel_main_idtf: [стальной цвет](*<- lang_ru;;*);
 	<- color;
 	<- sc_node_not_relation;;
-	
+
 dark_blue_color => nrel_main_idtf: [темно-синий цвет](*<- lang_ru;;*);
 	<- color;
 	<- sc_node_not_relation;;
