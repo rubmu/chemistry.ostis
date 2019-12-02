@@ -3375,9 +3375,9 @@ inorganic_acid
 =>nrel_main_idtf:[inorganic acid](*<-lang_en;;*);;
 
 nitrous_acid
-<-sc_node_not_relation;
-=>nrel_main_idtf:[азотичтая кислота](*<-lang_ru;;*);
-=>nrel_main_idtf:[nitrous acid](*<-lang_en;;*);;
+<-sc_node_not_relation;;
+//=>nrel_main_idtf:[азотистая кислота](*<-lang_ru;;*);
+//=>nrel_main_idtf:[nitrous acid](*<-lang_en;;*);;
 
 carboxylic_acid
 <-sc_node_not_relation;
