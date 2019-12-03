@@ -1,0 +1,27 @@
+lib_component_proc_find_class
+=> nrel_main_idtf:
+	[Компонент библиотеки. Scp-программа поиска класса сущности]
+	(* <- lang_ru;; *);
+	[Library component. Scp-program find entity class]
+	(* <- lang_en;; *);
+
+<- library_of_platform_independent_reusable_components;
+
+-> rrel_key_sc_element: 
+	proc_find_class;
+
+<- rrel_key_sc_element: 
+	...
+	(*
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			"file://htmls/Proc_Find_Class.html" 
+				(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+lib_component_proc_find_class = [*^"file://proc_find_class.scsi"*];;
+

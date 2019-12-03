@@ -8,13 +8,13 @@ elem_Pa
 => nrel_idtf: [atom Pa] (* <-lang_en;;*);
 
 <- rrel_key_sc_element: definition_of_elem_Pa
-(* 
+(*
 	=> nrel_main_idtf: [Опр.(Атом протактиния)] (* <- lang_ru;; *);;
 	<- definition;;
 	<= nrel_sc_text_translation: ...
 	(*
 		-> rrel_example:
-			[<p><b><sc_element sys_idtf  = "elem_Pa">Протактиний</sc_element></b> - <sc_element sys_idtf  = "chemical_element">химический элемент</sc_element>   третьей  <sc_element sys_idtf  = "periodic_group">группы</sc_element>, 7-го <sc_element sys_idtf  = "period">периода</sc_element>  периодической системы химических элементов.</p>] 
+			[<p><b><sc_element sys_idtf  = "elem_Pa">Протактиний</sc_element></b> - <sc_element sys_idtf  = "chemical_element">химический элемент</sc_element>   третьей  <sc_element sys_idtf  = "periodic_group">группы</sc_element>, 7-го <sc_element sys_idtf  = "period">периода</sc_element>  периодической системы химических элементов.</p>]
 			(*
 				<-lang_ru;;
 				=> nrel_format: format_html;;
@@ -80,7 +80,7 @@ elem_Pa
 <- rrel_key_sc_element: electron_configuration_Pa
 (*
 	<- explanation;;
-	=> nrel_main_idtf: 
+	=> nrel_main_idtf:
 		[Утв.(атом протактиния, электронная конфигурация*)](*<- lang_ru;;*);;
 	<= nrel_sc_text_translation:...
 	(*
@@ -105,5 +105,3 @@ atomic_mass_Pa <- number;
 => nrel_main_idtf:[231,03588](*<-lang_ru;; <- lang_en;;*);;
 electronegativity_Pa <- number;
 => nrel_main_idtf:[1,5](*<-lang_ru;; <- lang_en;;*);;
-
-

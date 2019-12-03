@@ -1,0 +1,22 @@
+ui_menu_add_acid
+<- ui_user_command_class_atom; ui_user_command_class_view_kb;
+=> nrel_main_idtf:
+	[Что будет, если добавить к этому веществу кислоту?]
+	(* <- lang_ru;;*);
+	[What will happen if I add acid to this substance?]
+	(* <- lang_en;;*);;
+
+ui_menu_add_acid
+=> ui_nrel_command_template:
+	[*
+		action_add_acid _-> ._action_add_acid_instance
+			(*
+			_-> ui_arg_1;;
+			*);;
+		._action_add_acid_instance _<- question;;
+	*];;
+
+ui_menu_add_acid
+=> ui_nrel_command_lang_template:
+	[Узнаем, что будет, если добавить к $ui_arg_1 кислоту] (* <- lang_ru;;*);
+	[Finding out what's goin to happen if I add acid to $ui_arg_1] (* <- lang_en;;*);;

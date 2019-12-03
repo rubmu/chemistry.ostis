@@ -1,0 +1,988 @@
+agent_of_calculating_number_of_particles 
+=> nrel_main_idtf: 
+	[агентная scp-программа вычисления числа частиц химичесткого вещества](* <- lang_ru;;*);
+	[agent scp-program of calculating number of particles of substance](* <- lang_ru;;*);
+	<- agent_scp_program;;
+
+scp_program -> agent_of_calculating_number_of_particles
+	(*
+	-> rrel_params: .agent_of_calculating_number_of_particles_params
+		(*
+		-> rrel_1: rrel_in: _event;;
+		-> rrel_2: rrel_in: _input_arc;;
+		*);;
+
+	-> rrel_operators: .agent_of_calculating_number_of_particles_operators
+		(*
+		-> rrel_init: .agent_of_calculating_number_of_particles_operator1A
+			(*
+			<- searchElStr3;;
+
+			-> rrel_1: rrel_assign: rrel_scp_var: _temp;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _input_arc;;
+			-> rrel_3: rrel_assign: rrel_scp_var: _quest;;
+
+			=> nrel_goto: .agent_of_calculating_number_of_particles_operator1B;;
+			*);;
+
+		-> .agent_of_calculating_number_of_particles_operator1B
+			(*
+			<- searchElStr3;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_const: action_of_calculating_number_of_particles;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc1;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _quest;;
+
+			=> nrel_then: .agent_of_calculating_number_of_particles_operator1C;;
+			=> nrel_else: .agent_of_calculating_number_of_particles_operator_return;;
+			*);;
+
+		-> .agent_of_calculating_number_of_particles_operator1C
+			(*
+			<- searchElStr3;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _quest;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc1;;
+			-> rrel_3: rrel_assign: rrel_scp_var: _param;;
+
+			=> nrel_then: .agent_of_calculating_number_of_particles_operator2A;;
+			=> nrel_else: .agent_of_calculating_number_of_particles_operator_return;;
+			*);;
+
+		-> .agent_of_calculating_number_of_particles_operator2A            
+			(*
+			<- searchElStr3;;
+
+			-> rrel_1: rrel_assign: rrel_scp_var: rrel_not_relation: _unknown_class;;    
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc_class;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _param;;
+
+			=> nrel_then: .agent_of_calculating_number_of_particles_operator2B;;
+			=> nrel_else: .agent_of_calculating_number_of_particles_operator_error2A;;    
+			*);;
+
+		-> .agent_of_calculating_number_of_particles_operator2B            
+			(*
+			<- genEl;;
+
+			-> rrel_1: rrel_assign: rrel_scp_var: rrel_node: _answer;;
+
+			=> nrel_goto: .agent_of_calculating_number_of_particles_operator3A;;   
+			*);;		
+
+		-> .agent_of_calculating_number_of_particles_operator3A            
+			(*
+			<- ifCoin;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_const: chemical_substance;;    
+			-> rrel_2: rrel_fixed: rrel_scp_var: _unknown_class;;
+
+			=> nrel_then: .agent_of_calculating_number_of_particles_operator6A;;
+			=> nrel_else: .agent_of_calculating_number_of_particles_operator3B;;    
+			*);;
+
+		-> .agent_of_calculating_number_of_particles_operator3B 		
+			(*
+			<- genEl;;
+
+			-> rrel_1: rrel_assign: rrel_scp_var: rrel_node: _set_for_class;;
+
+			=> nrel_goto: .agent_of_calculating_number_of_particles_operator4A;;  
+			*);;
+// Рекурсивно обходим дерево включения классов друг в друга начиная с chemical_substance
+		-> .agent_of_calculating_number_of_particles_operator4A       
+			(*
+			<- call;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_const: proc_find_class;;    
+			-> rrel_2: rrel_fixed: rrel_scp_const: .agent_of_calculating_number_of_particles_operator4A_params
+				(*
+				-> rrel_1: rrel_fixed: rrel_scp_var: _unknown_class;;
+				-> rrel_2: rrel_fixed: rrel_scp_const: chemical_substance;;
+				-> rrel_3: rrel_fixed: rrel_scp_var: _set_for_class;;
+				*);;
+			-> rrel_3: rrel_assign: rrel_scp_var: _descr;;
+
+			=> nrel_goto: .agent_of_calculating_number_of_particles_operator4B;;  
+			*);;
+
+		-> .agent_of_calculating_number_of_particles_operator4B		
+			(*
+			<- waitReturn;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _descr;;
+
+			=> nrel_goto: .agent_of_calculating_number_of_particles_operator5A;;
+			*);;
+// Проверяем, есть ли класс поданного на вход вещества в найденной цепочке включения 
+		-> .agent_of_calculating_number_of_particles_operator5A		
+			(*
+			<- searchElStr3;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _set_for_class;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc1;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _unknown_class;;
+	
+			=> nrel_then: .agent_of_calculating_number_of_particles_operator6A;;  
+			=> nrel_else: .agent_of_calculating_number_of_particles_operator_error2A;;	
+			*);;
+
+		-> .agent_of_calculating_number_of_particles_operator6A			
+			(*
+			<- contAssign;;
+
+			-> rrel_1: rrel_assign: rrel_scp_var: rrel_link: _link_num_of_particles;;
+			-> rrel_2: rrel_fixed: rrel_scp_const: [0];;
+
+			=> nrel_goto: .agent_of_calculating_number_of_particles_operator6B;;
+			*);;
+// задана ли масса
+		-> .agent_of_calculating_number_of_particles_operator6B		
+			(*
+			<- searchElStr5;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _param;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_common: _arc1;;
+			-> rrel_3: rrel_assign: rrel_scp_var: _node_mass;;
+			-> rrel_4: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc2;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: nrel_mass;;
+
+			=> nrel_then: .agent_of_calculating_number_of_particles_operator7A;;		// на случай для кол-ва в-ва: N = m/M * Na.
+			=> nrel_else: .agent_of_calculating_number_of_particles_operator11A;;       // на случай для кол-ва в-ва: N = n * Na.
+			*);;		
+// случай N = Na * m/M.
+// поиск M
+		-> .agent_of_calculating_number_of_particles_operator7A	
+			(*
+			<- searchElStr5;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _param;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_common: _arc1;;
+			-> rrel_3: rrel_assign: rrel_scp_var: _node_molar_mass;;
+			-> rrel_4: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc2;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: nrel_molar_mass;;
+
+			=> nrel_then: .agent_of_calculating_number_of_particles_operator8A;;
+			=> nrel_else: .agent_of_calculating_number_of_particles_operator_error3A;;      
+			*);;
+// проход по цепочке для M
+		-> .agent_of_calculating_number_of_particles_operator8A
+			(*
+			<- searchElStr3;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_const: value;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc1;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _node_molar_mass;;
+
+			=> nrel_then: .agent_of_calculating_number_of_particles_operator8B;;		
+			=> nrel_else: .agent_of_calculating_number_of_particles_operator_error1A;;      
+			*);;
+
+		-> .agent_of_calculating_number_of_particles_operator8B
+			(*
+			<- searchElStr5;;
+
+			-> rrel_1: rrel_assign: rrel_scp_var: _node_measurement;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_common: _arc1;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _node_molar_mass;;
+			-> rrel_4: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc2;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: nrel_measurement;;
+
+			=> nrel_then: .agent_of_calculating_number_of_particles_operator8C;;		
+			=> nrel_else: .agent_of_calculating_number_of_particles_operator_error1A;;      
+			*);;
+
+		-> .agent_of_calculating_number_of_particles_operator8C
+			(*
+			<- searchElStr5;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _node_measurement;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc1;;
+			-> rrel_3: rrel_assign: rrel_scp_var: _node_number;;
+			-> rrel_4: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc2;;
+			-> rrel_5: rrel_assign: rrel_scp_var: rrel_role_relation: _node_measure;;
+
+			=> nrel_then: .agent_of_calculating_number_of_particles_operator8D;;		
+			=> nrel_else: .agent_of_calculating_number_of_particles_operator_error1A;;      
+			*);;
+
+		-> .agent_of_calculating_number_of_particles_operator8D
+			(*
+			<- searchElStr3;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_const: number;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc1;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _node_number;;
+
+			=> nrel_then: .agent_of_calculating_number_of_particles_operator8E;;		
+			=> nrel_else: .agent_of_calculating_number_of_particles_operator_error1A;;      
+			*);;
+
+		-> .agent_of_calculating_number_of_particles_operator8E
+			(*
+			<- searchElStr5;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _node_number;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_common: _arc1;;
+			-> rrel_3: rrel_assign: rrel_scp_var: _link_molar_mass;;
+			-> rrel_4: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc2;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: nrel_idtf;;
+
+			=> nrel_then: .agent_of_calculating_number_of_particles_operator8F;;		
+			=> nrel_else: .agent_of_calculating_number_of_particles_operator_error1A;;      
+			*);;
+
+		-> .agent_of_calculating_number_of_particles_operator8F
+			(*
+			<- searchElStr3;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_const: decimal_numeral_system;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc1;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _link_molar_mass;;
+
+			=> nrel_then: .agent_of_calculating_number_of_particles_operator9A;;		
+			=> nrel_else: .agent_of_calculating_number_of_particles_operator_error1A;;      
+			*);;
+
+		-> .agent_of_calculating_number_of_particles_operator9A
+			(*
+			<- searchElStr3;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_const: value;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc1;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _node_mass;;
+
+			=> nrel_then: .agent_of_calculating_number_of_particles_operator9B;;		
+			=> nrel_else: .agent_of_calculating_number_of_particles_operator_error1A;;      
+			*);;
+
+		-> .agent_of_calculating_number_of_particles_operator9B
+			(*
+			<- searchElStr5;;
+
+			-> rrel_1: rrel_assign: rrel_scp_var: _node_measurement;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_common: _arc1;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _node_mass;;
+			-> rrel_4: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc2;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: nrel_measurement;;
+
+			=> nrel_then: .agent_of_calculating_number_of_particles_operator9C;;		
+			=> nrel_else: .agent_of_calculating_number_of_particles_operator_error1A;;      
+			*);;
+
+		-> .agent_of_calculating_number_of_particles_operator9C
+			(*
+			<- searchElStr5;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _node_measurement;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc1;;
+			-> rrel_3: rrel_assign: rrel_scp_var: _node_number;;
+			-> rrel_4: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc2;;
+			-> rrel_5: rrel_assign: rrel_scp_var: rrel_role_relation: _node_measure;;
+
+			=> nrel_then: .agent_of_calculating_number_of_particles_operator9D;;		
+			=> nrel_else: .agent_of_calculating_number_of_particles_operator_error1A;;      
+			*);;
+
+		-> .agent_of_calculating_number_of_particles_operator9D
+			(*
+			<- searchElStr3;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_const: number;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc1;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _node_number;;
+
+			=> nrel_then: .agent_of_calculating_number_of_particles_operator9E;;		
+			=> nrel_else: .agent_of_calculating_number_of_particles_operator_error1A;;      
+			*);;
+
+		-> .agent_of_calculating_number_of_particles_operator9E
+			(*
+			<- searchElStr5;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _node_number;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_common: _arc1;;
+			-> rrel_3: rrel_assign: rrel_scp_var: _link_mass;;
+			-> rrel_4: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc2;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: nrel_idtf;;
+
+			=> nrel_then: .agent_of_calculating_number_of_particles_operator9F;;		
+			=> nrel_else: .agent_of_calculating_number_of_particles_operator_error1A;;      
+			*);;
+
+			-> .agent_of_calculating_number_of_particles_operator9F
+			(*
+			<- searchElStr3;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_const: decimal_numeral_system;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc1;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _link_mass;;
+
+			=> nrel_then: .agent_of_calculating_number_of_particles_operator10A;;		
+			=> nrel_else: .agent_of_calculating_number_of_particles_operator_error1A;;      
+			*);;	
+
+		-> .agent_of_calculating_number_of_particles_operator10A      
+			(*
+			<- contDiv;;
+
+			-> rrel_1: rrel_assign: rrel_scp_var: _node_div_mass_and_molar_mass;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _link_mass;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _link_molar_mass;;
+
+			=> nrel_goto: .agent_of_calculating_number_of_particles_operator10B;;
+			*);;
+
+		-> .agent_of_calculating_number_of_particles_operator10B    
+			(*
+			<- contMult;;
+
+			-> rrel_1: rrel_assign: rrel_scp_var: _link_m_M_Na;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _node_div_mass_and_molar_mass;;
+			-> rrel_3: rrel_fixed: rrel_scp_const: [6,02];;   
+
+			=> nrel_goto: .agent_of_calculating_number_of_particles_operator10C;;
+			*);;
+		
+		-> .agent_of_calculating_number_of_particles_operator10C    
+			(*
+			<- contStringConcat;;
+			
+			-> rrel_1: rrel_assign: rrel_scp_var: _link_num_of_particles;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _link_m_M_Na;;
+			-> rrel_3: rrel_fixed: rrel_scp_const: [ * 10^23];; 
+
+			=> nrel_goto: .agent_of_calculating_number_of_particles_operator_preanswer1;;
+			*);;
+// Поиск n.
+// Случай N = Na * n.		
+		-> .agent_of_calculating_number_of_particles_operator11A	
+			(*
+			<- searchElStr5;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _param;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_common: _arc1;;
+			-> rrel_3: rrel_assign: rrel_scp_var: _node_chemical_amount;;
+			-> rrel_4: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc2;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: nrel_chemical_amount;;
+
+			=> nrel_then: .agent_of_calculating_number_of_particles_operator12A;;
+			=> nrel_else: .agent_of_calculating_number_of_particles_operator14A;;       
+			*);;
+// Проход по цепочке для n
+		-> .agent_of_calculating_number_of_particles_operator12A
+			(*
+			<- searchElStr3;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_const: value;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc1;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _node_chemical_amount;;
+
+			=> nrel_then: .agent_of_calculating_number_of_particles_operator12B;;		
+			=> nrel_else: .agent_of_calculating_number_of_particles_operator_error1A;;      
+			*);;
+
+		-> .agent_of_calculating_number_of_particles_operator12B
+			(*
+			<- searchElStr5;;
+
+			-> rrel_1: rrel_assign: rrel_scp_var: _node_measurement;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_common: _arc1;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _node_chemical_amount;;
+			-> rrel_4: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc2;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: nrel_measurement;;
+
+			=> nrel_then: .agent_of_calculating_number_of_particles_operator12C;;		
+			=> nrel_else: .agent_of_calculating_number_of_particles_operator_error1A;;      
+			*);;
+
+		-> .agent_of_calculating_number_of_particles_operator12C
+			(*
+			<- searchElStr5;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _node_measurement;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc1;;
+			-> rrel_3: rrel_assign: rrel_scp_var: _node_number;;
+			-> rrel_4: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc2;;
+			-> rrel_5: rrel_assign: rrel_scp_var: rrel_role_relation: _node_measure;;
+
+			=> nrel_then: .agent_of_calculating_number_of_particles_operator12D;;		
+			=> nrel_else: .agent_of_calculating_number_of_particles_operator_error1A;;      
+			*);;
+
+		-> .agent_of_calculating_number_of_particles_operator12D
+			(*
+			<- searchElStr3;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_const: number;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc1;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _node_number;;
+
+			=> nrel_then: .agent_of_calculating_number_of_particles_operator12E;;		
+			=> nrel_else: .agent_of_calculating_number_of_particles_operator_error1A;;      
+			*);;
+
+		-> .agent_of_calculating_number_of_particles_operator12E
+			(*
+			<- searchElStr5;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _node_number;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_common: _arc1;;
+			-> rrel_3: rrel_assign: rrel_scp_var: _link_chemical_amount;;
+			-> rrel_4: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc2;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: nrel_idtf;;
+
+			=> nrel_then: .agent_of_calculating_number_of_particles_operator12F;;		
+			=> nrel_else: .agent_of_calculating_number_of_particles_operator_error1A;;      
+			*);;
+
+			-> .agent_of_calculating_number_of_particles_operator12F
+			(*
+			<- searchElStr3;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_const: decimal_numeral_system;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc1;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _link_chemical_amount;;
+
+			=> nrel_then: .agent_of_calculating_number_of_particles_operator13A;;		
+			=> nrel_else: .agent_of_calculating_number_of_particles_operator_error1A;;      
+			*);;
+
+		-> .agent_of_calculating_number_of_particles_operator13A    
+			(*
+			<- contMult;;
+
+			-> rrel_1: rrel_assign: rrel_scp_var: _link_n_Na;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _link_chemical_amount;;
+			-> rrel_3: rrel_fixed: rrel_scp_const: [6,02];;   
+
+			=> nrel_goto: .agent_of_calculating_number_of_particles_operator13B;;
+			*);;
+
+		-> .agent_of_calculating_number_of_particles_operator13B    
+			(*
+			<- contStringConcat;;
+			
+			-> rrel_1: rrel_asign: rrel_scp_var: _link_num_of_particles;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _link_n_Na;;
+			-> rrel_3: rrel_fixed: rrel_scp_const: [ * 10^23];; 
+
+			=> nrel_goto: .agent_of_calculating_number_of_particles_operator_preanswer1;;
+			*);;
+// Случай N = Na * V/Vm.		
+		-> .agent_of_calculating_number_of_particles_operator14A	
+			(*
+			<- searchElStr5;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _param;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_common: _arc1;;
+			-> rrel_3: rrel_assign: rrel_scp_var: _node_amount;;
+			-> rrel_4: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc2;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: nrel_amount;;
+
+			=> nrel_then: .agent_of_calculating_number_of_particles_operator15A;;
+			=> nrel_else: .agent_of_calculating_number_of_particles_operator_error3A;;       
+			*);;
+// Проход по цепочке для V
+		-> .agent_of_calculating_number_of_particles_operator15A
+			(*
+			<- searchElStr3;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_const: value;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc1;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _node_amount;;
+
+			=> nrel_then: .agent_of_calculating_number_of_particles_operator15B;;		
+			=> nrel_else: .agent_of_calculating_number_of_particles_operator_error1A;;      
+			*);;
+
+		-> .agent_of_calculating_number_of_particles_operator15B
+			(*
+			<- searchElStr5;;
+
+			-> rrel_1: rrel_assign: rrel_scp_var: _node_measurement;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_common: _arc1;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _node_amount;;
+			-> rrel_4: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc2;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: nrel_measurement;;
+
+			=> nrel_then: .agent_of_calculating_number_of_particles_operator15C;;		
+			=> nrel_else: .agent_of_calculating_number_of_particles_operator_error1A;;      
+			*);;
+
+		-> .agent_of_calculating_number_of_particles_operator15C
+			(*
+			<- searchElStr5;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _node_measurement;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc1;;
+			-> rrel_3: rrel_assign: rrel_scp_var: _node_number;;
+			-> rrel_4: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc2;;
+			-> rrel_5: rrel_assign: rrel_scp_var: rrel_role_relation: _node_measure;;
+
+			=> nrel_then: .agent_of_calculating_number_of_particles_operator15D;;		
+			=> nrel_else: .agent_of_calculating_number_of_particles_operator_error1A;;      
+			*);;
+
+		-> .agent_of_calculating_number_of_particles_operator15D
+			(*
+			<- searchElStr3;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_const: number;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc1;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _node_number;;
+
+			=> nrel_then: .agent_of_calculating_number_of_particles_operator15E;;		
+			=> nrel_else: .agent_of_calculating_number_of_particles_operator_error1A;;      
+			*);;
+
+		-> .agent_of_calculating_number_of_particles_operator15E
+			(*
+			<- searchElStr5;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _node_number;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_common: _arc1;;
+			-> rrel_3: rrel_assign: rrel_scp_var: _link_amount;;
+			-> rrel_4: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc2;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: nrel_idtf;;
+
+			=> nrel_then: .agent_of_calculating_number_of_particles_operator15F;;		
+			=> nrel_else: .agent_of_calculating_number_of_particles_operator_error1A;;      
+			*);;
+
+			-> .agent_of_calculating_number_of_particles_operator15F
+			(*
+			<- searchElStr3;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_const: decimal_numeral_system;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc1;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _link_amount;;
+
+			=> nrel_then: .agent_of_calculating_number_of_particles_operator16A;;		
+			=> nrel_else: .agent_of_calculating_number_of_particles_operator_error1A;;      
+			*);;
+
+		-> .agent_of_calculating_number_of_particles_operator16A    
+			(*
+			<- contDiv;;
+
+			-> rrel_1: rrel_assign: rrel_scp_var: _link_v_on_vm;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _link_amount;;
+			-> rrel_3: rrel_fixed: rrel_scp_const: [22,4];;   
+
+			=> nrel_goto: .agent_of_calculating_number_of_particles_operator16B;;
+			*);;
+
+		-> .agent_of_calculating_number_of_particles_operator16B    
+			(*
+			<- contMult;;
+
+			-> rrel_1: rrel_assign: rrel_scp_var: _link_v_vm_na;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _link_v_on_vm;;
+			-> rrel_3: rrel_fixed: rrel_scp_const: [6,02];;   
+
+			=> nrel_goto: .agent_of_calculating_number_of_particles_operator16C;;
+			*);;
+
+        -> .agent_of_calculating_number_of_particles_operator16C   
+			(*
+			<- contStringConcat;;
+			
+			-> rrel_1: rrel_asign: rrel_scp_var: _link_num_of_particles;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _link_v_vm_na;;
+			-> rrel_3: rrel_fixed: rrel_scp_const: [ * 10^23];; 
+
+			=> nrel_goto: .agent_of_calculating_number_of_particles_operator_preanswer1;;
+			*);;
+
+		-> .agent_of_calculating_number_of_particles_operator_preanswer1
+			(*
+			<- genElStr3;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc1;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _param;;
+
+			=> nrel_goto: .agent_of_calculating_number_of_particles_operator_preanswer2;;
+			*);;
+
+		-> .agent_of_calculating_number_of_particles_operator_preanswer2
+			(*
+			<- genElStr3;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc1;;
+			-> rrel_3: rrel_fixed: rrel_scp_const: nrel_idtf;;
+
+			=> nrel_goto: .agent_of_calculating_number_of_particles_operator_answer1;;
+			*);;
+
+		-> .agent_of_calculating_number_of_particles_operator_answer1
+			(*
+			<- genElStr5;;
+
+			-> rrel_1: rrel_assign: rrel_scp_var: rrel_const: rrel_node: _new_node_number;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_common: _arc1;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _link_num_of_particles;;
+			-> rrel_4: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc2;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: nrel_idtf;;
+
+			=> nrel_goto: .agent_of_calculating_number_of_particles_operator_answer1a;;
+			*);;
+
+		-> .agent_of_calculating_number_of_particles_operator_answer1a
+			(*
+			<- searchSetStr5;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: rrel_const: rrel_node: _new_node_number;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_common: _arc1;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _link_num_of_particles;;
+			-> rrel_4: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc2;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: nrel_idtf;;
+
+			-> rrel_set_2: rrel_fixed: rrel_scp_var: rrel_set: _answer;;
+			-> rrel_set_4: rrel_fixed: rrel_scp_var: rrel_set: _answer;;
+
+			=> nrel_goto: .agent_of_calculating_number_of_particles_operator_answer1b;;
+			*);;
+
+		-> .agent_of_calculating_number_of_particles_operator_answer1b
+			(*
+			<- genElStr3;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc1;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _link_num_of_particles;;
+
+			=> nrel_goto: .agent_of_calculating_number_of_particles_operator_answer2;;
+			*);;
+
+		-> .agent_of_calculating_number_of_particles_operator_answer2
+			(*
+			<- genElStr3;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_const: number;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc1;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _new_node_number;;
+
+			=> nrel_goto: .agent_of_calculating_number_of_particles_operator_answer2a;;
+			*);;
+
+		-> .agent_of_calculating_number_of_particles_operator_answer2a
+			(*
+			<- searchSetStr3;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_const: number;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc1;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _new_node_number;;
+
+			-> rrel_set_2: rrel_fixed: rrel_scp_var: rrel_set: _answer;;
+
+			=> nrel_goto: .agent_of_calculating_number_of_particles_operator_answer2b;;
+			*);;
+		
+		-> .agent_of_calculating_number_of_particles_operator_answer2b
+			(*
+			<- genElStr3;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc1;;
+			-> rrel_3: rrel_fixed: rrel_scp_const: number;;
+
+			=> nrel_goto: .agent_of_calculating_number_of_particles_operator_answer2c;;
+			*);;
+
+		-> .agent_of_calculating_number_of_particles_operator_answer2c
+			(*
+			<- genElStr3;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc1;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _new_node_number;;
+
+			=> nrel_goto: .agent_of_calculating_number_of_particles_operator_answer3;;
+			*);;
+
+		-> .agent_of_calculating_number_of_particles_operator_answer3
+			(*
+			<- genElStr3;;
+
+			-> rrel_1: rrel_assign: rrel_scp_var: rrel_const: rrel_node: _new_node_liter;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc1;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _new_node_number;;
+
+			=> nrel_goto: .agent_of_calculating_number_of_particles_operator_answer3a;;
+			*);;
+
+		-> .agent_of_calculating_number_of_particles_operator_answer3a
+			(*
+			<- searchSetStr3;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _new_node_liter;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc1;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _new_node_number;;
+
+			-> rrel_set_2: rrel_fixed: rrel_scp_var: rrel_set: _answer;;
+
+			=> nrel_goto: .agent_of_calculating_number_of_particles_operator_answer3b;;
+			*);;
+
+		-> .agent_of_calculating_number_of_particles_operator_answer3b
+			(*
+			<- genElStr3;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc1;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _new_node_liter;;
+
+			=> nrel_goto: .agent_of_calculating_number_of_particles_operator_answer4;;
+			*);;
+
+		-> .agent_of_calculating_number_of_particles_operator_answer4
+			(*
+			<- genElStr5;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _new_node_liter;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_common: _arc1;;
+			-> rrel_3: rrel_assign: rrel_scp_var: rrel_node: rrel_const: _node_num_of_particles;;
+			-> rrel_4: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc2;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: nrel_measurement;;
+
+			=> nrel_goto: .agent_of_calculating_number_of_particles_operator_answer4a;;
+			*);;
+
+		-> .agent_of_calculating_number_of_particles_operator_answer4a
+			(*
+			<- searchSetStr5;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _new_node_liter;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_common: _arc1;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _node_num_of_particles;;
+			-> rrel_4: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc2;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: nrel_measurement;;
+
+			-> rrel_set_2: rrel_fixed: rrel_scp_var: rrel_set: _answer;;
+			-> rrel_set_4: rrel_fixed: rrel_scp_var: rrel_set: _answer;;
+
+			=> nrel_goto: .agent_of_calculating_number_of_particles_operator_answer4b;;
+			*);;
+
+		-> .agent_of_calculating_number_of_particles_operator_answer4b
+			(*
+			<- genElStr3;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc1;;
+			-> rrel_3: rrel_fixed: rrel_scp_const: nrel_measurement;;
+
+			=> nrel_goto: .agent_of_calculating_number_of_particles_operator_answer4c;;
+			*);;
+
+		-> .agent_of_calculating_number_of_particles_operator_answer4c
+			(*
+			<- genElStr3;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc1;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _node_num_of_particles;;
+
+			=> nrel_goto: .agent_of_calculating_number_of_particles_operator_answer5;;
+			*);;
+
+		-> .agent_of_calculating_number_of_particles_operator_answer5
+			(*
+			<- genElStr3;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_const: value;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc_quant;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _node_num_of_particles;;
+
+			=> nrel_goto: .agent_of_calculating_number_of_particles_operator_answer5a;;
+			*);;
+
+		-> .agent_of_calculating_number_of_particles_operator_answer5a
+			(*
+			<- genElStr3;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc1;;
+			-> rrel_3: rrel_fixed: rrel_scp_const: value;;
+
+			=> nrel_goto: .agent_of_calculating_number_of_particles_operator_answer5b;;
+			*);;
+
+		-> .agent_of_calculating_number_of_particles_operator_answer5b
+			(*
+			<- genElStr3;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc1;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _arc_quant;;
+
+			=> nrel_goto: .agent_of_calculating_number_of_particles_operator_answer6;;
+			*);;
+
+		-> .agent_of_calculating_number_of_particles_operator_answer6
+			(*
+			<- genElStr5;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _param;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_common: _arc1;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _node_num_of_particles;;
+			-> rrel_4: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc2;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: nrel_N;;
+
+			=> nrel_goto: .agent_of_calculating_number_of_particles_operator_answer6a;;
+			*);;
+
+		-> .agent_of_calculating_number_of_particles_operator_answer6a
+			(*
+			<- searchSetStr5;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _param;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_common: _arc1;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _node_num_of_particles;;
+			-> rrel_4: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc2;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: nrel_N;;
+
+			-> rrel_set_2: rrel_fixed: rrel_scp_var: rrel_set: _answer;;
+			-> rrel_set_4: rrel_fixed: rrel_scp_var: rrel_set: _answer;;
+
+			=> nrel_goto: .agent_of_calculating_number_of_particles_operator_answer6b;;
+			*);;
+
+		-> .agent_of_calculating_number_of_particles_operator_answer6b
+			(*
+			<- genElStr3;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc1;;
+			-> rrel_3: rrel_fixed: rrel_scp_const: nrel_N;;
+
+			=> nrel_goto: .agent_of_calculating_number_of_particles_operator_answer7a;;
+			*);;
+
+		-> .agent_of_calculating_number_of_particles_operator_answer7a
+			(*
+			<- genElStr3;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc1;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _unknown_class;;
+
+			=> nrel_goto: .agent_of_calculating_number_of_particles_operator_answer7b;;
+			*);;
+
+			-> .agent_of_calculating_number_of_particles_operator_answer7b
+			(*
+			<- genElStr3;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc1;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _arc_class;;
+
+			=> nrel_goto: .agent_of_calculating_number_of_particles_operator_answer8;;
+			*);;
+
+		-> .agent_of_calculating_number_of_particles_operator_answer8
+			(*
+			<- genElStr5;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _quest;;
+			-> rrel_2: rrel_assign: rrel_const: rrel_const: rrel_common: rrel_scp_var: _arc1;;
+		  	-> rrel_3: rrel_fixed: rrel_scp_var: _answer;;
+		  	-> rrel_4: rrel_assign: rrel_const: rrel_pos_const_perm: rrel_scp_var: _arc2;;
+		  	-> rrel_5: rrel_fixed: rrel_scp_const: nrel_answer;;
+
+			=> nrel_goto: .agent_of_calculating_number_of_particles_operator_answer9;;
+			*);;
+
+		-> .agent_of_calculating_number_of_particles_operator_answer9			
+			(*
+			<- genElStr3;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_const: question_finished_successfully;;
+			-> rrel_2: rrel_assign: rrel_const: rrel_pos_const_perm: rrel_scp_var: _arc1;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _quest;;
+
+			=> nrel_goto: .agent_of_calculating_number_of_particles_operator_return;;   
+			*);;
+
+		-> .agent_of_calculating_number_of_particles_operator_error1A			
+			(*
+			<- call;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_const: proc_of_adding_validating_message;;    
+			-> rrel_2: rrel_fixed: rrel_scp_const: .agent_of_calculating_number_of_particles_operator_error1A_params
+				(*
+				-> rrel_1: rrel_fixed: rrel_scp_var: _quest;;
+				-> rrel_2: rrel_fixed: rrel_scp_const: [Ошибка! Цепочка величин не полная!];; 
+				*);;
+			-> rrel_3: rrel_assign: rrel_scp_var: _descr;;
+
+			=> nrel_goto: .agent_of_calculating_number_of_particles_operator_error1B;;  
+			*);;
+
+			-> .agent_of_calculating_number_of_particles_operator_error1B		
+			(*
+			<- waitReturn;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _descr;;
+
+			=> nrel_goto: .agent_of_calculating_number_of_particles_operator_return;;
+			*);;
+
+		-> .agent_of_calculating_number_of_particles_operator_error2A			
+			(*
+			<- call;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_const: proc_of_adding_validating_message;;    
+			-> rrel_2: rrel_fixed: rrel_scp_const: .agent_of_calculating_number_of_particles_operator_error2A_params
+				(*
+				-> rrel_1: rrel_fixed: rrel_scp_var: _quest;;
+				-> rrel_2: rrel_fixed: rrel_scp_const: [Ошибка! Поданный на вход параметр не является веществом или отсутствует его принадлежность к какому-либо классу!];;  
+				*);;
+			-> rrel_3: rrel_assign: rrel_scp_var: _descr;;
+
+			=> nrel_goto: .agent_of_calculating_number_of_particles_operator_error2B;;  
+			*);;
+
+		-> .agent_of_calculating_number_of_particles_operator_error2B		
+			(*
+			<- waitReturn;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _descr;;
+
+			=> nrel_goto: .agent_of_calculating_number_of_particles_operator_return;;
+			*);;
+
+		-> .agent_of_calculating_number_of_particles_operator_error3A			
+			(*
+			<- call;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_const: proc_of_adding_validating_message;;    
+			-> rrel_2: rrel_fixed: rrel_scp_const: .agent_of_calculating_number_of_particles_operator_error3A_params
+				(*
+				-> rrel_1: rrel_fixed: rrel_scp_var: _quest;;
+				-> rrel_2: rrel_fixed: rrel_scp_const: [Ошибка! Не достаточно данных!];;  
+				*);;
+			-> rrel_3: rrel_assign: rrel_scp_var: _descr;;
+
+			=> nrel_goto: .agent_of_calculating_number_of_particles_operator_error3B;;  
+			*);;
+
+		-> .agent_of_calculating_number_of_particles_operator_error3B		
+			(*
+			<- waitReturn;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _descr;;
+
+			=> nrel_goto: .agent_of_calculating_number_of_particles_operator_return;;
+			*);;
+
+		-> .agent_of_calculating_number_of_particles_operator_return
+			(*
+			<- return;;
+			*);;
+		*);;
+	*);;
