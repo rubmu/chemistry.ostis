@@ -1,0 +1,6 @@
+sc_text_agent_counting_break_time_of_some_quantity_of_chemical_element
+-> rrel_key_sc_element:
+	agent_counting_break_time_of_some_quantity_of_chemical_element;
+<- scp_program_sc_text;;
+
+sc_text_of_agent_counting_break_time_of_some_quantity_of_chemical_element = [*^"file://agent_counting_break_time_of_some_quantity_of_chemical_element.scsi"*];;

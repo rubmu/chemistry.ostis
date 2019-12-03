@@ -1,0 +1,54 @@
+sc_agent_counting_break_time_of_some_quantity_of_chemical_element
+=> nrel_main_idtf:	
+	[sc-агент подсчёта времени распада некоторого количества атомов химического элемента]
+	(* <- lang_ru;; *);
+	[sc-agent counting breaking time of some quantity of chemical element atoms]
+	(* <- lang_en;; *);
+	
+<- abstract_sc_agent;
+
+=> nrel_primary_initiation_condition: 
+	(sc_event_add_output_arc => question_initiated);
+	
+=> nrel_initiation_condition_and_result: 
+	(..sc_agent_counting_break_time_of_some_quantity_of_chemical_element_condition => ..sc_agent_counting_break_time_of_some_quantity_of_chemical_element_result);
+	
+<= nrel_sc_agent_key_sc_elements: 
+	{
+	question_initiated;
+	question;
+	action_counting_break_time_of_some_quantity_of_chemical_element
+	};
+	
+=> nrel_inclusion: 
+	.platform_independent_realization_of_sc_agent_counting_break_time_of_some_quantity_of_chemical_element
+	(*
+	<- platform_independent_abstract_sc_agent;;
+	<= nrel_sc_agent_program: 
+		{
+		agent_counting_break_time_of_some_quantity_of_chemical_element
+		};;
+		
+	-> sc_agent_counting_break_time_of_some_quantity_of_chemical_element 
+		(* <- active_sc_agent;; *);;
+	*);;
+
+..sc_agent_counting_break_time_of_some_quantity_of_chemical_element_condition
+= [*
+	action_counting_break_time_of_some_quantity_of_chemical_element _-> .._question;;
+	question_initiated _-> .._question;;
+	question _-> .._question;;
+	.._question _-> rrel_1: .._parameter_1;;
+	.._question _-> rrel_2: .._parameter_2;;
+*];;
+
+..sc_agent_counting_break_time_of_some_quantity_of_chemical_element_result
+= [*
+	action_counting_break_time_of_some_quantity_of_chemical_element _-> .._question;;
+	question_finished _-> .._question;;
+	question _-> .._question;;
+	.._question _=> nrel_answer:: .._answer_for_checking_domains_of_relation;;
+	.._question _-> rrel_1: .._parameter_1;;
+	.._question _-> rrel_2: .._parameter_2;;
+	
+*];;

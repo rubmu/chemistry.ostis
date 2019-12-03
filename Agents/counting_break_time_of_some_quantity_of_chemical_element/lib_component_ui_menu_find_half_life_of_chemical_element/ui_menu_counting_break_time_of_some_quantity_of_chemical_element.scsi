@@ -1,0 +1,15 @@
+ui_menu_counting_break_time_of_some_quantity_of_chemical_element <- ui_user_command_class_atom; ui_user_command_class_view_kb; ui_one_argument_command_class;
+=> nrel_main_idtf: [Рассчитать время расспада данного числа атомов выбранного химического элемента] (* <- lang_ru;;*);
+=> nrel_main_idtf: [Count break time of quantity atoms of selected chemical element] (* <- lang_en;;*);;
+ui_menu_counting_break_time_of_some_quantity_of_chemical_element => ui_nrel_command_template:
+	[*
+		action_counting_break_time_of_some_quantity_of_chemical_element _-> ._action_counting_break_time_of_some_quantity_of_chemical_element_instance
+			(*
+			  _-> rrel_1:: ui_arg_1;;
+			  _-> rrel_2:: ui_arg_2;;
+			*);;
+		._action_counting_break_time_of_some_quantity_of_chemical_element_instance _<- question;;
+	*];;
+
+ui_menu_counting_break_time_of_some_quantity_of_chemical_element => ui_nrel_command_lang_template: [Через сколько времени распадется $ui_arg_1 таких атомов как $ui_arg_2] (* <- lang_ru;;*);;
+ui_menu_counting_break_time_of_some_quantity_of_chemical_element => ui_nrel_command_lang_template: [After how much time $ui_arg_1 atoms like $ui_arg_2 will decay] (* <- lang_en;;*);;

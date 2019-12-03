@@ -1,4 +1,5 @@
 nrel_half_life
+	<-sc_node_norole_relation;
 	=>nrel_main_idtf:
 		[период полураспада*](*<-lang_ru;;*);
 		[half-life*](*<-lang_en;;*);
