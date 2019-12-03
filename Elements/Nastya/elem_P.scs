@@ -8,13 +8,13 @@ elem_P
 => nrel_idtf: [atom P] (* <-lang_en;;*);
 
 <- rrel_key_sc_element: definition_of_elem_P
-(* 
+(*
 	=> nrel_main_idtf: [Опр.(Атом фосфора)] (* <- lang_ru;; *);;
 	<- definition;;
 	<= nrel_sc_text_translation: ...
 	(*
 		-> rrel_example:
-			[<p><b><sc_element sys_idtf  = "elem_P">Фосфор</sc_element></b> - <sc_element sys_idtf  = "chemical_element">химический элемент</sc_element>   пятнадцатой  <sc_element sys_idtf  = "periodic_group">группы</sc_element>, 3-го <sc_element sys_idtf  = "period">периода</sc_element>  периодической системы химических элементов.</p>] 
+			[<p><b><sc_element sys_idtf  = "elem_P">Фосфор</sc_element></b> - <sc_element sys_idtf  = "chemical_element">химический элемент</sc_element>   пятнадцатой  <sc_element sys_idtf  = "periodic_group">группы</sc_element>, 3-го <sc_element sys_idtf  = "period">периода</sc_element>  периодической системы химических элементов.</p>]
 			(*
 				<-lang_ru;;
 				=> nrel_format: format_html;;
@@ -34,6 +34,7 @@ elem_P
 <- pnictogen;
 
 => nrel_periodic_number: fifteen;
+<= nrel_discovery_year: 1669;
 <- group_fifteen;
 <- period_three;
 
@@ -97,7 +98,7 @@ elem_P
 <- rrel_key_sc_element: electron_configuration_P
 (*
 	<- explanation;;
-	=> nrel_main_idtf: 
+	=> nrel_main_idtf:
 		[Утв.(атом фосфора, электронная конфигурация*)](*<- lang_ru;;*);;
 	<= nrel_sc_text_translation:...
 	(*
@@ -131,5 +132,3 @@ atomic_mass_P <- number;
 => nrel_main_idtf:[30,973762(2)](*<-lang_ru;; <- lang_en;;*);;
 electronegativity_P <- number;
 => nrel_main_idtf:[2,19](*<-lang_ru;; <- lang_en;;*);;
-
-

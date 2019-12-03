@@ -8,13 +8,13 @@ elem_Ra
 => nrel_idtf: [atom Ra] (* <-lang_en;;*);
 
 <- rrel_key_sc_element: definition_of_elem_Ra
-(* 
+(*
 	=> nrel_main_idtf: [Опр.(Атом радия)] (* <- lang_ru;; *);;
 	<- definition;;
 	<= nrel_sc_text_translation: ...
 	(*
 		-> rrel_example:
-			[<p><b><sc_element sys_idtf  = "elem_Ra">Радий</sc_element></b> - <sc_element sys_idtf  = "chemical_element">химический элемент</sc_element>   второй  <sc_element sys_idtf  = "periodic_group">группы</sc_element>, 7-го <sc_element sys_idtf  = "period">периода</sc_element>  периодической системы химических элементов.</p>] 
+			[<p><b><sc_element sys_idtf  = "elem_Ra">Радий</sc_element></b> - <sc_element sys_idtf  = "chemical_element">химический элемент</sc_element>   второй  <sc_element sys_idtf  = "periodic_group">группы</sc_element>, 7-го <sc_element sys_idtf  = "period">периода</sc_element>  периодической системы химических элементов.</p>]
 			(*
 				<-lang_ru;;
 				=> nrel_format: format_html;;
@@ -33,6 +33,7 @@ elem_Ra
 <- alkaline_earth_metal;
 
 => nrel_periodic_number: eighty_eight;
+<= nrel_discovery_year: 1898;
 <- group_two;
 <- period_seven;
 
@@ -69,7 +70,7 @@ elem_Ra
 <- rrel_key_sc_element: electron_configuration_Ra
 (*
 	<- explanation;;
-	=> nrel_main_idtf: 
+	=> nrel_main_idtf:
 		[Утв.(атом радия, электронная конфигурация*)](*<- lang_ru;;*);;
 	<= nrel_sc_text_translation:...
 	(*
@@ -94,5 +95,3 @@ atomic_mass_Ra <- number;
 => nrel_main_idtf:[226,0254](*<-lang_ru;; <- lang_en;;*);;
 electronegativity_Ra <- number;
 => nrel_main_idtf:[0,9](*<-lang_ru;; <- lang_en;;*);;
-
-

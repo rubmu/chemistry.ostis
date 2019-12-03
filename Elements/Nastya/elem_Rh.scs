@@ -8,13 +8,13 @@ elem_Rh
 => nrel_idtf: [atom Rh] (* <-lang_en;;*);
 
 <- rrel_key_sc_element: definition_of_elem_Rh
-(* 
+(*
 	=> nrel_main_idtf: [Опр.(Атом родия)] (* <- lang_ru;; *);;
 	<- definition;;
 	<= nrel_sc_text_translation: ...
 	(*
 		-> rrel_example:
-			[<p><b><sc_element sys_idtf  = "elem_Rh">Родий</sc_element></b> - <sc_element sys_idtf  = "chemical_element">химический элемент</sc_element>   девятой  <sc_element sys_idtf  = "periodic_group">группы</sc_element>  , 5-го <sc_element sys_idtf  = "period">периода</sc_element>  периодической системы химических элементов.</p>] 
+			[<p><b><sc_element sys_idtf  = "elem_Rh">Родий</sc_element></b> - <sc_element sys_idtf  = "chemical_element">химический элемент</sc_element>   девятой  <sc_element sys_idtf  = "periodic_group">группы</sc_element>  , 5-го <sc_element sys_idtf  = "period">периода</sc_element>  периодической системы химических элементов.</p>]
 			(*
 				<-lang_ru;;
 				=> nrel_format: format_html;;
@@ -36,6 +36,7 @@ elem_Rh
 <- platinoid;
 
 => nrel_periodic_number: forty_five;
+<= nrel_discovery_year: 1804;
 <- group_nine;
 <- period_five;
 
@@ -99,7 +100,7 @@ elem_Rh
 <- rrel_key_sc_element: electron_configuration_Rh
 (*
 	<- explanation;;
-	=> nrel_main_idtf: 
+	=> nrel_main_idtf:
 		[Утв.(атом родия, электронная конфигурация*)](*<- lang_ru;;*);;
 	<= nrel_sc_text_translation:...
 	(*
