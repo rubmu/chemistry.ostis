@@ -1,0 +1,225 @@
+agent_add_acid
+=> nrel_main_idtf:
+	[агентная scp-программа определения того что будет, если добавить кислоту] (* <- lang_ru;; *);
+	[agent scp-program finding out what will happen if add acid] (* <- lang_en;; *);
+	<- agent_scp_program;;
+
+scp_program -> agent_add_acid
+	(*
+	-> rrel_params: .agent_add_acid_params
+		(*
+		-> rrel_1: rrel_in: _event;;
+		-> rrel_2: rrel_in: _input_arc;;
+		*);;
+
+	-> rrel_operators: .agent_add_acid_operator_set
+		(*
+		-> rrel_init: .agent_add_acid_operator1A
+			(*
+			<- searchElStr3;;
+
+			-> rrel_1: rrel_assign: rrel_scp_var: _temp;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _input_arc;;
+			-> rrel_3: rrel_assign: rrel_scp_var: _quest;;
+
+			=> nrel_goto: .agent_add_acid_operator1B;;
+			*);;
+
+		-> .agent_add_acid_operator1B
+			(*
+			<- searchElStr3;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_const: action_add_acid;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc1;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _quest;;
+
+			=> nrel_then: .agent_add_acid_operator1C;;
+			=> nrel_else: .agent_add_acid_operator_return;;
+			*);;
+
+		-> .agent_add_acid_operator1C
+			(*
+			<- searchElStr3;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _quest;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc2;;
+			-> rrel_3: rrel_assign: rrel_scp_var: _pattern;;
+
+			=> nrel_then: .agent_add_acid_operator_gen_answer;;
+			=> nrel_else: .agent_add_acid_operator_message;;
+			*);;
+
+
+		-> .agent_add_acid_operator_gen_answer // Start
+			(*
+			<- genEl;;
+
+			-> rrel_1: rrel_assign: rrel_node: rrel_const: rrel_scp_var: _answer_for_checking_domains_of_relation;;
+
+			=> nrel_goto: .agent_add_acid_operator1D1;;
+			*);;
+
+		-> .agent_add_acid_operator1D1
+			(*
+			<- genElStr3;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _answer_for_checking_domains_of_relation;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc1;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _pattern;;
+
+			=> nrel_goto: .check_if_metal;;
+			*);;
+
+
+
+		-> .check_if_metal
+			(*
+				<- searchElStr3;;
+
+				-> rrel_1: rrel_fixed: rrel_scp_const: rrel_node: concept_metal;;
+				-> rrel_2: rrel_assign: rrel_scp_var : rrel_pos_const_perm : _arc3;;
+				-> rrel_3: rrel_fixed: rrel_scp_var: _pattern;;
+
+				=> nrel_then: .generate_then;;
+				=> nrel_else: .check_salt;;
+			*);;
+
+		-> .check_salt
+			(*
+				<- searchElStr3;;
+
+				-> rrel_1: rrel_fixed: rrel_scp_const: rrel_node: concept_salt;;
+				-> rrel_2: rrel_assign: rrel_scp_var : rrel_pos_const_perm : _arc3;;
+				-> rrel_3: rrel_fixed: rrel_scp_var: _pattern;;
+
+				=> nrel_then: .generate_else;;
+				=> nrel_else: .generate_other;;
+			*);;
+
+		-> .generate_other
+		(*
+			<- contAssign ;;
+
+			-> rrel_1 : rrel_assign : rrel_scp_var : rrel_link : _metal ;;
+			-> rrel_2 : rrel_fixed : rrel_scp_const : rrel_link : [пока непонятно] ;;
+			=> nrel_goto: .gen_const;;
+		*);;
+
+		-> .generate_then
+			(*
+				<- contAssign ;;
+
+				-> rrel_1 : rrel_assign : rrel_scp_var : rrel_link : _metal ;;
+				-> rrel_2 : rrel_fixed : rrel_scp_const : rrel_link : [соль + вода] ;;
+				=> nrel_goto: .gen_const;;
+			*);;
+
+
+		-> .generate_else
+			(*
+				<- contAssign ;;
+
+				-> rrel_1 : rrel_assign : rrel_scp_var : rrel_link : _metal ;;
+				-> rrel_2 : rrel_fixed : rrel_scp_const : rrel_link : [соль + кислота] ;;
+				=> nrel_goto: .gen_const;;
+			*);;
+
+		-> .gen_const
+			(*
+				<- genElStr3;;
+				-> rrel_1: rrel_fixed: rrel_scp_var: _pattern;;
+				-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arccc;;
+				-> rrel_3: rrel_fixed: rrel_scp_var: _metal;;
+
+				=> nrel_goto: .add_to_answer;;
+			*);;
+
+		-> .add_to_answer
+			(*
+				<- genElStr3;;
+				-> rrel_1: rrel_fixed: rrel_scp_var: _answer_for_checking_domains_of_relation;;
+				-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc4;;
+				-> rrel_3: rrel_fixed: rrel_pos_const_perm: rrel_scp_var: _arccc;;
+				=> nrel_goto: .add_to_answer_another;;
+			*);;
+		-> .add_to_answer_another
+			(*
+				<- genElStr3;;
+				-> rrel_1: rrel_fixed: rrel_scp_var: _answer_for_checking_domains_of_relation;;
+				-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc4;;
+				-> rrel_3: rrel_fixed: rrel_scp_var: _metal;;
+				=> nrel_goto: .agent_add_acid_operator_answer;;
+			*);;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		-> .agent_add_acid_operator_answer
+			(*
+			<- genElStr5;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _quest;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_common: _arc1;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _answer_for_checking_domains_of_relation;;
+			-> rrel_4: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc2;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: nrel_answer;;
+
+			=> nrel_goto: .agent_add_acid_operator_success;;
+			*);;
+
+		-> .agent_add_acid_operator_success
+			(*
+			<- genElStr3;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_const: question_finished_successfully;;
+			-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc1;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _quest;;
+
+			=> nrel_goto: .agent_add_acid_operator_return;;
+			*);;
+
+		-> .agent_add_acid_operator_message
+			(*
+			<- call;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_const: proc_of_adding_validating_message;;
+			-> rrel_2: rrel_fixed: rrel_scp_const: .agent_add_acid_operator_message_params
+				(*
+				-> rrel_1: rrel_fixed: rrel_scp_var: _quest;;
+				-> rrel_2: rrel_fixed: rrel_scp_const: [Wrong first parameter! It must be a structure(rrel_struct).];;
+				*);;
+			-> rrel_3: rrel_assign: rrel_scp_var: _descr1;;
+
+			=> nrel_goto: .agent_add_acid_operator_message_wait;;
+			*);;
+
+		-> .agent_add_acid_operator_message_wait
+			(*
+			<- waitReturn;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _descr1;;
+
+			=> nrel_goto: .agent_add_acid_operator_return;;
+			*);;
+
+		-> .agent_add_acid_operator_return
+			(*
+			<- return;;
+			*);;
+		*);;
+	*);;
