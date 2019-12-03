@@ -1,0 +1,16 @@
+ui_menu_file_for_agent_find_oxidation_state <- ui_user_command_class_atom; ui_user_command_class_view_kb; ui_one_argument_command_class;;
+
+ui_menu_file_for_agent_find_oxidation_state => nrel_main_idtf: [Найти степень окисления химического элемента] (* <- lang_ru;; *);;
+ui_menu_file_for_agent_find_oxidation_state => nrel_main_idtf: [Find valencies of current chemical element] (* <- lang_en;; *);;
+	
+ui_menu_file_for_agent_find_oxidation_state => ui_nrel_command_template:
+	[*
+		action_find_oxidation_state _-> ._action_find_oxidation_state_instance
+			(*
+			_-> ui_arg_1;;
+			*);;
+		._action_find_oxidation_state_instance _<- question;;
+	*];;
+
+ui_menu_file_for_agent_find_oxidation_state => ui_nrel_command_lang_template: [Каковы степени окисления данного химического элемента $ui_arg_1] (* <- lang_ru;; *);;
+ui_menu_file_for_agent_find_oxidation_state => ui_nrel_command_lang_template: [What are valencies of current chemical element $ui_arg_1] (* <- lang_en;; *);;

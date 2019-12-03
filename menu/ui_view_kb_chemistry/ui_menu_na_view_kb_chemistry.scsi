@@ -31,5 +31,7 @@ ui_menu_na_view_kb_chemistry <= nrel_ui_commands_decomposition:
 	ui_menu_finding_density_of_substance;
 	ui_menu_find_substance_is_metal;
 	ui_menu_find_volume_of_gas;
-	ui_menu_find_ion_electric_charge
+	ui_menu_find_ion_electric_charge;
+	ui_menu_file_for_agent_find_amines_of_group;
+	ui_menu_file_for_agent_find_oxidation_state
 };;

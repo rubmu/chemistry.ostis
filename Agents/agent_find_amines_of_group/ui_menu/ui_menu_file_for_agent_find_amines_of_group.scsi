@@ -1,0 +1,16 @@
+ui_menu_file_for_agent_find_amines_of_group <- ui_user_command_class_atom; ui_user_command_class_view_kb; ui_one_argument_command_class;;
+
+ui_menu_file_for_agent_find_amines_of_group => nrel_main_idtf: [Найти амины группы] (* <- lang_ru;; *);;
+ui_menu_file_for_agent_find_amines_of_group => nrel_main_idtf: [Find valencies of current chemical element] (* <- lang_en;; *);;
+	
+ui_menu_file_for_agent_find_amines_of_group => ui_nrel_command_template:
+	[*
+		action_find_amines_of_group _-> ._action_find_amines_of_group_instance
+			(*
+			_-> ui_arg_1;;
+			*);;
+		._action_find_amines_of_group_instance _<- question;;
+	*];;
+
+ui_menu_file_for_agent_find_amines_of_group => ui_nrel_command_lang_template: [Каковы амины $ui_arg_1] (* <- lang_ru;; *);;
+ui_menu_file_for_agent_find_amines_of_group => ui_nrel_command_lang_template: [What are valencies of current chemical element $ui_arg_1] (* <- lang_en;; *);;
