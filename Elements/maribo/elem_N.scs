@@ -1,5 +1,5 @@
 elem_N
-	=> nrel_main_idtf: 
+	=> nrel_main_idtf:
 		[nitrogenium atom] (* <-lang_en;;*);
 		[атом азота] (* <-lang_ru;;*);
 	=> nrel_idtf: [atom N] (* <-lang_en;;*);
@@ -7,13 +7,13 @@ elem_N
 <- chemical_element;
 <- sc_node_not_relation;
 <- rrel_key_sc_element: definition_of_Nitrogenium
-(* 
+(*
 	=> nrel_main_idtf: [Опр. (атом азота)] (* <- lang_ru;; *);;
 	<- definition;;
 	<= nrel_sc_text_translation:...
 	(*
 		-> rrel_example:
-			[<p><b>Азот</b> - <sc_element sys_idtf  = "chemical_element">химический элемент</sc_element>    пятой   <sc_element sys_idtf  = "periodic_group">группы</sc_element>  , 2-го <sc_element sys_idtf  = "period">периода</sc_element>  периодической системы химических элементов. </p>] 
+			[<p><b>Азот</b> - <sc_element sys_idtf  = "chemical_element">химический элемент</sc_element>    пятой   <sc_element sys_idtf  = "periodic_group">группы</sc_element>  , 2-го <sc_element sys_idtf  = "period">периода</sc_element>  периодической системы химических элементов. </p>]
 			(*
 				<-lang_ru;;
 				=> nrel_format: format_html;;
@@ -39,6 +39,7 @@ elem_N
 <- valence_three; valence_two; valence_four; valence_five;
 
 => nrel_biological_significance: life_support;
+<= nrel_discovery_year: 1772;
 
 => nrel_being_in_body: ...
 (*
@@ -97,7 +98,7 @@ elem_N
 <- rrel_key_sc_element: electron_configuration_N
 (*
 	<- explanation;;
-	=> nrel_main_idtf: 
+	=> nrel_main_idtf:
 		[Утв. (атом азота, электронная конфигурация*)](*<- lang_ru;;*);;
 	<= nrel_sc_text_translation:...
 	(*
