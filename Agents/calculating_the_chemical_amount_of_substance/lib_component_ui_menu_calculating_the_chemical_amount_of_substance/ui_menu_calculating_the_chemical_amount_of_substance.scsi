@@ -1,0 +1,15 @@
+ui_menu_calculating_the_chemical_amount_of_substance <- ui_user_command_class_atom; ui_user_command_class_view_kb;
+
+=> nrel_main_idtf: [Подсчёт химического количества вещества] (* <- lang_ru;;*);
+=> nrel_main_idtf: [Сalculate the chemical amount of substance] (* <- lang_en;;*);;
+ui_menu_calculating_the_chemical_amount_of_substance => ui_nrel_command_template:
+	[*
+		action_calculating_the_chemical_amount_of_substance _-> ._action_calculating_the_chemical_amount_of_substance_instance
+			(*
+			_-> ui_arg_1;;
+			*);;
+		._action_calculating_the_chemical_amount_of_substance_instance _<- question;;
+	*];;
+
+ui_menu_calculating_the_chemical_amount_of_substance => ui_nrel_command_lang_template: [Химическое количество вещества: $ui_arg_1] (* <- lang_ru;;*);;
+ui_menu_calculating_the_chemical_amount_of_substance => ui_nrel_command_lang_template: [Chemical amount of substance: $ui_arg_1] (* <- lang_en;;*);;
