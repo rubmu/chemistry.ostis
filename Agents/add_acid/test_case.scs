@@ -1,0 +1,37 @@
+concept_metal
+=> nrel_main_idtf:
+	[метал](* <- lang_ru;; *);
+	[metal](* <- lang_en;; *);
+=>nrel_idtf:
+	[метал](* <-lang_ru;; *);;
+
+concept_salt
+=> nrel_main_idtf: [соль](* <- lang_ru;; *);
+=> nrel_idtf: [соль](* <- lang_ru;; *);;
+
+concept_metal -> elem_Fe;;
+concept_metal -> subst_Na;;
+concept_metal -> subst_Li;;
+concept_metal -> subst_K;;
+concept_metal -> subst_Mg;;
+concept_metal -> subst_Ca;;
+concept_metal -> subst_Cu;;
+concept_metal -> subst_Zn;;
+concept_metal -> subst_Au;;
+concept_metal -> subst_Ag;;
+concept_metal -> subst_Be;;
+
+concept_salt -> sulfate;;
+concept_salt -> chloride;;
+concept_salt -> fluoride;;
+concept_salt -> nitrate;;
+concept_salt -> phosphate;;
+concept_salt -> picrate;;
+concept_salt -> carbonate;;
+concept_salt -> sulfide;;
+concept_salt -> silicate;;
+concept_salt -> iodide;;
+concept_salt -> bromide;;
+concept_salt -> caesium_chloride;;
+concept_salt -> polonium_II_dibromide;;
+concept_salt -> copper_II_bromide;;

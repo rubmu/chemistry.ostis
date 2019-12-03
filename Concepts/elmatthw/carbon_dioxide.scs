@@ -7,6 +7,7 @@ carbon_dioxide
 =>nrel_applying:food_industry;cryosurgery;
 <-non_toxic_substance;
 =>nrel_being_in_nature:ocean;atmosphere;
+=>nrel_molar_mass: [44];
 <-no_smell;
 <-no_color;
 =>nrel_sublimation_temperature:...
@@ -14,12 +15,12 @@ carbon_dioxide
 	<-quantity;;
 	<=nrel_value:...
 	(*
-		->rrel_degree_celsius: [-78]	
+		->rrel_degree_celsius: [-78]
 		(*
 			<-number;;
 		*);;
 	*);;
-*); 
+*);
 // определение
 <- rrel_key_sc_element:...
 (*
@@ -29,8 +30,8 @@ carbon_dioxide
 	(*
 		->rrel_example:
 		[Углекислый газ — бесцветный газ (в нормальных условиях) без запаха, с химической формулой CO2.]
-		(* 
-			<-lang_ru;; 
+		(*
+			<-lang_ru;;
 			=>nrel_format: format_html;;
 		*);;
 	*);;

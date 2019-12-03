@@ -51,6 +51,8 @@ elem_Si
 	*);;
 *);
 
+=> nrel_debye_temperature: 640 (* <- number;; *);
+
 
 => nrel_atomic_mass: ...
 (*

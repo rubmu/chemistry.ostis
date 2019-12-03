@@ -21,6 +21,24 @@ nrel_periodic_number
 	=> nrel_first_domain: chemical_element;
 	=> nrel_second_domain: number;;
 
+nrel_color
+	=> nrel_main_idtf: [цвет*](* <- lang_ru;; *);
+	<- sc_node_norole_relation;
+	=> nrel_first_domain: color;
+	=> nrel_second_domain: chemical_element;;
+
+nrel_molar_mass
+	=> nrel_main_idtf: [молярная масса*](* <- lang_ru;; *);
+	<- sc_node_norole_relation;
+	=> nrel_first_domain: chemical_element;
+	=> nrel_second_domain: number;;
+
+nrel_density_of_gas
+  => nrel_main_idtf: [плотность газа*](* <- lang_ru;; *);
+	<- sc_node_norole_relation;
+	=> nrel_first_domain: chemical_element;
+	=> nrel_second_domain: number;;
+
 nrel_discovery_year
 	=> nrel_main_idtf: [год открытия*](* <- lang_ru;; *);
 	<- sc_node_norole_relation;
