@@ -1,0 +1,37 @@
+lib_component_agent_calculating_the_mass_of_substance
+=> nrel_main_idtf:
+	[Компонент библиотеки. sc-агент подсчёта массы вещества]
+	(* <- lang_ru;; *);
+	[Library component. sc-agent calculate the mass of substance]
+	(* <- lang_en;; *);
+
+<- library_of_platform_independent_reusable_components; 
+<- library_of_atomic_reusable_components;
+
+=> nrel_attendant_component: 
+	lib_component_ui_menu_file_for_checking_domains_of_relation;
+
+-> rrel_key_sc_element: 
+	.platform_independent_realization_of_sc_agent_calculating_the_mass_of_substance; 
+
+<- rrel_key_sc_element: 
+	...
+	(*
+	<- explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			"file://htmls/Agent_Of_Calculating_The_Mass_Of_Substance.html"
+				(* <- lang_ru;; *);; 
+		*);;
+	*);;
+
+sc_node_not_relation -> action_calculating_the_mass_of_substance;;
+
+action_calculating_the_mass_of_substance => nrel_main_idtf:
+	[действие. Подсчёта массы вещества]
+	(* <- lang_ru;;	*);
+	[action. Calculate the mass of substance]
+	(* <- lang_en;;	*);;
+
