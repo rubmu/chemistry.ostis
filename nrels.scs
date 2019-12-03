@@ -39,6 +39,12 @@ nrel_density_of_gas
 	=> nrel_first_domain: chemical_element;
 	=> nrel_second_domain: number;;
 
+nrel_discovery_year
+	=> nrel_main_idtf: [год открытия*](* <- lang_ru;; *);
+	<- sc_node_norole_relation;
+	=> nrel_first_domain: year;
+	=> nrel_second_domain: chemical_element;;
+
 nrel_solvation
 <- sc_node_norole_relation;
 => nrel_main_idtf:

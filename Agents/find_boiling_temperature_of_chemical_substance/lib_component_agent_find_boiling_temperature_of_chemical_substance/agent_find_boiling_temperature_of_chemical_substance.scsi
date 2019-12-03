@@ -4,17 +4,17 @@ agent_find_boiling_temperature_of_chemical_substance
 	[agent scp-program search boiling temperature of given substance] (* <- lang_en;; *);
 	<- agent_scp_program;;
 
-scp_program -> agent_find_boiling_temperature_of_chemical_substance 
+scp_program -> agent_find_boiling_temperature_of_chemical_substance
 	(*
-	-> rrel_params: .agent_find_boiling_temperature_of_chemical_substance_params 
+	-> rrel_params: .agent_find_boiling_temperature_of_chemical_substance_params
 		(*
 		-> rrel_1: rrel_in: _event;;
 		-> rrel_2: rrel_in: _input_arc;;
 		*);;
 
-	-> rrel_operators: .agent_find_boiling_temperature_of_chemical_substance_operator_set 
+	-> rrel_operators: .agent_find_boiling_temperature_of_chemical_substance_operator_set
 		(*
-		-> rrel_init: .agent_find_boiling_temperature_of_chemical_substance_operator1A 
+		-> rrel_init: .agent_find_boiling_temperature_of_chemical_substance_operator1A
 			(*
 			<- searchElStr3;;
 
@@ -43,7 +43,7 @@ scp_program -> agent_find_boiling_temperature_of_chemical_substance
 
 			-> rrel_1: rrel_fixed: rrel_scp_var: _quest;;
 			-> rrel_2: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc2;;
-			-> rrel_3: rrel_assign: rrel_scp_var: _pattern;;										
+			-> rrel_3: rrel_assign: rrel_scp_var: _pattern;;
 
 			=> nrel_then: .agent_find_boiling_temperature_of_chemical_substance_operator_gen_answer;;
 			=> nrel_else: .agent_find_boiling_temperature_of_chemical_substance_operator_message;;
@@ -105,7 +105,7 @@ scp_program -> agent_find_boiling_temperature_of_chemical_substance
 
 			-> rrel_1: rrel_fixed: rrel_scp_var: _quest;;
 			-> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_common: _arc1;;
-			-> rrel_3: rrel_fixed: rrel_scp_var: _answer_for_checking_domains_of_relation;;							
+			-> rrel_3: rrel_fixed: rrel_scp_var: _answer_for_checking_domains_of_relation;;
 			-> rrel_4: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc2;;
 			-> rrel_5: rrel_fixed: rrel_scp_const: nrel_answer;;
 
@@ -122,13 +122,13 @@ scp_program -> agent_find_boiling_temperature_of_chemical_substance
 
 			=> nrel_goto: .agent_find_boiling_temperature_of_chemical_substance_operator_return;;
 			*);;
-			
+
 		-> .agent_find_boiling_temperature_of_chemical_substance_operator_message
 			(*
 			<- call;;
 
 			-> rrel_1: rrel_fixed: rrel_scp_const: proc_of_adding_validating_message;;
-			-> rrel_2: rrel_fixed: rrel_scp_const: .agent_find_boiling_temperature_of_chemical_substance_operator_message_params 
+			-> rrel_2: rrel_fixed: rrel_scp_const: .agent_find_boiling_temperature_of_chemical_substance_operator_message_params
 				(*
 				-> rrel_1: rrel_fixed: rrel_scp_var: _quest;;
 				-> rrel_2: rrel_fixed: rrel_scp_const: [Wrong first parameter! It must be a structure(rrel_struct).];;

@@ -6,6 +6,7 @@ ui_menu_na_view_kb_chemistry <= nrel_ui_commands_decomposition:
   ui_menu_add_acid;
   ui_menu_find_density_of_gas;
   ui_menu_find_colouring_by_color;
+	ui_menu_find_by_discovery_year;
 	ui_menu_find_chemical_amount_of_substance;
 	ui_menu_find_object_structure;
 	ui_menu_find_color_of_flame;
@@ -33,5 +34,7 @@ ui_menu_na_view_kb_chemistry <= nrel_ui_commands_decomposition:
 	ui_menu_finding_density_of_substance;
 	ui_menu_find_substance_is_metal;
 	ui_menu_find_volume_of_gas;
-	ui_menu_find_ion_electric_charge
+	ui_menu_find_ion_electric_charge;
+	ui_menu_file_for_agent_find_amines_of_group;
+	ui_menu_file_for_agent_find_oxidation_state
 };;

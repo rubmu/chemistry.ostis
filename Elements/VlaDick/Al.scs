@@ -2,11 +2,11 @@ elem_Al
 <- sc_node_not_relation;
 <- rrel_key_sc_element:
 	Definition_of_aluminium
-	(* 
+	(*
 	<- definition;;
 	<= nrel_sc_text_translation:
 		...
-		(* 
+		(*
 		-> rrel_example:"file://htmls/Al.html" (* <-lang_ru;; *);;
 		*);;
 	<= nrel_using_constants:
@@ -21,11 +21,12 @@ elem_Al
 <- group_thirteen;
 <- period_three;
 => nrel_periodic_number: thirteen;
+<= nrel_discovery_year: 1825;
 
 <- metal;
 
 
-<= nrel_inclusion: oxidation_state_plus_three; 
+<= nrel_inclusion: oxidation_state_plus_three;
 <= nrel_inclusion: valence_three;
 
 
@@ -64,7 +65,7 @@ elem_Al
 <- rrel_key_sc_element: electron_configuration_Al
 	(*
 		<- explanation;;
-		=> nrel_main_idtf: 
+		=> nrel_main_idtf:
 			[Утв. (алюминий, электронная конфигурация*)](*<- lang_ru;;*);;
 		<= nrel_sc_text_translation:...
 		(*

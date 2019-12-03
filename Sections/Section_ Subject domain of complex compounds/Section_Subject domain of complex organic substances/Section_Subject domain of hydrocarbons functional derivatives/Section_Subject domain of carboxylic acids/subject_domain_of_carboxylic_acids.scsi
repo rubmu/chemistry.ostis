@@ -1,5 +1,5 @@
 subject_domain_of_carboxylic_acids
-=> nrel_main_idtf: 
+=> nrel_main_idtf:
 	[Предметная область карбоновых кислот]
 	(* <- lang_ru;;*);
 	[Subject domain of carboxylic acids]
@@ -24,7 +24,7 @@ propionic_acid;
 acetic_acid;;
 
 carboxylic_acid<-sc_node_not_relation;
-=>nrel_main_idtf: 
+=>nrel_main_idtf:
 	[карбоновая кислота](* <-lang_ru;;*);
 	[carboxylic acid](* <-lang_en;; *);
 =>nrel_idtf:
@@ -53,7 +53,7 @@ carboxylic_acid<-sc_node_not_relation;
 
 
 <-rrel_key_sc_element:...
-(*	
+(*
 	<-explanation;;
 	->rrel_key_sc_element:proton;;
 
@@ -88,7 +88,7 @@ carboxylic_acid<-sc_node_not_relation;
     *);
 
 <-rrel_key_sc_element:...
-(*	
+(*
 	->rrel_key_sc_element: elem_C; acid;;
 	<-explanation;;
 	=>nrel_main_idtf:[Утв. (углерод, кислота)](*<-lang_ru;;*);;
@@ -97,7 +97,7 @@ carboxylic_acid<-sc_node_not_relation;
 	(*
     ->rrel_example :[По международной номенклатуре ИЮПАК, карбоновые кислоты называют, выбирая за основу наиболее длинную углеродную цепочку, содержащую группу -СООН, и добавляя к названию
  соответствующего углеводорода окончание «овая» и слово «кислота». При этом атому углерода, входящему в состав карбоксильной группы, присваивается первый номер](*<-lang_ru;;*);;
-	->rrel_example :[Carboxylic acids are commonly identified using their trivial names, and usually have the suffix -ic acid. 
+	->rrel_example :[Carboxylic acids are commonly identified using their trivial names, and usually have the suffix -ic acid.
 	IUPAC-recommended names also exist; in this system, carboxylic acids have an -oic acid suffix.](*<-lang_en;;*);;
 	*);;
 *);
@@ -116,7 +116,7 @@ carboxylic_acid<-sc_node_not_relation;
 *);;
 
 functional_group<-sc_node_not_relation;
-=> nrel_main_idtf: 
+=> nrel_main_idtf:
 	[functional group]
 	(* <- lang_en;; *);
 
@@ -136,15 +136,15 @@ functional_group<-sc_node_not_relation;
 	*);;
 	<=nrel_sc_text_translation:...
 	(*
-    ->rrel_example :[Функциональная группа — совокупность атомов, определяющая характерные химические свойства данного класса соединений. 
+    ->rrel_example :[Функциональная группа — совокупность атомов, определяющая характерные химические свойства данного класса соединений.
 	Старшая функциональная группа соединения является критерием его отнесения к тому или иному классу органических соединений.](*<-lang_ru;;*);;
-	->rrel_example :[A functional group is a set of atoms that determines the characteristic chemical properties of a class of compounds. 
+	->rrel_example :[A functional group is a set of atoms that determines the characteristic chemical properties of a class of compounds.
 	The senior functional group of the compound is the criterion for its attribution to a particular class of organic compounds](*<-lang_en;;*);;
 	*);;
 *);
 
 <-rrel_key_sc_element:...
-(*	
+(*
 	->rrel_key_sc_element:molecule; nrel_reaction;;
 	<-explanation;;
 	=>nrel_main_idtf:[Утв. (молекула, химическая реакция, )](*<-lang_ru;;*);;
@@ -194,14 +194,14 @@ formic_acid<-sc_node_not_relation;
 *);
 
 <-rrel_key_sc_element:...
-(*	
+(*
 	->rrel_key_sc_element:food_additive_E236; salt; anion; acid;;
 	<-explanation;;
 	=>nrel_main_idtf:[Утв. (пищевая добавка E236, соль, анион, кислота)](*<-lang_ru;;*);;
 	=>nrel_main_idtf:[Exp. (food additive E236, salt, anion, acid)](*<-lang_en;;*);;
 	<=nrel_sc_text_translation:...
 	(*
-    ->rrel_example :[Зарегистрирована в качестве пищевой добавки под обозначением E236. В природе также обнаружена у пчёл, в крапиве, хвое. 
+    ->rrel_example :[Зарегистрирована в качестве пищевой добавки под обозначением E236. В природе также обнаружена у пчёл, в крапиве, хвое.
 	Соли и анионы муравьиной кислоты называются формиатами.](*<-lang_ru;;*);;
 	->rrel_example :[It is registered as a food additive under the designation E236. In nature, bees are also found in bees, in nettles.
 Salts and anions of formic acid are called formates.](*<-lang_en;;*);;
@@ -209,16 +209,16 @@ Salts and anions of formic acid are called formates.](*<-lang_en;;*);;
 *);
 
 <-rrel_key_sc_element:...
-(*	
+(*
 	->rrel_key_sc_element:strong_smell; no_color; liquid; nrel_solubility;  benzene; glycerol; water; diethyl_ether; ethanol;;
 	<-explanation;;
 	=>nrel_main_idtf:[Утв. (муравьиная кислота, резкий запах, бесцвветный, жидкость, растворимость*, бензол, глицерин, вода, диэтиловый эфир, этанол)](*<-lang_ru;;*);;
 	=>nrel_main_idtf:[Exp. (formic acid, colorless, liquid, solubility, benzene, glycerol, water, diethyl ether, ethanol)](*<-lang_en;;*);;
 	<=nrel_sc_text_translation:...
 	(*
-    ->rrel_example :[При нормальных условиях муравьиная кислота представляет собой резко пахнущую бесцветную жидкость. Растворима в ацетоне, бензоле, глицерине, толуоле. 
+    ->rrel_example :[При нормальных условиях муравьиная кислота представляет собой резко пахнущую бесцветную жидкость. Растворима в ацетоне, бензоле, глицерине, толуоле.
 	Смешивается с водой, диэтиловым эфиром, этанолом.](*<-lang_ru;;*);;
-	->rrel_example :[Under normal conditions, formic acid is a dramatically odorless, colorless liquid. Soluble in acetone, benzene, glycerol, toluene. 
+	->rrel_example :[Under normal conditions, formic acid is a dramatically odorless, colorless liquid. Soluble in acetone, benzene, glycerol, toluene.
 	Miscible with water, diethyl ether, ethanol.](*<-lang_en;;*);;
 	*);;
 *);
@@ -347,7 +347,7 @@ caproic_acid<-sc_node_not_relation;
 *);
 
 <-rrel_key_sc_element:...
-(*	
+(*
 	->rrel_key_sc_element:no_color; liquid; smell; ether; fatd;;
 	<-explanation;;
 	=>nrel_main_idtf:[Утв. (бесцветный, жидкость, запах, эфир, жир)](*<-lang_ru;;*);;
@@ -431,7 +431,7 @@ caproic_acid<-sc_node_not_relation;
 *);;
 
 enanthic_acid<-sc_node_not_relation;
-=>nrel_main_idtf: 
+=>nrel_main_idtf:
 	[энантовая кислота](* <-lang_ru;;*);
 	[enanthic acid](* <-lang_en;; *);
 =>nrel_idtf:
@@ -458,7 +458,7 @@ enanthic_acid<-sc_node_not_relation;
 *);
 
 <-rrel_key_sc_element:...
-(*	
+(*
 	->rrel_key_sc_element:no_color; liquid; smell;;
 	<-explanation;;
 	=>nrel_main_idtf:[Утв. (энантовая кислота, бесцветный, жидкость, запах, масло)](*<-lang_ru;;*);;
@@ -471,7 +471,7 @@ enanthic_acid<-sc_node_not_relation;
 *);
 
 <-rrel_key_sc_element:...
-(*	
+(*
 	->rrel_key_sc_element:salt; anion; nrel_solubility; water; ethanol;;
 	<-explanation;;
 	=>nrel_main_idtf:[Утв. (соль, анион, энантовая кислота, растворимость*, вода, этанол)](*<-lang_ru;;*);;
@@ -554,7 +554,7 @@ enanthic_acid<-sc_node_not_relation;
 *);;
 
 malonic_acid<-sc_node_not_relation;
-=>nrel_main_idtf: 
+=>nrel_main_idtf:
 	[малоновая кислота](* <-lang_ru;;*);
 	[malonic acid](* <-lang_en;; *);
 =>nrel_idtf:
@@ -581,7 +581,7 @@ malonic_acid<-sc_node_not_relation;
 *);
 
 <-rrel_key_sc_element:...
-(*	
+(*
 	->rrel_key_sc_element:salt; ester; nrel_solubility; water; ethanol; diethyl_ether; benzene;;
 	<-explanation;;
 	=>nrel_main_idtf:[Утв. (соль, сложный эфир, растворимость, вода, этанол, диэтиловый эфир, бензол)](*<-lang_ru;;*);;
@@ -596,15 +596,15 @@ malonic_acid<-sc_node_not_relation;
 *);
 
 <-rrel_key_sc_element:...
-(*	
+(*
 	->rrel_key_sc_element:alkali_metal; subst_Pb; subst_Ba; water; acid; nrel_melting_temperature; acetic_acid; monobasic_acid;;
 	<-explanation;;
 	=>nrel_main_idtf:[Утв. (щелочной металл, вода, свинец, барий, кислота, температура плавнения*, уксусная кислота, одноосновная кислота)](*<-lang_ru;;*);;
 	=>nrel_main_idtf:[Exp. (formic acid, water, plumbum, barium, acid, melting temperature*, acetic acid, monobasic acid )](*<-lang_en;;*);;
 	<=nrel_sc_text_translation:...
 	(*
-    ->rrel_example :[Cоли щелочных металлов малоновой кислоты хорошо растворяются в воде, в отличие от малонатов свинца и бария. 
-	При нагревании кислоты выше температуры плавления или нагревания её водного раствора выше 70°C малоновая кислота легко декарбоксилируется с образованием уксусной кислоты. 
+    ->rrel_example :[Cоли щелочных металлов малоновой кислоты хорошо растворяются в воде, в отличие от малонатов свинца и бария.
+	При нагревании кислоты выше температуры плавления или нагревания её водного раствора выше 70°C малоновая кислота легко декарбоксилируется с образованием уксусной кислоты.
 	Декарбоксилированию подвергаются также замещённые малоновые кислоты, которые превращаются в одноосновные кислоты.](*<-lang_ru;;*);;
 	->rrel_example :[Salts of alkali metals of malonic acid are readily soluble in water, unlike lead and barium malonates.
 	When the acid is heated above the melting point or by heating its aqueous solution above 70 ° C, malonic acid is readily decarboxylated to form acetic acid.
@@ -671,7 +671,7 @@ malonic_acid<-sc_node_not_relation;
 *);;
 
 succinic_acid<-sc_node_not_relation;
-=>nrel_main_idtf: 
+=>nrel_main_idtf:
 	[янтарная кислота](* <-lang_ru;;*);
 	[succinic acid](* <-lang_en;; *);
 =>nrel_idtf:
@@ -698,7 +698,7 @@ succinic_acid<-sc_node_not_relation;
 *);
 
 <-rrel_key_sc_element:...
-(*	
+(*
 	->rrel_key_sc_element:no_color; crystall; nrel_solubility; water;;
 	<-explanation;;
 	=>nrel_main_idtf:[Утв. (бесцветный, кристалл, растворимость*, вода)](*<-lang_ru;;*);;
@@ -711,7 +711,7 @@ succinic_acid<-sc_node_not_relation;
 *);
 
 <-rrel_key_sc_element:...
-(*	
+(*
 	->rrel_key_sc_element:succinic_acid; nrel_receiving;;
 	<-explanation;;
 	=>nrel_main_idtf:[Утв. (янтарная кислота, получение*)](*<-lang_ru;;*);;
@@ -782,7 +782,7 @@ succinic_acid<-sc_node_not_relation;
 *);;
 
 oxalic_acid<-sc_node_not_relation;
-=>nrel_main_idtf: 
+=>nrel_main_idtf:
 	[щавелевая кислота](* <-lang_ru;;*);
 	[oxalic acid](* <-lang_en;; *);
 =>nrel_idtf:
@@ -811,7 +811,7 @@ oxalic_acid<-sc_node_not_relation;
 *);
 
 <-rrel_key_sc_element:...
-(*	
+(*
 	->rrel_key_sc_element:salt; ester;;
 	<-explanation;;
 	=>nrel_main_idtf:[Утв. (соль, сложный эфир, щавелевая кислота)](*<-lang_ru;;*);;
@@ -826,16 +826,16 @@ oxalic_acid<-sc_node_not_relation;
 *);
 
 <-rrel_key_sc_element:...
-(*	
+(*
 	->rrel_key_sc_element:reagent; organic_chemistry;;
 	<-explanation;;
 	=>nrel_main_idtf:[Утв. (щавелевая кислота, реагент, органическая химия)](*<-lang_ru;;*);;
 	=>nrel_main_idtf:[Exp. (oxalic acid, reagent, organic chemistry)](*<-lang_en;;*);;
 	<=nrel_sc_text_translation:...
 	(*
-    ->rrel_example :[Щавелевая кислота является хорошим стимулятором работы мышц и нервов. 
+    ->rrel_example :[Щавелевая кислота является хорошим стимулятором работы мышц и нервов.
 	Щавелевая кислота и оксалаты являются реагентами, используемыми в аналитической и органической химии.](*<-lang_ru;;*);;
-	->rrel_example :[Oxalic acid is a good stimulator for the work of muscles and nerves. 
+	->rrel_example :[Oxalic acid is a good stimulator for the work of muscles and nerves.
 	Oxalic acid and oxalates are reagents used in analytical and organic chemistry.](*<-lang_en;;*);;
 	*);;
 *);
@@ -924,7 +924,7 @@ oxalic_acid<-sc_node_not_relation;
 *);;
 
 valeric_acid<-sc_node_not_relation;
-=>nrel_main_idtf: 
+=>nrel_main_idtf:
 	[валериановая кислота](* <-lang_ru;;*);
 	[valeric acid](* <-lang_en;; *);
 =>nrel_idtf:
@@ -939,7 +939,7 @@ valeric_acid<-sc_node_not_relation;
 	=>nrel_main_idtf:[Опр. (Валериановая кислота)](*<-lang_ru;;*);;
 	=>nrel_main_idtf:[Def. (Valeric acid)](*<-lang_en;;*);;
 	<=nrel_using_constants:...
-	(*	
+	(*
 		->monobasic_acid;;
 		->no_color;;
 		->liquid;;
@@ -954,15 +954,15 @@ valeric_acid<-sc_node_not_relation;
 *);
 
 <-rrel_key_sc_element:...
-(*	
+(*
 	->rrel_key_sc_element:pressure; water; diluted_solution;;
 	<-explanation;;
 	=>nrel_main_idtf:[Утв. (давление, вода, разбавленный раствор)](*<-lang_ru;;*);;
 	=>nrel_main_idtf:[Exp. (pressure, water, dilute solution)](*<-lang_en;;*);;
 	<=nrel_sc_text_translation:...
 	(*
-    ->rrel_example :[При попадании на кожу или слизистые оболочки может вызвать ожоги. 
-	Валериановая кислота имеет низкое давление пара при нормальных условиях и не угрожает дыхательным путям. 
+    ->rrel_example :[При попадании на кожу или слизистые оболочки может вызвать ожоги.
+	Валериановая кислота имеет низкое давление пара при нормальных условиях и не угрожает дыхательным путям.
 	Она может быть опасна водной фауне и флоре, поэтому при сливании должна быть сильно разбавлена.](*<-lang_ru;;*);;
 	->rrel_example :[Caused burns of skin or mucous membranes.
 	Valeric acid has a low vapor pressure under normal conditions and does not threaten the respiratory tract.
@@ -1071,14 +1071,14 @@ butyric_acid<-sc_node_not_relation;
 *);
 
 <-rrel_key_sc_element:...
-(*	
+(*
 	->rrel_key_sc_element:food_additive_E236; salt; anion; acid;;
 	<-explanation;;
 	=>nrel_main_idtf:[Утв. (масляная кислота, эфир, целлюлоза)](*<-lang_ru;;*);;
 	=>nrel_main_idtf:[Exp. (butyric acid, ether,cellulose)](*<-lang_en;;*);;
 	<=nrel_sc_text_translation:...
 	(*
-    ->rrel_example :[Масляная кислота и её эфиры в небольших количествах содержатся в сливочном масле и нефти. 
+    ->rrel_example :[Масляная кислота и её эфиры в небольших количествах содержатся в сливочном масле и нефти.
 	Масляная кислота используется в производстве ацетобутиратов целлюлозы, пищевых и кормовых добавок.
 	Масляная кислота проявляет противораковое и противоспалительное действие, влияет на аппетит, предупреждает развитие окислительного стресса.](*<-lang_ru;;*);;
 	->rrel_example :[Butyric acid and its esters are contained in small amounts in butter and oil.
@@ -1088,15 +1088,15 @@ butyric_acid<-sc_node_not_relation;
 *);
 
 <-rrel_key_sc_element:...
-(*	
+(*
 	->rrel_key_sc_element:strong_smell; no_color; liquid; nrel_solubility;  benzene; glycerol; water; diethyl_ether; ethanol;;
 	<-explanation;;
 	=>nrel_main_idtf:[Утв. (масляная кислота, кислота)](*<-lang_ru;;*);;
 	=>nrel_main_idtf:[Exp. (butyric acid, acid)](*<-lang_en;;*);;
 	<=nrel_sc_text_translation:...
 	(*
-    ->rrel_example :[Масляная кислота — одна из самых важных низкомолекулярных кислот, которые синтезируются природным образом в кишечнике. 
-	Она является основным энергетическим материалом для эпителиоцитов и поддерживает кишечный гомеостаз. 
+    ->rrel_example :[Масляная кислота — одна из самых важных низкомолекулярных кислот, которые синтезируются природным образом в кишечнике.
+	Она является основным энергетическим материалом для эпителиоцитов и поддерживает кишечный гомеостаз.
 	Также доказана корреляционная связь между дефицитом низкомолекулярных кислот и частотой развития и обострения заболеваний толстого кишечника.](*<-lang_ru;;*);;
 	->rrel_example :[Oleic acid is one of the most important low molecular weight acids that are synthesized naturally in the intestine.
 	It is the main energy material for epithelial cells and supports intestinal homeostasis.
@@ -1175,7 +1175,7 @@ butyric_acid<-sc_node_not_relation;
 *);;
 
 carboxyl_group<-sc_node_not_relation;
-=>nrel_main_idtf: 
+=>nrel_main_idtf:
 	[карбоксильная группа](* <-lang_ru;;*);
 	[carboxyl group](* <-lang_en;; *);
 
@@ -1222,7 +1222,7 @@ acetic_acid<-sc_node_not_relation;
 *);
 
 <-rrel_key_sc_element:...
-(*	
+(*
 	->rrel_key_sc_element:ester; salt;;
 	<-explanation;;
 	=>nrel_main_idtf:[Утв. (соль, сложный эфир, ацетат)](*<-lang_ru;;*);;
@@ -1235,14 +1235,14 @@ acetic_acid<-sc_node_not_relation;
 *);
 
 <-rrel_key_sc_element:...
-(*	
+(*
 	->rrel_key_sc_element:no_color; liquid; strong_smell; taste; nrel_solubility; water;;
 	<-explanation;;
 	=>nrel_main_idtf:[Утв. (уксусная кислота, бесцветный, жидкость, резкий запах, вкус, растворимость*, вода)](*<-lang_ru;;*);;
 	=>nrel_main_idtf:[Exp. (acetic acid, colorless, liquid, strong smell, taste, solubility*, water)](*<-lang_en;;*);;
 	<=nrel_sc_text_translation:...
 	(*
-    ->rrel_example :[Уксусная кислота представляет собой бесцветную жидкость с характерным резким запахом и кислым вкусом. 
+    ->rrel_example :[Уксусная кислота представляет собой бесцветную жидкость с характерным резким запахом и кислым вкусом.
 	Гигроскопична. Неограниченно растворима в воде.](*<-lang_ru;;*);;
 	->rrel_example :[Acacetic acid is a colorless liquid with a characteristic sharp odor and sour taste.
 	It is hygroscopic. Unlimitedly soluble in water.](*<-lang_en;;*);;
@@ -1343,10 +1343,10 @@ acetic_acid<-sc_node_not_relation;
 			<-number;;
 		*);;
 	*);;
-*);;	
+*);;
 
 propionic_acid<-sc_node_not_relation;
-=>nrel_main_idtf: 
+=>nrel_main_idtf:
 	[пропионовая кислота](* <-lang_ru;;*);
 	[propionic acid](* <-lang_en;; *);
 =>nrel_idtf:
@@ -1374,7 +1374,7 @@ propionic_acid<-sc_node_not_relation;
 *);
 
 <-rrel_key_sc_element:...
-(*	
+(*
 	->rrel_key_sc_element:no_color; liquid; strong_smell; salt; anion; acid;;
 	<-explanation;;
 	=>nrel_main_idtf:[Утв. (пропионовая кислота, бесцветный, жидкость, резкий запах, соль, анион, кислота)](*<-lang_ru;;*);;
@@ -1387,7 +1387,7 @@ propionic_acid<-sc_node_not_relation;
 *);
 ////
 <-rrel_key_sc_element:...
-(*	
+(*
 	->rrel_key_sc_element:water; carboxylic_acid; ether; amide;;
 	<-explanation;;
 	=>nrel_main_idtf:[Утв. (вода, карбоновая кислота, эфир, амид)](*<-lang_ru;;*);;

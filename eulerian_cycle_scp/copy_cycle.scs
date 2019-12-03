@@ -1,0 +1,85 @@
+
+//Программа копирования цепи
+scp_program -> copy_cycle (*	
+	-> rrel_params: ... (*
+		//Цикл, из которого нужно скопировать вершины
+		-> rrel_1: rrel_in: _cycle;;
+		//Цикл, в который нужно скопировать вершины
+		-> rrel_2: rrel_in: _copy;;
+	*);;
+
+	-> rrel_operators: ... (*
+
+		//Оператор поиска начальной вершины
+		//После этого переходим к добавлению начальной вершины в _copy
+		->  rrel_init: ..find_begin_vertex (*
+			<- searchElStr5;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _cycle;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc1;;
+			-> rrel_3: rrel_assign: rrel_scp_var: _begin;;
+			-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc2;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: rrel_begin;;
+			=> nrel_then: ..add_begin_vertex;;
+			=> nrel_else: ..return;;
+		*);;
+
+		//Добавление начальной вершины в цикл _copy
+		-> ..add_begin_vertex (*
+			<- genElStr5;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _copy;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc1;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _begin;;
+			-> rrel_4: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc2;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: rrel_begin;;
+			=> nrel_goto: ..find_set_vertices;;
+		*);;
+
+		//Нахождение множества всех элементов цикла _cycle
+		->  ..find_set_vertices (*
+			<- searchSetStr5;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _cycle;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc1;;
+			-> rrel_3: rrel_assign: rrel_scp_var: _vertex;;
+			-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc2;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: rrel_element;;
+			->rrel_set_3: rrel_assign: rrel_scp_var: _vertices;;
+			=> nrel_then: ..get_element;;
+			=> nrel_else: ..return;;
+		*);;
+
+		//Получение одного из элементов множества _vertices
+		-> ..get_element (*
+			<- searchElStr3;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _vertices;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc_vertex;;
+			-> rrel_3: rrel_assign: rrel_scp_var: _vertex;;
+			=> nrel_then: ..erase_arc_vertex;; 
+			=> nrel_else: ..return;;
+		*);;
+
+		//Удаление _vertex из множества _vertices
+		-> ..erase_arc_vertex (*
+			<- eraseEl;;
+			-> rrel_1: rrel_fixed: rrel_erase: rrel_scp_var: _arc_vertex;;
+			=> nrel_goto: ..add_vertex;;
+		*);;
+
+		//Оператор добавления вершины в новый цикл
+		//Переход к получению слдеюущей вершины
+		-> ..add_vertex (*
+			<- genElStr5;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _copy;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc1;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _vertex;;
+			-> rrel_4: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc2;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: rrel_element;;
+			=> nrel_goto: ..get_element;;
+		*);;
+
+		//Оператор return
+		-> ..return (*
+			<- return;;
+		*);;
+
+	*);;
+*);;
