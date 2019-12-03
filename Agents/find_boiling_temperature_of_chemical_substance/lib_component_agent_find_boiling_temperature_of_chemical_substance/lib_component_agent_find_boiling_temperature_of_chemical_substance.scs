@@ -5,16 +5,16 @@ lib_component_agent_find_boiling_temperature_of_chemical_substance
 	[Library component. sc-agent search boiling temperature of given substance]
 	(* <- lang_en;; *);
 
-<- library_of_platform_independent_reusable_components; 
+<- library_of_platform_independent_reusable_components;
 <- library_of_atomic_reusable_components;
 
-=> nrel_attendant_component: 
+=> nrel_attendant_component:
 	lib_component_ui_menu_find_boiling_temperature_of_chemical_substance;
 
--> rrel_key_sc_element: 
-	.platform_independent_realization_of_sc_agent_find_boiling_temperature_of_chemical_substance; 
+-> rrel_key_sc_element:
+	.platform_independent_realization_of_sc_agent_find_boiling_temperature_of_chemical_substance;
 
-<- rrel_key_sc_element: 
+<- rrel_key_sc_element:
 	...
 	(*
 	<- explanation;;
@@ -23,7 +23,7 @@ lib_component_agent_find_boiling_temperature_of_chemical_substance
 		(*
 		-> rrel_example:
 			"file://htmls/Domains.html"
-				(* <- lang_ru;; *);; 
+				(* <- lang_ru;; *);;
 		*);;
 	*);;
 
@@ -34,4 +34,3 @@ action_find_boiling_temperature_of_chemical_substance => nrel_main_idtf:
 	(* <- lang_ru;;	*);
 	[action. search boiling_temperature of given substance]
 	(* <- lang_en;;	*);;
-

@@ -2,11 +2,11 @@ elem_Na
 <- sc_node_not_relation;
 <- rrel_key_sc_element:
 	Definition_of_natrium
-	(* 
+	(*
 	<- definition;;
 	<= nrel_sc_text_translation:
 		...
-		(* 
+		(*
 		-> rrel_example:"file://htmls/Na.html" (* <-lang_ru;; *);;
 		*);;
 	<= nrel_using_constants:
@@ -21,10 +21,11 @@ elem_Na
 <- group_one;
 <- period_three;
 => nrel_periodic_number: eleven;
+<= nrel_discovery_year: 1807;
 
 <- metal;
 
-<= nrel_inclusion: oxidation_state_plus_one; 
+<= nrel_inclusion: oxidation_state_plus_one;
 <= nrel_inclusion: valence_one;
 
 
@@ -62,7 +63,7 @@ elem_Na
 <- rrel_key_sc_element: electron_configuration_Na
 	(*
 		<- explanation;;
-		=> nrel_main_idtf: 
+		=> nrel_main_idtf:
 			[Утв. (натрий, электронная конфигурация*)](*<- lang_ru;;*);;
 		<= nrel_sc_text_translation:...
 		(*

@@ -1,0 +1,60 @@
+
+//Программа очистки памяти
+scp_program -> clear (*	
+	-> rrel_params: ... (*
+		//Узел графа
+		-> rrel_1: rrel_in: _graph;;
+	*);;
+
+	-> rrel_operators: ... (*
+
+		//Создание множества всех циклов, принадлежащих графу
+		//Если множество непустое, то находим первый цикл
+		//Если множество пустое, то выходим из программы
+		-> rrel_init: ..create_all_cycles (*
+			<- searchSetStr5;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _graph;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc1;;
+			-> rrel_3: rrel_assign: rrel_scp_var: _c;;
+			-> rrel_4: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc2;;
+			-> rrel_5: rrel_fixed:  rrel_scp_const: rrel_cycle;;
+			->rrel_set_3: rrel_assign: rrel_scp_var: _cycles;;
+			=> nrel_then: ..get_cycle;;		
+			=> nrel_else: ..return;;	
+		*);;
+
+		//Поиск цикла во множестве всех циклов
+		//Если цикл найден, то удаляем его
+		//Если цикл не найден, то очищаем память от _cycles и выходим из программы
+		-> ..get_cycle (*
+			<- searchElStr3;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _cycles;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _deleted_arc;;
+			-> rrel_3: rrel_assign: rrel_scp_var: _cycle;;
+			=> nrel_then: ..delete_cycle;;
+			=> nrel_else: ..delete_cycles;;
+		*);;
+
+		//Удаление _cycle
+		//Возвращение к поиску следующего цикла
+		-> ..delete_cycle (*
+			<- eraseEl;;
+			-> rrel_1: rrel_fixed: rrel_erase: rrel_scp_var: _cycle;;
+			=> nrel_goto: ..get_cycle;;	
+		*);;
+
+		//Удаление _cycles
+		//Переход к выходу из программы
+		-> ..delete_cycles (*
+			<- eraseEl;;
+			-> rrel_1: rrel_fixed: rrel_erase: rrel_scp_var: _cycles;;
+			=> nrel_goto: ..return;;	
+		*);;
+
+		//Оператор return
+		-> ..return (*
+			<- return;;
+		*);;
+
+	*);;
+*);;

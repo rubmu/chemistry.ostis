@@ -1,0 +1,6 @@
+sc_text_of_agent_calculating_the_chemical_amount_of_substance
+-> rrel_key_sc_element:
+	agent_calculating_the_chemical_amount_of_substance;
+<- scp_program_sc_text;;
+
+sc_text_of_agent_calculating_the_chemical_amount_of_substance = [*^"file://agent_calculating_the_chemical_amount_of_substance.scsi"*];;

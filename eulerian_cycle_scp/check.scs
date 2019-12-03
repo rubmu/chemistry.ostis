@@ -1,0 +1,160 @@
+
+//Программа проверки циклов на пересечение
+scp_program -> check (*	
+	-> rrel_params: ... (*
+		//Узел графа
+		-> rrel_1: rrel_in: _graph;;
+		//Результат поиска
+		-> rrel_2: rrel_out: _check;;
+	*);;
+
+	-> rrel_operators: ... (*
+
+		//Инициализация переменной _size нулем (означаает количество вершин в графе)
+		-> rrel_init: ..initialize (*
+			<- varAssign;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _size;;
+			-> rrel_2: rrel_fixed: rrel_scp_const: [0];;
+			=> nrel_goto: ..find_set_vertices;;
+		*);;
+
+		//Нахождение всех вершин графа
+		->  ..find_set_vertices (*
+			<- searchSetStr5;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _graph;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc1;;
+			-> rrel_3: rrel_assign: rrel_scp_var: _vertex;;
+			-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc2;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: rrel_vertex;;
+			->rrel_set_3: rrel_assign: rrel_scp_var: _vertices;;
+			=> nrel_then: ..get_element;;
+			=> nrel_else: ..operator_return_false;;
+		*);;
+
+		//Получение одной из вершины
+		//Если вершина найдена, то добавляем 1 к _size
+		//Если вершина не найдена, то переходим к поиску всех циклов
+		-> ..get_element (*
+			<- searchElStr3;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _vertices;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc_vertex;;
+			-> rrel_3: rrel_assign: rrel_scp_var: _vertex;;
+			=> nrel_then: ..erase_arc_vertex;; 
+			=> nrel_else: ..create_all_cycles_i;;
+		*);;
+
+		//Удаление дуги, между вершиной цикла и множеством всех вершин
+		-> ..erase_arc_vertex (*
+			<- eraseEl;;
+			-> rrel_1: rrel_fixed: rrel_erase: rrel_scp_var: _arc_vertex;;
+			=> nrel_goto: ..temp;;
+		*);;
+
+		//Создание временной переменной, которая равна длине _size (необходима в процессе вычисления длины цикла)
+		//Переход к суммированию
+		-> ..temp (*
+			<- varAssign;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _temp;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _size;;
+			=> nrel_goto: ..sum;;
+		*);;
+
+		//Оператор сложения (_size = _temp + 1)
+		//Переход к получению новой вершины
+		-> ..sum (*
+			<- contAdd;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _size;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _temp;;
+			-> rrel_3: rrel_fixed: rrel_scp_const: [1];;
+			=> nrel_goto: ..get_element;;
+		*);;
+
+		//Создание множества всех циклов, принадлежащих графу
+		//Если множество непустое, то находим первый цикл
+		//Если множество пустое, то выходим из программы
+		-> ..create_all_cycles_i (*
+			<- searchSetStr5;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _graph;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc1;;
+			-> rrel_3: rrel_assign: rrel_scp_var: _vertex;;
+			-> rrel_4: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc2;;
+			-> rrel_5: rrel_fixed:  rrel_scp_const: rrel_cycle;;
+			->rrel_set_3: rrel_assign: rrel_scp_var: _cycles_i;;
+			=> nrel_then: ..get_cycle_i;;		
+			=> nrel_else: ..operator_return_false;;	
+		*);;
+
+		//Поиск цикла во множестве всех циклов
+		//Если цикл найден, то удаляем дугу между этим циклом и множеством всех циклом
+		//Если цикл не найден, то возвращаем false
+		-> ..get_cycle_i (*
+			<- searchElStr3;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _cycles_i;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _deleted_arc_i;;
+			-> rrel_3: rrel_assign: rrel_scp_var: _cycle_i;;
+			=> nrel_then: ..delete_arc_i;;
+			=> nrel_else: ..operator_return_false;;
+		*);;
+
+		//Удаление дуги между циклом и множеством всех циклов
+		-> ..delete_arc_i (*
+			<- eraseEl;;
+			-> rrel_1: rrel_fixed: rrel_erase: rrel_scp_var: _deleted_arc_i;;
+			=> nrel_goto: ..get_length;;	
+		*);;
+
+		//Вызов программы _length, которая находит длину цикла
+		-> ..get_length (*
+			<- call;;
+			-> rrel_1: rrel_fixed: rrel_scp_const: length;;
+			-> rrel_2: rrel_fixed: rrel_scp_const: ... (*
+				//Цикл, длину которого нужно найти
+				-> rrel_1: rrel_fixed: rrel_scp_var: _cycle_i;;
+				//Длина цикла
+				-> rrel_2: rrel_assign: rrel_scp_var: _length;;
+			*);;
+			-> rrel_3: rrel_assign: rrel_scp_var: _descr;;
+			=> nrel_goto: ..wait_length;;
+		*);;	
+	
+		//Ожидание завершения нахождения длины цикла
+		//Переход к обработке результата
+		-> ..wait_length (*
+			<- waitReturn;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _descr;;
+			=> nrel_goto: ..if_equals_true;;
+		*);;
+
+		//Если длина цикла равна количеству вершин, то возвращаем true
+		//Если нет, то берем следующий цикл
+		-> ..if_equals_true (*
+			<- ifEq;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _length;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _size;;
+			=> nrel_then: ..operator_return_true;;
+			=> nrel_else: ..get_cycle_i;;
+		*);;
+
+		//Возвращение 1, то есть граф является кактусом
+		-> ..operator_return_true (*
+			<- varAssign;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _check;;
+			-> rrel_2: rrel_fixed: rrel_scp_const: [1];;
+			=> nrel_goto: ..operator_return;;
+		*);;
+
+		//Возвращение 0, то есть граф не является кактусом
+		-> ..operator_return_false (*
+			<- varAssign;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _check;;
+			-> rrel_2: rrel_fixed: rrel_scp_const: [0];;
+			=> nrel_goto: ..operator_return;;
+		*);;
+
+		//Оператор operator_return
+		-> ..operator_return (*
+			<- return;;
+		*);;
+
+	*);;
+*);;
