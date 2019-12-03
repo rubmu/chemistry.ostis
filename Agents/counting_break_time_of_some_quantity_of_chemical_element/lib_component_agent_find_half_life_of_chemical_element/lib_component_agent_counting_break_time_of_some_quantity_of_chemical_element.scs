@@ -1,4 +1,4 @@
-lib_component_agent_find_half_life_of_chemical_element
+lib_component_agent_counting_break_time_of_some_quantity_of_chemical_element
 => nrel_main_idtf:
 	[Компонент библиотеки. sc-агент поиска периода полураспада заданного химического элемента]
 	(* <- lang_ru;; *);
@@ -10,7 +10,7 @@ lib_component_agent_find_half_life_of_chemical_element
 <- reusable_scp_agent;
 
 -> rrel_key_sc_element: 
-	.platform_independent_realization_of_sc_agent_find_half_life_of_chemical_element; 
+	.platform_independent_realization_of_sc_agent_counting_break_time_of_some_quantity_of_chemical_element; 
 
 <- rrel_key_sc_element: 
 	...
@@ -25,9 +25,9 @@ lib_component_agent_find_half_life_of_chemical_element
 		*);;
 	*);;
 
-sc_node_not_relation -> action_find_half_life_of_chemical_element;;
+sc_node_not_relation -> action_counting_break_time_of_some_quantity_of_chemical_element;;
 
-action_find_half_life_of_chemical_element => nrel_main_idtf:
+action_counting_break_time_of_some_quantity_of_chemical_element => nrel_main_idtf:
 	[действие. Поиск периода полураспада заданного химического элемента]
 	(* <- lang_ru;;	*);
 	[action. Search the half life of given chemical element]

@@ -1,0 +1,25 @@
+counting_break_time_of_some_quantity_of_chemical_element
+=> nrel_main_idtf:
+	[Компонент библиотеки. Команда пользовательского интерфейса для подсчёта времени распада некоторого количества атомов химического элемента]
+	(* <- lang_ru;; *);
+	[Library component. User interface command of counting break time of quantity of chemical element atoms]
+	(* <- lang_en;; *);
+
+<- platform_independent_reusable_component_OSTIS;
+<- atomic_reusable_component_OSTIS;
+<- reusable_knowledge_base_sc_model_component;
+
+<- rrel_key_sc_element:
+	... 
+	(*
+	<- explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			"file://htmls/Ui_Domains.html"
+				(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+counting_break_time_of_some_quantity_of_chemical_element  = [*^"file://ui_menu_counting_break_time_of_some_quantity_of_chemical_element.scsi"*];; 

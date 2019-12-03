@@ -1,20 +1,20 @@
-agent_find_half_life_of_chemical_element
+agent_counting_break_time_of_some_quantity_of_chemical_element
 =>nrel_main_idtf:
-    [агентная scp-программа поиска периода полураспада заданного элемента] (* <- lang_ru;; *);
-	[agent scp-program search half life of given element] (* <- lang_en;; *);
+    [агентная scp-программа подсчёта времени расспада некоторого количества атомов химического элемента] (* <- lang_ru;; *);
+	[agent scp-program counting break time of some quantity of chemical element] (* <- lang_en;; *);
 	<- agent_scp_program;;
 
-scp_program -> agent_find_half_life_of_chemical_element 
+scp_program -> agent_counting_break_time_of_some_quantity_of_chemical_element 
 	(*
-	-> rrel_params: .agent_find_half_life_of_chemical_element_params 
+	-> rrel_params: .agent_counting_break_time_of_some_quantity_of_chemical_element_params 
 		(*
 		-> rrel_1: rrel_in: _event;;
 		-> rrel_2: rrel_in: _input_arc;;
 		*);;
 
-	-> rrel_operators: .agent_find_half_life_of_chemical_element_operator_set 
+	-> rrel_operators: .agent_counting_break_time_of_some_quantity_of_chemical_element_operator_set 
 		(*
-		-> rrel_init: .agent_find_half_life_of_chemical_element_operator1A 
+		-> rrel_init: .agent_counting_break_time_of_some_quantity_of_chemical_element_operator1A 
 			(*
 			<- searchElStr3;;
 
@@ -22,14 +22,14 @@ scp_program -> agent_find_half_life_of_chemical_element
 			-> rrel_2: rrel_fixed: rrel_scp_var: _input_arc;;
 			-> rrel_3: rrel_assign: rrel_scp_var: _quest;;
 
-			=> nrel_goto: .agent_find_half_life_of_chemical_element_operator1B;;
+			=> nrel_goto: .agent_counting_break_time_of_some_quantity_of_chemical_element_operator1B;;
 			*);;
 
-		-> .agent_find_half_life_of_chemical_element_operator1B
+		-> .agent_counting_break_time_of_some_quantity_of_chemical_element_operator1B
 			(*
 			<- searchElStr3;;
 
-			-> rrel_1: rrel_fixed: rrel_scp_const: action_find_half_life_of_chemical_element;;
+			-> rrel_1: rrel_fixed: rrel_scp_const: action_counting_break_time_of_some_quantity_of_chemical_element;;
 			-> rrel_2: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc1;;
 			-> rrel_3: rrel_fixed: rrel_scp_var: _quest;;
 
@@ -136,16 +136,9 @@ scp_program -> agent_find_half_life_of_chemical_element
             -> rrel_4: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc2;;
             -> rrel_5: rrel_fixed: rrel_scp_const: nrel_main_idtf;;
 
-            =>nrel_then:.testPrint4;;
+            =>nrel_then:.assign_half_life_main_link;;
             =>nrel_else:.operator_return;;
         *);;
-
-		->.testPrint4
-		(*
-			<- print;;
-			-> rrel_1: rrel_fixed: rrel_scp_const: [here];;
-			=> nrel_goto: .assign_half_life_main_link;;
-		*);;
 
 		->.assign_half_life_main_link
         (*
@@ -157,16 +150,9 @@ scp_program -> agent_find_half_life_of_chemical_element
             -> rrel_4: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc2;;
             -> rrel_5: rrel_fixed: rrel_scp_const: nrel_main_idtf;;
 
-            =>nrel_then:.testPrint5;;
+            =>nrel_then:.assign_half_life_link;;
             =>nrel_else:.operator_return;;
         *);;
-
-		->.testPrint5
-		(*
-			<- printEl;;
-			-> rrel_1: rrel_fixed: rrel_scp_var: _half_life;;
-			=> nrel_goto: .assign_half_life_link;;
-		*);;
 
 		->.assign_half_life_link
         (*
@@ -248,27 +234,12 @@ scp_program -> agent_find_half_life_of_chemical_element
 			=> nrel_goto: .find_middle_of_string;;
 		*);;
 
-		// ->.split_half_life_string
-		//  (*
-		// 	<- stringSplit;;
-		// 	-> rrel_1: rrel_assign: rrel_scp_var: _strings_set;;
-		// 	-> rrel_2: rrel_fixed: rrel_scp_var: _half_life_main_link;;
-		// 	-> rrel_3: rrel_fixed: rrel_scp_const: [ ];;
-		// 	=> nrel_goto: .find_measure_1;;
-		// *);;
 		->.find_middle_of_string
 		(*
 			<- stringSub;;
 			-> rrel_1: rrel_assign: rrel_scp_var: _middle;;
 			-> rrel_2: rrel_fixed: rrel_scp_var: _half_life_main_link;;
 			-> rrel_3: rrel_fixed: rrel_scp_const: [ ];;
-			=> nrel_goto: .test_print_2;;
-		*);;
-
-		->.test_print_2
-		(*
-			<- print;;
-			-> rrel_1: rrel_fixed: rrel_scp_var: _middle;;
 			=> nrel_goto: .find_length_of_string;;
 		*);;
 
@@ -276,13 +247,6 @@ scp_program -> agent_find_half_life_of_chemical_element
 			<- stringLen;;
 			-> rrel_1: rrel_assign: rrel_scp_var: rrel_link: _length;;
 			-> rrel_2: rrel_fixed: rrel_scp_var: _half_life_main_link;;
-			=> nrel_goto: .test_print_3;;
-		*);;
-
-		->.test_print_3
-		(*
-			<- print;;
-			-> rrel_1: rrel_fixed: rrel_scp_var: _length;;
 			=> nrel_goto: .normalize_length;;
 		*);;
 
@@ -388,17 +352,8 @@ scp_program -> agent_find_half_life_of_chemical_element
 			-> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc1;;
 			-> rrel_3: rrel_fixed: rrel_scp_var: _edge;;
 
-			=> nrel_goto: .test_print_4;;
-			*);;
-
-		->.test_print_4
-		(*
-			<- print;;
-			-> rrel_1: rrel_fixed: rrel_scp_var: _result_string;;
 			=> nrel_goto: .connect_answer;;
-		*);;
-
-
+			*);;
 
 		-> .connect_answer
 			(*
