@@ -1,15 +1,41 @@
 concept_metal
 => nrel_main_idtf:
-	[метал](* <- lang_ru;; *);
+	[металл](* <- lang_ru;; *);
 	[metal](* <- lang_en;; *);
 =>nrel_idtf:
-	[метал](* <-lang_ru;; *);;
+	[металл](* <-lang_ru;; *);;
 
 concept_salt
 => nrel_main_idtf: [соль](* <- lang_ru;; *);
 => nrel_idtf: [соль](* <- lang_ru;; *);;
 
+concept_oxide
+=> nrel_main_idtf: [оксид](* <- lang_ru;; *);
+=> nrel_idtf: [оксид](* <- lang_ru;; *);;
+
+concept_oxide -> zinc_oxide;;
+concept_oxide -> lithium_oxide;;
+concept_oxide -> sodium_oxide;;
+concept_oxide -> chromium_oxide_3;;
+concept_oxide -> nickel_oxide_2;;
+concept_oxide -> aluminum_oxide;;
+
+base -> subst_ZnOH2;;
+base -> subst_CsOH;;
+base -> subst_InOH3;;
+base -> subst_KOH;;
+base -> subst_CdOH2;;
+base -> subst_AgOH;;
+base -> subst_SrOH2;;
+base -> subst_BeOH2;;
+base -> subst_AlOH3;;
+base -> subst_NiOH;;
+base -> subst_CrOH3;;
+base -> subst_FeOH3;;
+base -> subst_RbOH;;
+
 concept_metal -> elem_Fe;;
+concept_metal -> subst_Fe;;
 concept_metal -> subst_Na;;
 concept_metal -> subst_Li;;
 concept_metal -> subst_K;;
