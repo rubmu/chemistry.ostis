@@ -1,66 +1,102 @@
 agent_find_element_atomic_mass
-=>nrel_main_idtf:
+=> nrel_main_idtf:
     [агентная scp-программа поиска атомной массы заданного элемента] (* <- lang_ru;; *);
 	[agent scp-program search atomic mass of given element] (* <- lang_en;; *);
 	<- agent_scp_program;;
 
 scp_program -> agent_find_element_atomic_mass
 (*
-    ->rrel_params: .agent_find_element_atomic_mass_params
+    -> rrel_params: .agent_find_element_atomic_mass_params
     (*
-        ->rrel_1:rrel_in:_event;;
-        ->rrel_2:rrel_in:_input_arc;;
+        -> rrel_1: rrel_in: _event;;
+        -> rrel_2: rrel_in: _input_arc;;
     *);;
 
-    ->rrel_operators: .agent_find_element_atomic_mass_operator_set
+    -> rrel_operators: .agent_find_element_atomic_mass_operator_set
     (*
-        ->rrel_init:.agent_find_element_atomic_mass_operator1A
+        -> rrel_init: .agent_find_element_atomic_mass_operator1A
         (*
-            <-searchElStr3;;
+            <- searchElStr3;;
 
-            ->rrel_1:rrel_assign:rrel_scp_var:_temp;;
-            ->rrel_2:rrel_fixed:rrel_scp_var:_input_arc;;
-            ->rrel_3:rrel_assign:rrel_scp_var:_quest;;
+            -> rrel_1: rrel_assign: rrel_scp_var: _temp;;
+            -> rrel_2: rrel_fixed: rrel_scp_var: _input_arc;;
+            -> rrel_3: rrel_assign: rrel_scp_var: _quest;;
 
-            =>nrel_then:.agent_find_element_atomic_mass_operator1B;;
-            =>nrel_else:.agent_find_element_atomic_mass_operator_return;;
+            => nrel_then: .agent_find_element_atomic_mass_operator1B;;
+            => nrel_else: .agent_find_element_atomic_mass_operator_return;;
         *);;
 
-        ->.agent_find_element_atomic_mass_operator1B
+        -> .agent_find_element_atomic_mass_operator1B
         (*
-            <-searchElStr3;;
+            <- searchElStr3;;
 
-            ->rrel_1:rrel_fixed:rrel_scp_const:action_find_element_atomic_mass;;
-            ->rrel_2:rrel_assign:rrel_scp_var:rrel_pos_const_perm:_arc1;;
-            ->rrel_3:rrel_fixed:rrel_scp_var:_quest;;
+            -> rrel_1: rrel_fixed: rrel_scp_const: action_find_element_atomic_mass;;
+            -> rrel_2: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc1;;
+            -> rrel_3: rrel_fixed: rrel_scp_var: _quest;;
 
-            =>nrel_then:.agent_find_element_atomic_mass_operator1C;;
-            =>nrel_else:.agent_find_element_atomic_mass_operator_return;;
+            => nrel_then: .agent_find_element_atomic_mass_operator1C;;
+            => nrel_else: .agent_find_element_atomic_mass_operator_return;;
         *);;
 
-        ->.agent_find_element_atomic_mass_operator1C
+        -> .agent_find_element_atomic_mass_operator1C
         (*
-            <-searchElStr3;;
+            <- searchElStr3;;
             
-            ->rrel_1:rrel_fixed:rrel_scp_var:_quest;;
-            ->rrel_2:rrel_assign:rrel_scp_var:rrel_pos_const_perm:_arc2;;
-            ->rrel_3:rrel_assign:rrel_scp_var:_pattern;;
+            -> rrel_1: rrel_fixed: rrel_scp_var: _quest;;
+            -> rrel_2: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc2;;
+            -> rrel_3: rrel_assign: rrel_scp_var: _pattern;;
 
-            =>nrel_then:.agent_find_element_atomic_mass_operator_gen_answer;;
-            //=>nrel_else:.agent_find_element_atomic_mass_operator_message;;
-            =>nrel_else:.agent_find_element_atomic_mass_operator_return;;
+            => nrel_then: .agent_find_element_atomic_mass_operator_check_in1;;
+            => nrel_else: .agent_find_element_atomic_mass_operator_error1;;
         *);;
 
-        ->.agent_find_element_atomic_mass_operator_gen_answer
+        -> .agent_find_element_atomic_mass_operator_check_in1
         (*
-            <-genEl;;
+            <- searchElStr3;;
 
-            ->rrel_1:rrel_assign:rrel_node:rrel_const:rrel_scp_var:_answer_for_checking_domains_of_relation;;
+			-> rrel_1: rrel_assign: rrel_scp_var: rrel_not_relation: _unknown_class;;    
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc_class;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _pattern;;
 
-            =>nrel_goto:.agent_find_element_atomic_mass_operator1D1;;
+            => nrel_then: .agent_find_element_atomic_mass_operator_check_in2;;
+            => nrel_else: .agent_find_element_atomic_mass_operator_error1;;
         *);;
 
-        ->.agent_find_element_atomic_mass_operator1D1
+        -> .agent_find_element_atomic_mass_operator_check_in2            
+			(*
+			<- ifCoin;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_const: chemical_substance;;    
+			-> rrel_2: rrel_fixed: rrel_scp_var: _unknown_class;;
+
+			=> nrel_then: .agent_find_element_atomic_mass_operator_gen_answer;;
+			=> nrel_else: .agent_find_element_atomic_mass_operator_check_in3;;    
+			*);;
+
+        -> .agent_find_element_atomic_mass_operator_check_in3
+        (*
+            <- searchElStr5;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_const: chemical_substance;;    
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_common: _arc1;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _unknown_class;;
+            -> rrel_4: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc2;;
+            -> rrel_5: rrel_fixed: rrel_scp_const: nrel_inclusion;;
+
+            => nrel_then: .agent_find_element_atomic_mass_operator_gen_answer;;
+            => nrel_else: .agent_find_element_atomic_mass_operator_error1;;
+        *);;
+
+        -> .agent_find_element_atomic_mass_operator_gen_answer
+        (*
+            <- genEl;;
+
+            -> rrel_1: rrel_assign: rrel_node: rrel_const: rrel_scp_var: _answer_for_checking_domains_of_relation;;
+
+            => nrel_goto: .agent_find_element_atomic_mass_operator1D1;;
+        *);;
+
+        -> .agent_find_element_atomic_mass_operator1D1
         (*
             <- genElStr3;;
 
@@ -71,9 +107,9 @@ scp_program -> agent_find_element_atomic_mass
 			=> nrel_goto: .agent_find_element_atomic_mass_operator1D1_2;;         
         *);;
 
-        ->.agent_find_element_atomic_mass_operator1D1_2
+        -> .agent_find_element_atomic_mass_operator1D1_2
         (*
-            <-genElStr3;;
+            <- genElStr3;;
 
             -> rrel_1: rrel_fixed: rrel_scp_var: _answer_for_checking_domains_of_relation;;
 			-> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc1;;
@@ -82,72 +118,100 @@ scp_program -> agent_find_element_atomic_mass
 			=> nrel_goto: .agent_find_element_atomic_mass_operator1D2;;
         *);;
 
-        ->.agent_find_element_atomic_mass_operator1D2
+        -> .agent_find_element_atomic_mass_operator1D2
         (*
             <- searchElStr5;;
+
 			-> rrel_1: rrel_fixed: rrel_scp_var: _pattern;;
 			-> rrel_2: rrel_assign: rrel_scp_var: rrel_common: _arc1;;
 			-> rrel_3: rrel_assign: rrel_scp_var: _node;;
 			-> rrel_4: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc2;;
 			-> rrel_5: rrel_fixed: rrel_scp_const: nrel_atomic_mass;;
 
-            =>nrel_then:.agent_find_element_atomic_mass_operator1D3;;
-            =>nrel_else:.agent_find_element_atomic_mass_operator_return;;
+            => nrel_then: .agent_find_element_atomic_mass_operator1D2a;;
+            => nrel_else: .agent_find_element_atomic_mass_operator_error3;;
         *);;
 
-        ->.agent_find_element_atomic_mass_operator1D3
-        (*
-            <-searchElStr5;;
-            ->rrel_1:rrel_assign:rrel_scp_var:_measure;;
-            ->rrel_2:rrel_assign:rrel_scp_var:rrel_common:_arc1;;
-            ->rrel_3:rrel_fixed:rrel_scp_var:_node;;
-            ->rrel_4:rrel_assign:rrel_scp_var:rrel_const:rrel_pos_const_perm:_arc2;;
-            ->rrel_5:rrel_fixed:rrel_scp_const: nrel_measurement;;
+        -> .agent_find_element_atomic_mass_operator1D2a
+			(*
+			<- searchElStr3;;
 
-            =>nrel_then:.agent_find_element_atomic_mass_operator1D4;;
-            =>nrel_else:.agent_find_element_atomic_mass_operator_return;;
-        *);;
+			-> rrel_1: rrel_fixed: rrel_scp_const: value;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc1;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _node;;
 
-        ->.agent_find_element_atomic_mass_operator1D4
+			=> nrel_then: .agent_find_element_atomic_mass_operator1D3;;		
+			=> nrel_else: .agent_find_element_atomic_mass_operator_error1;;      
+			*);;
+
+        -> .agent_find_element_atomic_mass_operator1D3
         (*
             <- searchElStr5;;
+
+            -> rrel_1: rrel_assign: rrel_scp_var: _measure;;
+            -> rrel_2: rrel_assign: rrel_scp_var: rrel_common: _arc1;;
+            -> rrel_3: rrel_fixed: rrel_scp_var: _node;;
+            -> rrel_4: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc2;;
+            -> rrel_5: rrel_fixed: rrel_scp_const: nrel_measurement;;
+
+            => nrel_then: .agent_find_element_atomic_mass_operator1D4;;
+            => nrel_else: .agent_find_element_atomic_mass_operator_error3;;
+        *);;
+
+        -> .agent_find_element_atomic_mass_operator1D4
+        (*
+            <- searchElStr5;;
+
 			-> rrel_1: rrel_fixed: rrel_scp_var: _measure;;
 			-> rrel_2: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc1;;
 			-> rrel_3: rrel_assign: rrel_scp_var: _value;;
 			-> rrel_4: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc2;;
 			-> rrel_5: rrel_fixed: rrel_scp_const: rrel_aem;;
 
-            =>nrel_then:.agent_find_element_atomic_mass_operator1D5;;
-            =>nrel_else:.agent_find_element_atomic_mass_operator_return;;
+            => nrel_then: .agent_find_element_atomic_mass_operator1D4a;;
+            => nrel_else: .agent_find_element_atomic_mass_operator_error5;;
         *);;
 
-        ->.agent_find_element_atomic_mass_operator1D5
-        (*
-            <-genElStr5;;
-            ->rrel_1:rrel_fixed:rrel_scp_var:_pattern;;
-            ->rrel_2:rrel_assign:rrel_scp_var:rrel_const:rrel_common:_common;;
-            ->rrel_3:rrel_fixed:rrel_scp_var:_value;;
-            ->rrel_4:rrel_assign:rrel_scp_var:rrel_pos_const_perm:_arc2;;
-            ->rrel_5:rrel_fixed:rrel_scp_const:nrel_atomic_mass_aem;;
+         -> .agent_find_element_atomic_mass_operator1D4a
+			(*
+			<- searchElStr3;;
 
-            =>nrel_goto:.agent_find_element_atomic_mass_operator1D6;;
+			-> rrel_1: rrel_fixed: rrel_scp_const: number;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc1;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _value;;
+
+			=> nrel_then: .agent_find_element_atomic_mass_operator1D5;;		
+			=> nrel_else: .agent_find_element_atomic_mass_operator_error5;;      
+			*);;
+
+        -> .agent_find_element_atomic_mass_operator1D5
+        (*
+            <- genElStr5;;
+
+            -> rrel_1: rrel_fixed: rrel_scp_var: _pattern;;
+            -> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_common: _common;;
+            -> rrel_3: rrel_fixed: rrel_scp_var: _value;;
+            -> rrel_4: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc2;;
+            -> rrel_5: rrel_fixed: rrel_scp_const: nrel_atomic_mass_aem;;
+
+            => nrel_goto: .agent_find_element_atomic_mass_operator1D6;;
         *);;
 
-        ->.agent_find_element_atomic_mass_operator1D6
+        -> .agent_find_element_atomic_mass_operator1D6
         (*
-            <-searchSetStr5;;
-            ->rrel_1:rrel_fixed:rrel_scp_var:_pattern;;
-            ->rrel_2:rrel_assign:rrel_scp_var:rrel_common:_arc1;;
-            ->rrel_3:rrel_assign:rrel_scp_var:_value;;
-            ->rrel_4:rrel_assign:rrel_scp_var:rrel_pos_const_perm:_arc2;;
-            ->rrel_5:rrel_fixed:rrel_scp_const:nrel_atomic_mass_aem;;
+            <- searchSetStr5;;
+
+            -> rrel_1: rrel_fixed: rrel_scp_var: _pattern;;
+            -> rrel_2: rrel_assign: rrel_scp_var: rrel_common: _arc1;;
+            -> rrel_3: rrel_assign: rrel_scp_var: _value;;
+            -> rrel_4: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc2;;
+            -> rrel_5: rrel_fixed: rrel_scp_const: nrel_atomic_mass_aem;;
 
             -> rrel_set_2: rrel_fixed: rrel_scp_var: rrel_set: _answer_for_checking_domains_of_relation;;
 			-> rrel_set_3: rrel_fixed: rrel_scp_var: rrel_set: _answer_for_checking_domains_of_relation;;
 			-> rrel_set_4: rrel_fixed: rrel_scp_var: rrel_set: _answer_for_checking_domains_of_relation;;
 
-            =>nrel_then:.agent_find_element_atomic_mass_operator_answer;;
-            =>nrel_else:.agent_find_element_atomic_mass_operator_return;;
+            => nrel_goto: .agent_find_element_atomic_mass_operator_answer;;
         *);;
 
         -> .agent_find_element_atomic_mass_operator_answer
@@ -155,13 +219,105 @@ scp_program -> agent_find_element_atomic_mass
 			<- genElStr5;;
 
 			-> rrel_1: rrel_fixed: rrel_scp_var: _quest;;
-			-> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_common:_arc1;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_common: _arc1;;
 			-> rrel_3: rrel_fixed: rrel_scp_var: _answer_for_checking_domains_of_relation;;							
 			-> rrel_4: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc2;;
 			-> rrel_5: rrel_fixed: rrel_scp_const: nrel_answer;;
 
+			=> nrel_goto: .agent_find_element_atomic_mass_operator_finished;;
+			*);;
+
+        -> .agent_find_element_atomic_mass_operator_finished
+			(*
+            <- genElStr3;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_const: question_finished_successfully;;
+			-> rrel_2: rrel_assign: rrel_const: rrel_pos_const_perm: rrel_scp_var: _arc1;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _quest;;
+
+            => nrel_goto: .agent_find_element_atomic_mass_operator_return;;
+			*);;
+
+        -> .agent_find_element_atomic_mass_operator_error1			
+			(*
+			<- call;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_const: proc_of_adding_validating_message;;    
+			-> rrel_2: rrel_fixed: rrel_scp_const: .agent_find_element_atomic_mass_operator_error1_params
+				(*
+				-> rrel_1: rrel_fixed: rrel_scp_var: _quest;;
+				-> rrel_2: rrel_fixed: rrel_scp_const: [Ошибка! Поданный на вход параметр не является веществом или отсутствует его принадлежность к какому-либо классу!];;  
+				*);;
+			-> rrel_3: rrel_assign: rrel_scp_var: _descr;;
+
+			=> nrel_goto: .agent_find_element_atomic_mass_operator_error2;;  
+			*);;
+
+		-> .agent_find_element_atomic_mass_operator_error2		
+			(*
+			<- waitReturn;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _descr;;
+
 			=> nrel_goto: .agent_find_element_atomic_mass_operator_return;;
 			*);;
+
+        -> .agent_find_element_atomic_mass_operator_error3			
+			(*
+			<- call;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_const: proc_of_adding_validating_message;;    
+			-> rrel_2: rrel_fixed: rrel_scp_const: .agent_find_element_atomic_mass_operator_error3_params
+				(*
+				-> rrel_1: rrel_fixed: rrel_scp_var: _quest;;
+				-> rrel_2: rrel_fixed: rrel_scp_const: [Ошибка! Для данного вещества не задана атоманая масса!];;  
+				*);;
+			-> rrel_3: rrel_assign: rrel_scp_var: _descr;;
+
+			=> nrel_goto: .agent_find_element_atomic_mass_operator_error4;;  
+			*);;
+
+		-> .agent_find_element_atomic_mass_operator_error4	
+			(*
+			<- waitReturn;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _descr;;
+
+			=> nrel_goto: .agent_find_element_atomic_mass_operator_erase;;
+			*);;
+
+                -> .agent_find_element_atomic_mass_operator_error5			
+			(*
+			<- call;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_const: proc_of_adding_validating_message;;    
+			-> rrel_2: rrel_fixed: rrel_scp_const: .agent_find_element_atomic_mass_operator_error5_params
+				(*
+				-> rrel_1: rrel_fixed: rrel_scp_var: _quest;;
+				-> rrel_2: rrel_fixed: rrel_scp_const: [Ошибка! Для данного вещества указана неполная или неверная цепочка величин!];;  
+				*);;
+			-> rrel_3: rrel_assign: rrel_scp_var: _descr;;
+
+			=> nrel_goto: .agent_find_element_atomic_mass_operator_error6;;  
+			*);;
+
+		-> .agent_find_element_atomic_mass_operator_error6
+			(*
+			<- waitReturn;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _descr;;
+
+			=> nrel_goto: .agent_find_element_atomic_mass_operator_erase;;
+			*);;
+
+        -> .agent_find_element_atomic_mass_operator_erase	
+			(*
+			<- eraseEl;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: rrel_erase: _answer_for_checking_domains_of_relation;;
+
+			=> nrel_goto: .agent_find_element_atomic_mass_operator_return;;
+			*);;  
 
 		-> .agent_find_element_atomic_mass_operator_return
 			(*

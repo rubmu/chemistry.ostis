@@ -1,0 +1,450 @@
+agent_determine_is_reaction_possible
+=>nrel_main_idtf:
+    [агентная scp-программа определения возможна ли реакция] (* <- lang_ru;; *);
+	[agent scp-program determine is reaction possible] (* <- lang_en;; *);
+	<- agent_scp_program;;
+
+scp_program -> agent_determine_is_reaction_possible
+(*
+    -> rrel_params: .agent_determine_is_reaction_possible_params
+	(*
+		-> rrel_1: rrel_in: _event;;
+		-> rrel_2: rrel_in: _input_arc;;
+	*);;
+
+    -> rrel_operators: .agent_determine_is_reaction_possible_operator_set
+    (*
+        -> rrel_init: .reaction_operator0A
+		(*
+			<- searchElStr3;;
+
+			-> rrel_1: rrel_assign: rrel_scp_var: _temp;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _input_arc;;
+			-> rrel_3: rrel_assign: rrel_scp_var: _quest;;
+
+			=> nrel_then: .reaction_operator0B;;
+			=> nrel_else: .reaction_operator_return;;
+		*);;
+
+        ->.reaction_operator0B
+		(*
+			<- searchElStr3;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_const: action_determine_is_reaction_possible;;
+			-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _quest;;
+
+			=> nrel_then: .reaction_operator0C_1arg;;
+			=> nrel_else: .reaction_operator_return;;
+		*);;
+
+		->.reaction_operator0C_1arg
+        (*
+            <- searchElStr5;;
+
+		  	-> rrel_1: rrel_fixed: rrel_scp_var: _quest;;
+		  	-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc1;;
+		  	-> rrel_3: rrel_assign: rrel_scp_var: rrel_node: _subst_1;;
+			-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc2;;
+		  	-> rrel_5: rrel_fixed: rrel_scp_const:rrel_role_relation: rrel_1;;
+
+            =>nrel_then:.reaction_operator0C_2arg;;
+            =>nrel_else:.operator_return;;
+        *);;
+
+        ->.reaction_operator0C_2arg
+        (*
+            <- searchElStr5;;
+
+		  	-> rrel_1: rrel_fixed: rrel_scp_var: _quest;;
+		  	-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc1;;
+		  	-> rrel_3: rrel_assign: rrel_scp_var: rrel_node: _subst_2;;
+			-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc2;;
+		  	-> rrel_5: rrel_fixed: rrel_scp_const:rrel_role_relation: rrel_2;;
+
+            =>nrel_then:.agent_determine_is_reaction_possible_gen_elements_set;;
+            =>nrel_else:.operator_return;;
+        *);;
+
+		// phase 1
+		->.agent_determine_is_reaction_possible_gen_elements_set
+			(*
+				<-genEl;;
+
+				-> rrel_1: rrel_assign: rrel_const: rrel_node: rrel_scp_var: _elem_set;;
+
+				=>nrel_goto:.op1;;
+			*);;
+
+		->.op1 (*
+			<- searchSetStr3;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _elem;;
+			-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc;;
+			-> rrel_3: rrel_fixed: rrel_node: rrel_scp_var: _subst_1;;
+			-> rrel_set_1: rrel_assign: rrel_scp_var: _elem_set;;
+			=> nrel_then: .for_each_elem;;
+			=> nrel_else: .operator_return;;
+		*);;
+
+		->.for_each_elem
+        (*
+            <-searchElStr3;;
+
+            ->rrel_1: rrel_fixed: rrel_scp_var: _elem_set;;
+			->rrel_2: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc_set;;
+			->rrel_3: rrel_assign: rrel_scp_var: _elem;;
+
+            =>nrel_then:.check1;;
+            =>nrel_else:.operator_return;;
+        *);;
+
+		->.check1
+        (*
+            <-searchElStr3;;
+
+            ->rrel_1: rrel_fixed: rrel_scp_var: _elem;;
+			->rrel_2: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _before_subst_2_arc;;
+			->rrel_3: rrel_fixed: rrel_scp_var: _subst_2;;
+
+            =>nrel_then:.assign_arc_to_subst_1;;
+            =>nrel_else:.delete_elem_from_set;;
+        *);;
+
+		->.delete_elem_from_set
+        (*
+           	<-eraseEl;;
+
+			->rrel_1: rrel_fixed: rrel_scp_var: rrel_erase:_arc_set;;
+
+			=>nrel_goto:.for_each_elem;;
+        *);;
+
+		->.assign_arc_to_subst_1
+        (*
+            <-searchElStr3;;
+
+            ->rrel_1: rrel_fixed: rrel_scp_var: _elem;;
+			->rrel_2: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _before_subst_1_arc;;
+			->rrel_3: rrel_fixed: rrel_scp_var: _subst_1;;
+
+            =>nrel_then:.is_reaction_1;;
+            =>nrel_else:.operator_return;;
+        *);;
+
+		
+		// phase 2
+
+		->.is_reaction_1
+        (*
+            <- searchElStr5;;
+
+		  	-> rrel_1: rrel_fixed: rrel_scp_var: _elem;;
+		  	-> rrel_2: rrel_assign: rrel_common: rrel_scp_var: _edge;;
+		  	-> rrel_3: rrel_assign: rrel_scp_var: rrel_node: _reaction_result;;
+			-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _reaction_arc;;
+		  	-> rrel_5: rrel_fixed: rrel_scp_const: rrel_no_role_relation: nrel_substitution_reaction;;
+
+            =>nrel_then:.assing_reaction_1;;
+            =>nrel_else:.is_reaction_2;;
+        *);;
+
+		-> .assing_reaction_1
+		(*
+			<- varAssign;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _reaction;;
+			-> rrel_2: rrel_fixed: rrel_scp_const: rrel_no_role_relation: nrel_substitution_reaction;;
+			=> nrel_goto: .find_subst_result_1;;
+		*);;
+
+		->.is_reaction_2
+        (*
+            <- searchElStr5;;
+
+		  	-> rrel_1: rrel_fixed: rrel_scp_var: _elem;;
+		  	-> rrel_2: rrel_assign: rrel_common: rrel_scp_var: _edge;;
+		  	-> rrel_3: rrel_assign: rrel_scp_var: rrel_node: _reaction_result;;
+			-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc;;
+		  	-> rrel_5: rrel_fixed: rrel_scp_const: rrel_no_role_relation: nrel_exchange_reaction;;
+
+            =>nrel_then:.assing_reaction_2;;
+            =>nrel_else:.operator_return;;
+        *);;
+
+		-> .assing_reaction_2
+		(*
+			<- varAssign;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _reaction;;
+			-> rrel_2: rrel_fixed: rrel_scp_const: rrel_no_role_relation: nrel_exchange_reaction;;
+			=> nrel_goto: .find_subst_result_1;;
+		*);;
+
+		// Don't have these reactions for now
+		//*********************************************************************
+		// ->.is_reaction_4
+        // (*
+        //     <- searchElStr5;;
+
+		//   	-> rrel_1: rrel_fixed: rrel_scp_var: _elem;;
+		//   	-> rrel_2: rrel_assign: rrel_common: rrel_scp_var: _edge;;
+		//   	-> rrel_3: rrel_assign: rrel_scp_var: rrel_node: _reaction_result;;
+		// 	-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc;;
+		//   	-> rrel_5: rrel_fixed: rrel_scp_const: rrel_no_role_relation: nrel_addition_reaction;;
+
+        //     =>nrel_then:.assing_reaction_4;;
+        //     =>nrel_else:.is_reaction_5;;
+        // *);;
+
+		// -> .assing_reaction_4
+		// (*
+		// 	<- varAssign;;
+		// 	-> rrel_1: rrel_assign: rrel_scp_var: _reaction;;
+		// 	-> rrel_2: rrel_fixed: rrel_scp_const: rrel_no_role_relation: nrel_addition_reaction;;
+		// 	=> nrel_goto: .find_subst_result_1;;
+		// *);;
+
+		// ->.is_reaction_5
+        // (*
+        //     <- searchElStr5;;
+
+		//   	-> rrel_1: rrel_fixed: rrel_scp_var: _elem;;
+		//   	-> rrel_2: rrel_assign: rrel_common: rrel_scp_var: _edge;;
+		//   	-> rrel_3: rrel_assign: rrel_scp_var: rrel_node: _reaction_result;;
+		// 	-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc;;
+		//   	-> rrel_5: rrel_fixed: rrel_scp_const: rrel_no_role_relation: nrel_condensation_reaction;;
+
+        //     =>nrel_then:.assing_reaction_5;;
+        //     =>nrel_else:.operator_return;;
+        // *);;
+
+		// -> .assing_reaction_5
+		// (*
+		// 	<- varAssign;;
+		// 	-> rrel_1: rrel_assign: rrel_scp_var: _reaction;;
+		// 	-> rrel_2: rrel_fixed: rrel_scp_const: rrel_no_role_relation: nrel_condensation_reaction;;
+		// 	=> nrel_goto: .find_subst_result_1;;
+		// *);;
+
+		->.find_subst_result_1
+			(*
+				<-genEl;;
+
+				-> rrel_1: rrel_assign: rrel_const: rrel_node: rrel_scp_var: _elem_result_set;;
+
+				=>nrel_goto:.find_subst_result_2;;
+			*);;
+
+		->.find_subst_result_2
+			(*
+				<-genEl;;
+
+				-> rrel_1: rrel_assign: rrel_const: rrel_node: rrel_scp_var: _arc_result_set;;
+
+				=>nrel_goto:.find_subst_result_3;;
+			*);;
+
+		->.find_subst_result_3 (*
+			<- searchSetStr3;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _reaction_result;;
+			-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc;;
+			-> rrel_3: rrel_assign: rrel_node_class: rrel_scp_var: _elem_result;;
+			-> rrel_set_2: rrel_assign: rrel_scp_var: _arc_result_set;;
+			-> rrel_set_3: rrel_assign: rrel_scp_var: _elem_result_set;;
+			=> nrel_then: .generate_answer;;
+			=> nrel_else: .operator_return;;
+		*);;
+
+		-> .generate_answer
+			(*
+			<- genEl;;
+
+			-> rrel_1: rrel_assign: rrel_node: rrel_const: rrel_scp_var: _answer;;
+
+			=> nrel_goto: .for_each_result_elem;;
+			*);;
+
+		->.for_each_result_elem
+        (*
+            <-searchElStr3;;
+
+            ->rrel_1: rrel_fixed: rrel_scp_var: _elem_result_set;;
+			->rrel_2: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc_set;;
+			->rrel_3: rrel_assign: rrel_scp_var: _elem_result;;
+
+            =>nrel_then:.add_to_answer_1;;
+            =>nrel_else:.for_each_result_arc;;
+        *);;
+
+		->.add_to_answer_1
+        (*
+            <-genElStr3;;
+
+            ->rrel_1:rrel_fixed :rrel_scp_var: _answer;;
+            ->rrel_2:rrel_assign :rrel_scp_var: rrel_pos_const_perm:_arc1;;
+            ->rrel_3:rrel_fixed :rrel_scp_var: _elem_result;;
+
+            =>nrel_goto: .delete_elem_from_result_set;;
+        *);;
+
+		->.delete_elem_from_result_set
+        (*
+           	<-eraseEl;;
+
+			->rrel_1: rrel_fixed: rrel_scp_var: rrel_erase: _arc_set;;
+
+			=>nrel_goto:.for_each_result_elem;;
+        *);;
+
+		->.for_each_result_arc
+        (*
+            <-searchElStr3;;
+
+            ->rrel_1: rrel_fixed: rrel_scp_var: _arc_result_set;;
+			->rrel_2: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc_set;;
+			->rrel_3: rrel_assign: rrel_scp_var: _arc_result;;
+
+            =>nrel_then:.add_to_answer_2;;
+            =>nrel_else:.reaction_operator_gen_temp_answer_1;;
+        *);;
+
+		->.add_to_answer_2
+        (*
+            <-genElStr3;;
+
+            ->rrel_1:rrel_fixed :rrel_scp_var: _answer;;
+            ->rrel_2:rrel_assign :rrel_scp_var: rrel_pos_const_perm:_arc1;;
+            ->rrel_3:rrel_fixed :rrel_scp_var: _arc_result;;
+
+            =>nrel_goto: .delete_arc_from_result_set;;
+        *);;
+
+		->.delete_arc_from_result_set
+        (*
+           	<-eraseEl;;
+
+			->rrel_1: rrel_fixed: rrel_scp_var: rrel_erase: _arc_set;;
+
+			=>nrel_goto:.for_each_result_arc;;
+        *);;
+
+
+		// answer generation
+		->.reaction_operator_gen_temp_answer_1
+        (*
+            <-genElStr3;;
+
+            ->rrel_1:rrel_fixed:rrel_scp_var:_answer;;
+            ->rrel_2:rrel_assign:rrel_scp_var:rrel_pos_const_perm:_arc1;;
+            ->rrel_3:rrel_fixed:rrel_scp_var: _subst_1;;
+
+            =>nrel_goto:.reaction_operator_gen_temp_answer_2;; 
+        *);;
+
+		->.reaction_operator_gen_temp_answer_2
+        (*
+            <-genElStr3;;
+
+            ->rrel_1:rrel_fixed:rrel_scp_var:_answer;;
+            ->rrel_2:rrel_assign:rrel_scp_var:rrel_pos_const_perm:_arc1;;
+            ->rrel_3:rrel_fixed:rrel_scp_var: _subst_2;;
+
+            =>nrel_goto:.reaction_operator_gen_temp_answer_3;; 
+        *);;
+
+		->.reaction_operator_gen_temp_answer_3
+        (*
+            <-genElStr3;;
+
+            ->rrel_1:rrel_fixed:rrel_scp_var:_answer;;
+            ->rrel_2:rrel_assign:rrel_scp_var:rrel_pos_const_perm:_arc1;;
+            ->rrel_3:rrel_fixed:rrel_scp_var: _elem;;
+
+            =>nrel_goto:.reaction_operator_gen_temp_answer_4;; 
+        *);;
+
+		->.reaction_operator_gen_temp_answer_4
+        (*
+            <-genElStr3;;
+
+            ->rrel_1:rrel_fixed:rrel_scp_var:_answer;;
+            ->rrel_2:rrel_assign:rrel_scp_var:rrel_pos_const_perm:_arc1;;
+            ->rrel_3:rrel_fixed:rrel_scp_var: _reaction_result;;
+
+            =>nrel_goto:.reaction_operator_gen_temp_answer_5;; 
+        *);;
+
+		->.reaction_operator_gen_temp_answer_5
+        (*
+            <-genElStr3;;
+
+            ->rrel_1:rrel_fixed:rrel_scp_var:_answer;;
+            ->rrel_2:rrel_assign:rrel_scp_var:rrel_pos_const_perm:_arc1;;
+            ->rrel_3:rrel_fixed:rrel_scp_var: _edge;;
+
+            =>nrel_goto:.reaction_operator_gen_temp_answer_6;; 
+        *);;
+
+		->.reaction_operator_gen_temp_answer_6
+        (*
+            <-genElStr3;;
+
+            ->rrel_1:rrel_fixed:rrel_scp_var:_answer;;
+            ->rrel_2:rrel_assign:rrel_scp_var:rrel_pos_const_perm:_arc1;;
+            ->rrel_3:rrel_fixed:rrel_scp_var: _before_subst_1_arc;;
+
+            =>nrel_goto:.reaction_operator_gen_temp_answer_7;; 
+        *);;
+
+
+		->.reaction_operator_gen_temp_answer_7
+        (*
+            <-genElStr3;;
+
+            ->rrel_1:rrel_fixed:rrel_scp_var:_answer;;
+            ->rrel_2:rrel_assign:rrel_scp_var:rrel_pos_const_perm:_arc1;;
+            ->rrel_3:rrel_fixed:rrel_scp_var: _before_subst_2_arc;;
+
+            =>nrel_goto:.reaction_operator_gen_temp_answer_8;; 
+        *);;
+
+		->.reaction_operator_gen_temp_answer_8
+        (*
+            <-genElStr3;;
+
+            ->rrel_1:rrel_fixed:rrel_scp_var:_answer;;
+            ->rrel_2:rrel_assign:rrel_scp_var:rrel_pos_const_perm:_arc1;;
+            ->rrel_3:rrel_fixed:rrel_scp_var: _reaction_arc;;
+
+            =>nrel_goto:.reaction_operator_gen_temp_answer_9;; 
+        *);;
+
+		->.reaction_operator_gen_temp_answer_9
+        (*
+            <-genElStr3;;
+
+            ->rrel_1:rrel_fixed:rrel_scp_var:_answer;;
+            ->rrel_2:rrel_assign:rrel_scp_var:rrel_pos_const_perm:_arc1;;
+            ->rrel_3:rrel_fixed:rrel_scp_var: _reaction;;
+
+            =>nrel_goto:.operator_connect_answer_to_question;; 
+        *);;
+
+		// finish
+		-> .operator_connect_answer_to_question
+			(*
+				<- genElStr5;;
+
+				-> rrel_1: rrel_fixed: rrel_scp_var: _quest;;
+				-> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_common: _arc1;;
+				-> rrel_3: rrel_fixed: rrel_scp_var: _answer;;							
+				-> rrel_4: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc2;;
+				-> rrel_5: rrel_fixed: rrel_scp_const: nrel_answer;;
+
+				=> nrel_goto: .operator_return;;
+			*);;
+
+        ->.reaction_operator_return
+        (*
+            <-return;;
+        *);;
+    *);;
+*);;

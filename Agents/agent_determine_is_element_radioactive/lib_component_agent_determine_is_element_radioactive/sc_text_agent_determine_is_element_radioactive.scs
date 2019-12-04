@@ -1,0 +1,6 @@
+sc_text_agent_determine_is_element_radioactive
+-> rrel_key_sc_element:
+	agent_determine_is_element_radioactive;
+<- scp_program_sc_text;;
+
+sc_text_of_agent_determine_is_element_radioactive = [*^"file://agent_determine_is_element_radioactive.scsi"*];;
