@@ -66,10 +66,6 @@ chromium_oxide_3
 <- sc_node_not_relation;
 => nrel_main_idtf:
 	[оксид меди (III)](* <- lang_ru;; *);;
-aluminium_oxide
-<- sc_node_not_relation;
-=> nrel_main_idtf:
-	[оксид аллюминия](* <- lang_ru;; *);;
 lead_oxide_2
 <- sc_node_not_relation;
 => nrel_main_idtf:
@@ -152,21 +148,21 @@ tin_oxide
 	[tin oxide](* <- lang_en;; *);
 =>nrel_idtf:
 	[SnO](*<-lang_en;;*);;
-	
+
 lead_oxide
 =>nrel_main_idtf:
 	[оксид свинца](* <- lang_ru;; *);
 	[lead oxide](* <- lang_en;; *);
 =>nrel_idtf:
 	[PbO](*<-lang_en;;*);;
-	
+
 chromium_oxide_3//
 =>nrel_main_idtf:
 	[оксид хрома(III)](* <- lang_ru;; *);
 	[chromium oxide(III)](* <- lang_en;; *);
 =>nrel_idtf:
 	[Cr2O3](*<-lang_en;;*);;
-	
+
 
 lithium_oxide//
 =>nrel_main_idtf:
@@ -174,70 +170,70 @@ lithium_oxide//
 	[lithium oxide](* <- lang_en;; *);
 =>nrel_idtf:
 	[Li2O](*<-lang_en;;*);;
-	
+
 sodium_oxide//
 =>nrel_main_idtf:
 	[оксид натрия](* <- lang_ru;; *);
 	[sodium oxide](* <- lang_en;; *);
 =>nrel_idtf:
 	[Na2O](*<-lang_en;;*);;
-	
+
 thallium_oxide_1//
 =>nrel_main_idtf:
 	[оксид таллия (I)](* <- lang_ru;; *);
 	[thallium oxide(I)](* <- lang_en;; *);
 =>nrel_idtf:
 	[Na2O](*<-lang_en;;*);;
-	
+
 thallium_oxide_3//
 =>nrel_main_idtf:
 	[оксид таллия (III)](* <- lang_ru;; *);
 	[thallium oxide(III)](* <- lang_en;; *);
 =>nrel_idtf:
 	[Na2O](*<-lang_en;;*);;
-	
+
 beryllium_oxide
 =>nrel_main_idtf:
 	[оксид бериллия](* <- lang_ru;; *);
 	[beryllium oxide](* <- lang_en;; *);
 =>nrel_idtf:
 	[BeO](*<-lang_en;;*);;
-	
+
 strontium_oxide
 =>nrel_main_idtf:
 	[оксид стронция](* <- lang_ru;; *);
 	[strontium oxide](* <- lang_en;; *);
 =>nrel_idtf:
 	[SrO](*<-lang_en;;*);;
-	
+
 aluminum_oxide
 =>nrel_main_idtf:
-	[оксид аллюминия](* <- lang_ru;; *);
+	[оксид алюминия](* <- lang_ru;; *);
 	[aluminum oxide](* <- lang_en;; *);
 =>nrel_idtf:
 	[Al2O3](*<-lang_en;;*);;
-	
+
 gallium_oxide
 =>nrel_main_idtf:
 	[оксид галлия](* <- lang_ru;; *);
 	[gallium oxide](* <- lang_en;; *);
 =>nrel_idtf:
 	[Ga2O3](*<-lang_en;;*);;
-	
+
 indium_oxide
 =>nrel_main_idtf:
 	[оксид индия](* <- lang_ru;; *);
 	[indium oxide](* <- lang_en;; *);
 =>nrel_idtf:
 	[In2O3](*<-lang_en;;*);;
-	
+
 cadmium_oxide
 =>nrel_main_idtf:
 	[оксид кадмия](* <- lang_ru;; *);
 	[cadmium oxide](* <- lang_en;; *);
 =>nrel_idtf:
 	[CdO](*<-lang_en;;*);;
-	
+
 iron_oxide_2
 =>nrel_main_idtf:
 	[оксид железа(II)](* <- lang_ru;; *);
@@ -245,10 +241,10 @@ iron_oxide_2
 =>nrel_idtf:
 	[FeO](*<-lang_en;;*);
 	[оксид ферума(II)](* <- lang_ru;; *);;
-	
+
 nickel_oxide_2
 =>nrel_main_idtf:
 	[оксид никеля(II)](* <- lang_ru;; *);
 	[nickel oxide(II)](* <- lang_en;; *);
 =>nrel_idtf:
-	[NiO](*<-lang_en;;*);;	
+	[NiO](*<-lang_en;;*);;
