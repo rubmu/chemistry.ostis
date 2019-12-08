@@ -31,6 +31,7 @@ ui_menu_na_view_kb_chemistry <= nrel_ui_commands_decomposition:
 	ui_menu_find_melting_temperature_of_chemical_substance;
 	ui_menu_find_boiling_temperature_of_chemical_substance;
 	ui_menu_counting_break_time_of_some_quantity_of_chemical_element;
+	ui_menu_finding_elements_by_date_range;
 	ui_menu_determine_is_element_radioactive;
 	ui_menu_file_for_agent_find_elem_valencies;
 	ui_menu_find_mass_fraction_of_elem_in_subst;
