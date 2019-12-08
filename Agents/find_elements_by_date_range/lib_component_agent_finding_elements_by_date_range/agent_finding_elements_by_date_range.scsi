@@ -201,6 +201,16 @@ scp_program -> agent_finding_elements_by_date_range (*
             -> rrel_2: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc1;;
             -> rrel_3: rrel_fixed: rrel_scp_var: _element;;
 
+            => nrel_goto: .date_range_finder__add_elem_to_answer_add_arc;;
+        *);;
+
+		-> .date_range_finder__add_elem_to_answer_add_arc (*
+            <- genElStr3;;
+
+            -> rrel_1: rrel_fixed: rrel_scp_var: _quest;;
+            -> rrel_2: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc1;;
+            -> rrel_3: rrel_fixed: rrel_scp_var: _element;;
+
             => nrel_goto: .date_range_finder__delete_elem_from_set;;
         *);;
 
