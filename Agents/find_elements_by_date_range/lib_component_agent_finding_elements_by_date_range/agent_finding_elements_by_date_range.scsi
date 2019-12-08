@@ -161,7 +161,7 @@ scp_program -> agent_finding_elements_by_date_range (*
 			-> rrel_2: rrel_fixed: rrel_scp_var: _first_arg_idtf;;
 
 			=> nrel_then: .date_range_finder__check_second_arg;;
-			=> nrel_else: .date_range_finder__delete_elem_from_set;;
+			=> nrel_else: .date_range_finder__check_first_arg_reversed;;
 		*);;
 
 		-> .date_range_finder__check_second_arg (*
@@ -169,6 +169,26 @@ scp_program -> agent_finding_elements_by_date_range (*
 
 			-> rrel_1: rrel_fixed: rrel_scp_var: _second_arg_idtf;;
 			-> rrel_2: rrel_fixed: rrel_scp_var: _year_idtf;;
+
+			=> nrel_then: .date_range_finder__add_elem_to_answer;;
+			=> nrel_else: .date_range_finder__delete_elem_from_set;;
+		*);;
+
+		-> .date_range_finder__check_first_arg_reversed (*
+			<- ifGr;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _first_arg_idtf;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _year_idtf;;
+
+			=> nrel_then: .date_range_finder__check_second_arg_reversed;;
+			=> nrel_else: .date_range_finder__delete_elem_from_set;;
+		*);;
+
+		-> .date_range_finder__check_second_arg_reversed (*
+			<- ifGr;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _year_idtf;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _second_arg_idtf;;
 
 			=> nrel_then: .date_range_finder__add_elem_to_answer;;
 			=> nrel_else: .date_range_finder__delete_elem_from_set;;
