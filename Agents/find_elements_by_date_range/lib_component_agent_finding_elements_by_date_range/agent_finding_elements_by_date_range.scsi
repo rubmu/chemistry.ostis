@@ -1,0 +1,241 @@
+agent_finding_elements_by_date_range
+=> nrel_main_idtf:
+    [агентная scp-программа для поиска всех элементов открытых в заданном промежутке] (* <- lang_ru;; *);
+	[agent scp-program for finding all elements discovered in given date range] (* <- lang_en;; *);
+	<- agent_scp_program;;
+
+scp_program -> agent_finding_elements_by_date_range (*
+	-> rrel_params: .agent_finding_elements_by_date_range_params (*
+		-> rrel_1: rrel_in: _event;;
+		-> rrel_2: rrel_in: _input_arc;;
+	*);;
+
+	-> rrel_operators: .agent_finding_elements_by_date_range_operator_set (*
+		-> rrel_init: .agent_finding_elements_by_date_range_operator1A (*
+			<- searchElStr3;;
+
+			-> rrel_1: rrel_assign: rrel_scp_var: _temp;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _input_arc;;
+			-> rrel_3: rrel_assign: rrel_scp_var: _quest;;
+
+			=> nrel_goto: .agent_finding_elements_by_date_range_operator1B;;
+		*);;
+
+		-> .agent_finding_elements_by_date_range_operator1B (*
+			<- searchElStr3;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_const: action_finding_elements_by_date_range;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc1;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _quest;;
+
+			=> nrel_then: .date_range_finder__operator0C_1arg;;
+			=> nrel_else: .date_range_finder__operator_return;;
+		*);;
+
+		-> .date_range_finder__operator0C_1arg (*
+            <- searchElStr5;;
+
+		  	-> rrel_1: rrel_fixed: rrel_scp_var: _quest;;
+		  	-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc1;;
+		  	-> rrel_3: rrel_assign: rrel_scp_var: rrel_node: _first_arg;;
+			-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc2;;
+		  	-> rrel_5: rrel_fixed: rrel_scp_const:rrel_role_relation: rrel_1;;
+
+            =>nrel_then: .date_range_finder__operator0C_2arg;;
+            =>nrel_else: .date_range_finder__operator_return;;
+        *);;
+
+        -> .date_range_finder__operator0C_2arg (*
+            <- searchElStr5;;
+
+		  	-> rrel_1: rrel_fixed: rrel_scp_var: _quest;;
+		  	-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc1;;
+		  	-> rrel_3: rrel_assign: rrel_scp_var: rrel_node: _second_arg;;
+			-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc2;;
+		  	-> rrel_5: rrel_fixed: rrel_scp_const:rrel_role_relation: rrel_2;;
+
+            => nrel_then: .date_range_finder__generate_answer_node;;
+            => nrel_else: .date_range_finder__operator_return;;
+        *);;
+
+		// Start
+
+		-> .date_range_finder__generate_answer_node (*
+			<- genEl;;
+
+			-> rrel_1: rrel_assign: rrel_const: rrel_node: rrel_scp_var: _answer;;
+
+			=> nrel_goto: .date_range_finder__find_first_arg_idtf;;
+		*);;
+
+		-> .date_range_finder__find_first_arg_idtf (*
+            <-searchElStr5;;
+
+            -> rrel_1: rrel_fixed: rrel_scp_var: _first_arg;;
+            -> rrel_2: rrel_assign: rrel_scp_var: rrel_common: _arc1;;
+            -> rrel_3: rrel_assign: rrel_scp_var: rrel_link: _first_arg_idtf;;
+            -> rrel_4: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc2;;
+            -> rrel_5: rrel_fixed: rrel_scp_const: nrel_system_identifier;;
+
+            => nrel_then: .date_range_finder__find_second_arg_idtf;;
+            => nrel_else: .date_range_finder__operator_return;;
+        *);;
+
+		-> .date_range_finder__find_second_arg_idtf (*
+            <-searchElStr5;;
+
+            -> rrel_1: rrel_fixed: rrel_scp_var: _second_arg;;
+            -> rrel_2: rrel_assign: rrel_scp_var: rrel_common: _arc1;;
+            -> rrel_3: rrel_assign: rrel_scp_var: rrel_link: _second_arg_idtf;;
+            -> rrel_4: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc2;;
+            -> rrel_5: rrel_fixed: rrel_scp_const: nrel_system_identifier;;
+
+            => nrel_then: .date_range_finder__generate_set;;
+            => nrel_else: .date_range_finder__operator_return;;
+        *);;
+
+		-> .date_range_finder__generate_set (*
+			<- genEl;;
+
+			-> rrel_1: rrel_assign: rrel_const: rrel_node: rrel_scp_var: _elem_set;;
+
+			=> nrel_goto: .date_range_finder__add_elements;;
+		*);;
+
+		-> .date_range_finder__add_elements (*
+			<- searchSetStr5;;
+
+			-> rrel_1: rrel_assign: rrel_scp_var: _some_year;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_common: _arc1;;
+			-> rrel_3: rrel_assign: rrel_scp_var: _element;;
+			-> rrel_4: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc2;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: nrel_discovery_year;;
+
+			-> rrel_set_3: rrel_assign: rrel_scp_var: _elem_set;;
+
+			=> nrel_then: .date_range_finder__for_each_elem;;
+			=> nrel_else: .date_range_finder__operator_return;;
+		*);;
+
+		-> .date_range_finder__for_each_elem (*
+            <-searchElStr3;;
+
+            -> rrel_1: rrel_fixed: rrel_scp_var: _elem_set;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc_set;;
+			-> rrel_3: rrel_assign: rrel_scp_var: _element;;
+
+            => nrel_then: .date_range_finder__find_year;;
+            => nrel_else: .date_range_finder__connect_answer;;
+        *);;
+
+		-> .date_range_finder__find_year (*
+			<- searchElStr5;;
+
+			-> rrel_1: rrel_assign: rrel_scp_var: _year;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_common: _arc1;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _element;;
+			-> rrel_4: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc2;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: nrel_discovery_year;;
+
+			=> nrel_then: .date_range_finder__find_year_idtf;;
+			=> nrel_else: .date_range_finder__delete_elem_from_set;;
+		*);;
+
+		-> .date_range_finder__find_year_idtf (*
+            <-searchElStr5;;
+
+            -> rrel_1: rrel_fixed: rrel_scp_var: _year;;
+            -> rrel_2: rrel_assign: rrel_scp_var: rrel_common: _arc1;;
+            -> rrel_3: rrel_assign: rrel_scp_var: rrel_link: _year_idtf;;
+            -> rrel_4: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc2;;
+            -> rrel_5: rrel_fixed: rrel_scp_const: nrel_system_identifier;;
+
+            => nrel_then: .date_range_finder__check_first_arg;;
+            => nrel_else: .date_range_finder__delete_elem_from_set;;
+        *);;
+
+		-> .date_range_finder__check_first_arg (*
+			<- ifGr;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _year_idtf;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _first_arg_idtf;;
+
+			=> nrel_then: .date_range_finder__check_second_arg;;
+			=> nrel_else: .date_range_finder__check_first_arg_reversed;;
+		*);;
+
+		-> .date_range_finder__check_second_arg (*
+			<- ifGr;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _second_arg_idtf;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _year_idtf;;
+
+			=> nrel_then: .date_range_finder__add_elem_to_answer;;
+			=> nrel_else: .date_range_finder__delete_elem_from_set;;
+		*);;
+
+		-> .date_range_finder__check_first_arg_reversed (*
+			<- ifGr;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _first_arg_idtf;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _year_idtf;;
+
+			=> nrel_then: .date_range_finder__check_second_arg_reversed;;
+			=> nrel_else: .date_range_finder__delete_elem_from_set;;
+		*);;
+
+		-> .date_range_finder__check_second_arg_reversed (*
+			<- ifGr;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _year_idtf;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _second_arg_idtf;;
+
+			=> nrel_then: .date_range_finder__add_elem_to_answer;;
+			=> nrel_else: .date_range_finder__delete_elem_from_set;;
+		*);;
+
+		-> .date_range_finder__add_elem_to_answer (*
+            <- genElStr3;;
+
+            -> rrel_1: rrel_fixed: rrel_scp_var: _answer;;
+            -> rrel_2: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc1;;
+            -> rrel_3: rrel_fixed: rrel_scp_var: _element;;
+
+            => nrel_goto: .date_range_finder__add_elem_to_answer_add_arc;;
+        *);;
+
+		-> .date_range_finder__add_elem_to_answer_add_arc (*
+            <- genElStr3;;
+
+            -> rrel_1: rrel_fixed: rrel_scp_var: _quest;;
+            -> rrel_2: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc1;;
+            -> rrel_3: rrel_fixed: rrel_scp_var: _element;;
+
+            => nrel_goto: .date_range_finder__delete_elem_from_set;;
+        *);;
+
+		->.date_range_finder__delete_elem_from_set (*
+           	<- eraseEl;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: rrel_erase: _arc_set;;
+
+			=> nrel_goto: .date_range_finder__for_each_elem;;
+        *);;
+
+		-> .date_range_finder__connect_answer (*
+			<- genElStr5;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _quest;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_common: _arc1;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_4: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc2;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: nrel_answer;;
+
+			=> nrel_goto: .operator_return;;
+		*);;
+
+		-> .date_range_finder__operator_return (*
+			<- return;;
+		*);;
+	*);;
+*);;

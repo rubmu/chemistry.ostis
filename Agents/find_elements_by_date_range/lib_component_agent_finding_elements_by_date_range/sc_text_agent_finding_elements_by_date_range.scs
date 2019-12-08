@@ -1,0 +1,6 @@
+sc_text_agent_finding_elements_by_date_range
+-> rrel_key_sc_element:
+	agent_finding_elements_by_date_range;
+<- scp_program_sc_text;;
+
+sc_text_of_agent_finding_elements_by_date_range = [*^"file://agent_finding_elements_by_date_range.scsi"*];;
