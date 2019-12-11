@@ -67,10 +67,67 @@ scp_program -> agent_add_acid
 			-> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc1;;
 			-> rrel_3: rrel_fixed: rrel_scp_var: _pattern;;
 
-			=> nrel_goto: .generate_input_tuple;;
+			=> nrel_goto: .check_if_metal;;
 			*);;
 
-    -> .generate_input_tuple
+		-> .check_if_metal
+			(*
+				<- searchElStr3;;
+
+				-> rrel_1: rrel_fixed: rrel_scp_const: rrel_node: concept_metal;;
+				-> rrel_2: rrel_assign: rrel_scp_var : rrel_pos_const_perm : _arc3;;
+				-> rrel_3: rrel_fixed: rrel_scp_var: _pattern;;
+
+				=> nrel_then: .generate_metal;;
+				=> nrel_else: .check_base;;
+			*);;
+
+     -> .check_base
+      (*
+        <- searchElStr3;;
+
+				-> rrel_1: rrel_fixed: rrel_scp_const: rrel_node: base;;
+				-> rrel_2: rrel_assign: rrel_scp_var : rrel_pos_const_perm : _arc3;;
+				-> rrel_3: rrel_fixed: rrel_scp_var: _pattern;;
+
+				=> nrel_then: .generate_metal;;
+				=> nrel_else: .check_salt;;
+      *);;
+
+		-> .check_salt
+			(*
+				<- searchElStr3;;
+
+				-> rrel_1: rrel_fixed: rrel_scp_const: rrel_node: concept_salt;;
+				-> rrel_2: rrel_assign: rrel_scp_var : rrel_pos_const_perm : _arc3;;
+				-> rrel_3: rrel_fixed: rrel_scp_var: _pattern;;
+
+				=> nrel_then: .generate_salt;;
+				=> nrel_else: .check_oxide;;
+			*);;
+
+    -> .check_oxide
+      (*
+        <- searchElStr3;;
+
+				-> rrel_1: rrel_fixed: rrel_scp_const: rrel_node: concept_oxide;;
+				-> rrel_2: rrel_assign: rrel_scp_var : rrel_pos_const_perm : _arc3;;
+				-> rrel_3: rrel_fixed: rrel_scp_var: _pattern;;
+
+				=> nrel_then: .generate_salt;;
+				=> nrel_else: .agent_add_acid_operator_return;;
+      *);;
+
+    -> .generate_salt
+    (*
+      <- genEl;;
+
+			-> rrel_1: rrel_assign: rrel_node: rrel_const: rrel_scp_var: _input_tuple;;
+
+      => nrel_goto: .generate_output_tuple;;
+    *);;
+
+    -> .generate_metal
     (*
       <- genEl;;
 
@@ -313,125 +370,8 @@ scp_program -> agent_add_acid
 
 
 
-		-> .check_if_metal
-			(*
-				<- searchElStr3;;
 
-				-> rrel_1: rrel_fixed: rrel_scp_const: rrel_node: concept_metal;;
-				-> rrel_2: rrel_assign: rrel_scp_var : rrel_pos_const_perm : _arc3;;
-				-> rrel_3: rrel_fixed: rrel_scp_var: _pattern;;
 
-				=> nrel_then: .generate_metal;;
-				=> nrel_else: .check_salt;;
-			*);;
-
-		-> .check_salt
-			(*
-				<- searchElStr3;;
-
-				-> rrel_1: rrel_fixed: rrel_scp_const: rrel_node: concept_salt;;
-				-> rrel_2: rrel_assign: rrel_scp_var : rrel_pos_const_perm : _arc3;;
-				-> rrel_3: rrel_fixed: rrel_scp_var: _pattern;;
-
-				=> nrel_then: .generate_salt;;
-				=> nrel_else: .check_oxide;;
-			*);;
-
-    -> .check_oxide
-      (*
-        <- searchElStr3;;
-
-				-> rrel_1: rrel_fixed: rrel_scp_const: rrel_node: concept_oxide;;
-				-> rrel_2: rrel_assign: rrel_scp_var : rrel_pos_const_perm : _arc3;;
-				-> rrel_3: rrel_fixed: rrel_scp_var: _pattern;;
-
-				=> nrel_then: .generate_oxide;;
-				=> nrel_else: .check_base;;
-      *);;
-
-    -> .check_base
-      (*
-        <- searchElStr3;;
-
-				-> rrel_1: rrel_fixed: rrel_scp_const: rrel_node: base;;
-				-> rrel_2: rrel_assign: rrel_scp_var : rrel_pos_const_perm : _arc3;;
-				-> rrel_3: rrel_fixed: rrel_scp_var: _pattern;;
-
-				=> nrel_then: .generate_base;;
-				=> nrel_else: .generate_other;;
-      *);;
-
-    -> .generate_base
-      (*
-        <- contAssign ;;
-
-        -> rrel_1 : rrel_assign : rrel_scp_var : rrel_link : _metal ;;
-        -> rrel_2 : rrel_fixed : rrel_scp_const : rrel_link : [соль + вода] ;;
-        => nrel_goto: .gen_const;;
-      *);;
-
-    -> .generate_oxide
-		(*
-			<- contAssign ;;
-
-			-> rrel_1 : rrel_assign : rrel_scp_var : rrel_link : _metal ;;
-			-> rrel_2 : rrel_fixed : rrel_scp_const : rrel_link : [соль + кислота] ;;
-			=> nrel_goto: .gen_const;;
-		*);;
-
-		-> .generate_other
-		(*
-			<- contAssign ;;
-
-			-> rrel_1 : rrel_assign : rrel_scp_var : rrel_link : _metal ;;
-			-> rrel_2 : rrel_fixed : rrel_scp_const : rrel_link : [пока непонятно] ;;
-			=> nrel_goto: .gen_const;;
-		*);;
-
-		-> .generate_metal
-			(*
-				<- contAssign ;;
-
-				-> rrel_1 : rrel_assign : rrel_scp_var : rrel_link : _metal ;;
-				-> rrel_2 : rrel_fixed : rrel_scp_const : rrel_link : [соль + вода] ;;
-				=> nrel_goto: .gen_const;;
-			*);;
-
-		-> .generate_salt
-			(*
-				<- contAssign ;;
-
-				-> rrel_1 : rrel_assign : rrel_scp_var : rrel_link : _metal ;;
-				-> rrel_2 : rrel_fixed : rrel_scp_const : rrel_link : [соль + кислота] ;;
-				=> nrel_goto: .gen_const;;
-			*);;
-
-		-> .gen_const
-			(*
-				<- genElStr3;;
-				-> rrel_1: rrel_fixed: rrel_scp_var: _pattern;;
-				-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arccc;;
-				-> rrel_3: rrel_fixed: rrel_scp_var: _metal;;
-
-				=> nrel_goto: .add_to_answer;;
-			*);;
-
-		-> .add_to_answer
-			(*
-				<- genElStr3;;
-				-> rrel_1: rrel_fixed: rrel_scp_var: _answer_for_checking_domains_of_relation;;
-				-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc4;;
-				-> rrel_3: rrel_fixed: rrel_pos_const_perm: rrel_scp_var: _arccc;;
-				=> nrel_goto: .add_to_answer_another;;
-			*);;
-		-> .add_to_answer_another
-			(*
-				<- genElStr3;;
-				-> rrel_1: rrel_fixed: rrel_scp_var: _answer_for_checking_domains_of_relation;;
-				-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc4;;
-				-> rrel_3: rrel_fixed: rrel_scp_var: _metal;;
-				=> nrel_goto: .agent_add_acid_operator_answer;;
-			*);;
 
 		-> .agent_add_acid_operator_answer
 			(*
