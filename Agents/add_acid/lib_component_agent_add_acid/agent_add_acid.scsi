@@ -79,8 +79,20 @@ scp_program -> agent_add_acid
 				-> rrel_3: rrel_fixed: rrel_scp_var: _pattern;;
 
 				=> nrel_then: .generate_metal;;
-				=> nrel_else: .check_salt;;
+				=> nrel_else: .check_base;;
 			*);;
+
+     -> .check_base
+      (*
+        <- searchElStr3;;
+
+				-> rrel_1: rrel_fixed: rrel_scp_const: rrel_node: base;;
+				-> rrel_2: rrel_assign: rrel_scp_var : rrel_pos_const_perm : _arc3;;
+				-> rrel_3: rrel_fixed: rrel_scp_var: _pattern;;
+
+				=> nrel_then: .generate_metal;;
+				=> nrel_else: .check_salt;;
+      *);;
 
 		-> .check_salt
 			(*
@@ -102,93 +114,471 @@ scp_program -> agent_add_acid
 				-> rrel_2: rrel_assign: rrel_scp_var : rrel_pos_const_perm : _arc3;;
 				-> rrel_3: rrel_fixed: rrel_scp_var: _pattern;;
 
-				=> nrel_then: .generate_oxide;;
-				=> nrel_else: .check_base;;
+				=> nrel_then: .generate_salt;;
+				=> nrel_else: .agent_add_acid_operator_return;;
       *);;
 
-    -> .check_base
+    -> .generate_metal
+    (*
+      <- genEl;;
+
+			-> rrel_1: rrel_assign: rrel_node: rrel_const: rrel_scp_var: _input_tuple;;
+
+      => nrel_goto: .generate_output_tuple_metal;;
+    *);;
+
+    -> .generate_salt
+    (*
+      <- genEl;;
+
+			-> rrel_1: rrel_assign: rrel_node: rrel_const: rrel_scp_var: _input_tuple;;
+
+      => nrel_goto: .generate_output_tuple_salt;;
+    *);;
+
+    -> .generate_output_tuple_metal
       (*
-        <- searchElStr3;;
+        <- genEl;;
 
-				-> rrel_1: rrel_fixed: rrel_scp_const: rrel_node: base;;
-				-> rrel_2: rrel_assign: rrel_scp_var : rrel_pos_const_perm : _arc3;;
-				-> rrel_3: rrel_fixed: rrel_scp_var: _pattern;;
+			  -> rrel_1: rrel_assign: rrel_node: rrel_const: rrel_scp_var: _output_tuple;;
 
-				=> nrel_then: .generate_base;;
-				=> nrel_else: .generate_other;;
+        => nrel_goto: .generate_general_part_of_answer1_metal;;
       *);;
 
-    -> .generate_base
+        -> .generate_output_tuple_salt
       (*
-        <- contAssign ;;
+        <- genEl;;
 
-        -> rrel_1 : rrel_assign : rrel_scp_var : rrel_link : _metal ;;
-        -> rrel_2 : rrel_fixed : rrel_scp_const : rrel_link : [соль + вода] ;;
-        => nrel_goto: .gen_const;;
+			  -> rrel_1: rrel_assign: rrel_node: rrel_const: rrel_scp_var: _output_tuple;;
+
+        => nrel_goto: .generate_general_part_of_answer1_salt;;
       *);;
 
-    -> .generate_oxide
-		(*
-			<- contAssign ;;
+    -> .generate_general_part_of_answer1_metal
+      (*
+        <- genElStr3;;
 
-			-> rrel_1 : rrel_assign : rrel_scp_var : rrel_link : _metal ;;
-			-> rrel_2 : rrel_fixed : rrel_scp_const : rrel_link : [соль + кислота] ;;
-			=> nrel_goto: .gen_const;;
+        -> rrel_1: rrel_fixed: rrel_scp_var: _input_tuple;;
+        -> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc_answr1;;
+        -> rrel_3: rrel_fixed: rrel_scp_var: _pattern;;
+
+        => nrel_goto: .generate_general_part_of_answer2_metal;;
+      *);;
+
+    -> .generate_general_part_of_answer1_salt
+      (*
+        <- genElStr3;;
+
+        -> rrel_1: rrel_fixed: rrel_scp_var: _input_tuple;;
+        -> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc_answr1;;
+        -> rrel_3: rrel_fixed: rrel_scp_var: _pattern;;
+
+        => nrel_goto: .generate_general_part_of_answer2_salt;;
+      *);;
+
+    -> .generate_general_part_of_answer2_metal
+      (*
+        <- genElStr3;;
+
+        -> rrel_1: rrel_fixed: rrel_scp_var: _input_tuple;;
+        -> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc_answr2;;
+        -> rrel_3: rrel_fixed: rrel_scp_const: concept_acid;;
+
+        => nrel_goto: .generate_general_part_of_answer3_metal;;
+      *);;
+
+    -> .generate_general_part_of_answer2_salt
+      (*
+        <- genElStr3;;
+
+        -> rrel_1: rrel_fixed: rrel_scp_var: _input_tuple;;
+        -> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc_answr2;;
+        -> rrel_3: rrel_fixed: rrel_scp_const: concept_acid;;
+
+        => nrel_goto: .generate_general_part_of_answer3_salt;;
+      *);;
+
+    -> .generate_general_part_of_answer3_metal
+      (*
+        <- genElStr3;;
+
+        -> rrel_1: rrel_fixed: rrel_scp_var: _input_tuple;;
+        -> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_common: _arc_answr3;;
+        -> rrel_3: rrel_fixed: rrel_scp_var: _output_tuple;;
+
+        => nrel_goto: .generate_general_part_of_answer4_metal;;
+      *);;
+
+    -> .generate_general_part_of_answer3_salt
+      (*
+        <- genElStr3;;
+
+        -> rrel_1: rrel_fixed: rrel_scp_var: _input_tuple;;
+        -> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_common: _arc_answr3;;
+        -> rrel_3: rrel_fixed: rrel_scp_var: _output_tuple;;
+
+        => nrel_goto: .generate_general_part_of_answer4_salt;;
+      *);;
+
+    -> .generate_general_part_of_answer4_metal
+      (*
+        <- genElStr3;;
+
+        -> rrel_1: rrel_fixed: rrel_scp_const: nrel_reaction;;
+        -> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc_answr4;;
+        -> rrel_3: rrel_fixed: rrel_scp_var: rrel_const: rrel_common: _arc_answr3;;
+
+        => nrel_goto: .generate_part_of_answer5_metal;;
+      *);;
+
+    -> .generate_general_part_of_answer4_salt
+      (*
+        <- genElStr3;;
+
+        -> rrel_1: rrel_fixed: rrel_scp_const: nrel_reaction;;
+        -> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc_answr4;;
+        -> rrel_3: rrel_fixed: rrel_scp_var: rrel_const: rrel_common: _arc_answr3;;
+
+        => nrel_goto: .generate_part_of_answer5_salt;;
+      *);;
+
+    -> .generate_part_of_answer5_metal
+      (*
+        <- genElStr3;;
+
+        -> rrel_1: rrel_fixed: rrel_scp_var: _output_tuple;;
+        -> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc_answr5;;
+        -> rrel_3: rrel_fixed: rrel_scp_const: concept_salt;;
+
+        => nrel_goto: .generate_part_of_answer6_metal;;
+      *);;
+
+    -> .generate_part_of_answer5_salt
+      (*
+        <- genElStr3;;
+
+        -> rrel_1: rrel_fixed: rrel_scp_var: _output_tuple;;
+        -> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc_answr5;;
+        -> rrel_3: rrel_fixed: rrel_scp_const: concept_salt;;
+
+        => nrel_goto: .generate_part_of_answer6_salt;;
+      *);;
+
+    -> .generate_part_of_answer6_metal
+      (*
+        <- genElStr3;;
+
+        -> rrel_1: rrel_fixed: rrel_scp_var: _output_tuple;;
+        -> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc_answr6;;
+        -> rrel_3: rrel_fixed: rrel_scp_const: concept_water;;
+
+        => nrel_goto: .add_to_answer1_metal;;
+      *);;
+
+    -> .generate_part_of_answer6_salt
+      (*
+        <- genElStr3;;
+
+        -> rrel_1: rrel_fixed: rrel_scp_var: _output_tuple;;
+        -> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc_answr6;;
+        -> rrel_3: rrel_fixed: rrel_scp_const: concept_acid;;
+
+        => nrel_goto: .add_to_answer1_salt;;
+      *);;
+
+    -> .add_to_answer1_metal
+    (*
+			<- genElStr3;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _answer_for_checking_domains_of_relation;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc_add_to_answer1;;
+			-> rrel_3: rrel_fixed: rrel_scp_const: concept_acid;;
+
+			=> nrel_goto: .add_to_answer2_metal;;
 		*);;
 
-		-> .generate_other
-		(*
-			<- contAssign ;;
+    -> .add_to_answer1_salt
+    (*
+			<- genElStr3;;
 
-			-> rrel_1 : rrel_assign : rrel_scp_var : rrel_link : _metal ;;
-			-> rrel_2 : rrel_fixed : rrel_scp_const : rrel_link : [пока непонятно] ;;
-			=> nrel_goto: .gen_const;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _answer_for_checking_domains_of_relation;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc_add_to_answer1;;
+			-> rrel_3: rrel_fixed: rrel_scp_const: concept_acid;;
+
+			=> nrel_goto: .add_to_answer2_salt;;
 		*);;
 
-		-> .generate_metal
-			(*
-				<- contAssign ;;
+    -> .add_to_answer2_metal
+    (*
+			<- genElStr3;;
 
-				-> rrel_1 : rrel_assign : rrel_scp_var : rrel_link : _metal ;;
-				-> rrel_2 : rrel_fixed : rrel_scp_const : rrel_link : [соль + вода] ;;
-				=> nrel_goto: .gen_const;;
-			*);;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _answer_for_checking_domains_of_relation;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc_add_to_answer2;;
+			-> rrel_3: rrel_fixed: rrel_scp_const: nrel_reaction;;
 
-		-> .generate_salt
-			(*
-				<- contAssign ;;
+			=> nrel_goto: .add_to_answer3_metal;;
+		*);;
 
-				-> rrel_1 : rrel_assign : rrel_scp_var : rrel_link : _metal ;;
-				-> rrel_2 : rrel_fixed : rrel_scp_const : rrel_link : [соль + кислота] ;;
-				=> nrel_goto: .gen_const;;
-			*);;
+    -> .add_to_answer2_salt
+    (*
+			<- genElStr3;;
 
-		-> .gen_const
-			(*
-				<- genElStr3;;
-				-> rrel_1: rrel_fixed: rrel_scp_var: _pattern;;
-				-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arccc;;
-				-> rrel_3: rrel_fixed: rrel_scp_var: _metal;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _answer_for_checking_domains_of_relation;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc_add_to_answer2;;
+			-> rrel_3: rrel_fixed: rrel_scp_const: nrel_reaction;;
 
-				=> nrel_goto: .add_to_answer;;
-			*);;
+			=> nrel_goto: .add_to_answer3_salt;;
+		*);;
 
-		-> .add_to_answer
-			(*
-				<- genElStr3;;
-				-> rrel_1: rrel_fixed: rrel_scp_var: _answer_for_checking_domains_of_relation;;
-				-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc4;;
-				-> rrel_3: rrel_fixed: rrel_pos_const_perm: rrel_scp_var: _arccc;;
-				=> nrel_goto: .add_to_answer_another;;
-			*);;
-		-> .add_to_answer_another
-			(*
-				<- genElStr3;;
-				-> rrel_1: rrel_fixed: rrel_scp_var: _answer_for_checking_domains_of_relation;;
-				-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc4;;
-				-> rrel_3: rrel_fixed: rrel_scp_var: _metal;;
-				=> nrel_goto: .agent_add_acid_operator_answer;;
-			*);;
+    -> .add_to_answer3_metal
+    (*
+			<- genElStr3;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _answer_for_checking_domains_of_relation;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc_add_to_answer3;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _input_tuple;;
+
+			=> nrel_goto: .add_to_answer4_metal;;
+		*);;
+
+    -> .add_to_answer3_salt
+    (*
+			<- genElStr3;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _answer_for_checking_domains_of_relation;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc_add_to_answer3;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _input_tuple;;
+
+			=> nrel_goto: .add_to_answer4_salt;;
+		*);;
+
+    -> .add_to_answer4_metal
+    (*
+			<- genElStr3;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _answer_for_checking_domains_of_relation;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc_add_to_answer4;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _output_tuple;;
+
+			=> nrel_goto: .add_to_answer5_metal;;
+		*);;
+
+    -> .add_to_answer4_salt
+    (*
+			<- genElStr3;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _answer_for_checking_domains_of_relation;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc_add_to_answer4;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _output_tuple;;
+
+			=> nrel_goto: .add_to_answer5_salt;;
+		*);;
+
+    -> .add_to_answer5_metal
+    (*
+			<- genElStr3;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _answer_for_checking_domains_of_relation;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc_add_to_answer5;;
+			-> rrel_3: rrel_fixed: rrel_scp_const: concept_salt;;
+
+			=> nrel_goto: .add_to_answer6_metal;;
+		*);;
+
+    -> .add_to_answer5_salt
+    (*
+			<- genElStr3;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _answer_for_checking_domains_of_relation;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc_add_to_answer5;;
+			-> rrel_3: rrel_fixed: rrel_scp_const: concept_salt;;
+
+			=> nrel_goto: .add_to_answer6_salt;;
+		*);;
+
+    -> .add_to_answer6_metal
+    (*
+			<- genElStr3;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _answer_for_checking_domains_of_relation;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc_add_to_answer6;;
+			-> rrel_3: rrel_fixed: rrel_scp_const: concept_water;;
+
+			=> nrel_goto: .add_to_answer_arc1_metal;;
+		*);;
+
+    -> .add_to_answer6_salt
+    (*
+			<- genElStr3;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _answer_for_checking_domains_of_relation;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc_add_to_answer6;;
+			-> rrel_3: rrel_fixed: rrel_scp_const: concept_acid;;
+
+			=> nrel_goto: .add_to_answer_arc1_salt;;
+		*);;
+
+    -> .add_to_answer_arc1_metal
+    (*
+			<- genElStr3;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _answer_for_checking_domains_of_relation;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc_add_to_answer_arc1;;
+			-> rrel_3: rrel_fixed: rrel_pos_const_perm: rrel_scp_var: _arc_answr1;;
+
+			=> nrel_goto: .add_to_answer_arc2_metal;;
+		*);;
+
+    -> .add_to_answer_arc1_salt
+    (*
+			<- genElStr3;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _answer_for_checking_domains_of_relation;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc_add_to_answer_arc1;;
+			-> rrel_3: rrel_fixed: rrel_pos_const_perm: rrel_scp_var: _arc_answr1;;
+
+			=> nrel_goto: .add_to_answer_arc2_salt;;
+		*);;
+
+    -> .add_to_answer_arc2_metal
+    (*
+			<- genElStr3;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _answer_for_checking_domains_of_relation;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc_add_to_answer_arc2;;
+			-> rrel_3: rrel_fixed: rrel_pos_const_perm: rrel_scp_var: _arc_answr2;;
+
+			=> nrel_goto: .add_to_answer_arc3_metal;;
+		*);;
+
+    -> .add_to_answer_arc2_salt
+    (*
+			<- genElStr3;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _answer_for_checking_domains_of_relation;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc_add_to_answer_arc2;;
+			-> rrel_3: rrel_fixed: rrel_pos_const_perm: rrel_scp_var: _arc_answr2;;
+
+			=> nrel_goto: .add_to_answer_arc3_salt;;
+		*);;
+
+    -> .add_to_answer_arc3_metal
+    (*
+			<- genElStr3;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _answer_for_checking_domains_of_relation;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc_add_to_answer_arc3;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: rrel_const: rrel_common: _arc_answr3;;
+
+			=> nrel_goto: .add_to_answer_arc4_metal;;
+		*);;
+
+    -> .add_to_answer_arc3_salt
+    (*
+			<- genElStr3;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _answer_for_checking_domains_of_relation;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc_add_to_answer_arc3;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: rrel_const: rrel_common: _arc_answr3;;
+
+			=> nrel_goto: .add_to_answer_arc4_salt;;
+		*);;
+
+    -> .add_to_answer_arc4_metal
+    (*
+			<- genElStr3;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _answer_for_checking_domains_of_relation;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc_add_to_answer_arc4;;
+			-> rrel_3: rrel_fixed: rrel_pos_const_perm: rrel_scp_var: _arc_answr4;;
+
+			=> nrel_goto: .add_to_answer_arc5_metal;;
+		*);;
+
+    -> .add_to_answer_arc4_salt
+    (*
+			<- genElStr3;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _answer_for_checking_domains_of_relation;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc_add_to_answer_arc4;;
+			-> rrel_3: rrel_fixed: rrel_pos_const_perm: rrel_scp_var: _arc_answr4;;
+
+			=> nrel_goto: .add_to_answer_arc5_salt;;
+		*);;
+
+    -> .add_to_answer_arc5_metal
+    (*
+			<- genElStr3;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _answer_for_checking_domains_of_relation;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc_add_to_answer_arc5;;
+			-> rrel_3: rrel_fixed: rrel_pos_const_perm: rrel_scp_var: _arc_answr5;;
+
+			=> nrel_goto: .add_to_answer_arc6_metal;;
+		*);;
+
+    -> .add_to_answer_arc5_salt
+    (*
+			<- genElStr3;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _answer_for_checking_domains_of_relation;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc_add_to_answer_arc5;;
+			-> rrel_3: rrel_fixed: rrel_pos_const_perm: rrel_scp_var: _arc_answr5;;
+
+			=> nrel_goto: .add_to_answer_arc6_salt;;
+		*);;
+
+    -> .add_to_answer_arc6_metal
+    (*
+			<- genElStr3;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _answer_for_checking_domains_of_relation;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc_add_to_answer_arc6;;
+			-> rrel_3: rrel_fixed: rrel_pos_const_perm: rrel_scp_var: _arc_answr6;;
+
+			=> nrel_goto: .agent_add_acid_operator_answer;;
+		*);;
+
+    -> .add_to_answer_arc6_salt
+    (*
+			<- genElStr3;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _answer_for_checking_domains_of_relation;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_const: rrel_pos_const_perm: _arc_add_to_answer_arc6;;
+			-> rrel_3: rrel_fixed: rrel_pos_const_perm: rrel_scp_var: _arc_answr6;;
+
+			=> nrel_goto: .agent_add_acid_operator_answer;;
+		*);;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 		-> .agent_add_acid_operator_answer
 			(*

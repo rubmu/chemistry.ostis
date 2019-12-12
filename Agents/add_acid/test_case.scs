@@ -9,6 +9,14 @@ concept_salt
 => nrel_main_idtf: [соль](* <- lang_ru;; *);
 => nrel_idtf: [соль](* <- lang_ru;; *);;
 
+concept_acid
+=> nrel_main_idtf: [кислота](* <- lang_ru;; *);
+=> nrel_idtf: [кислота](* <- lang_ru;; *);;
+
+concept_water
+=> nrel_main_idtf: [вода](* <- lang_ru;; *);
+=> nrel_idtf: [вода](* <- lang_ru;; *);;
+
 concept_oxide
 => nrel_main_idtf: [оксид](* <- lang_ru;; *);
 => nrel_idtf: [оксид](* <- lang_ru;; *);;
@@ -19,6 +27,7 @@ concept_oxide -> sodium_oxide;;
 concept_oxide -> chromium_oxide_3;;
 concept_oxide -> nickel_oxide_2;;
 concept_oxide -> aluminum_oxide;;
+concept_oxide -> tin_oxide;;
 
 base -> subst_ZnOH2;;
 base -> subst_CsOH;;
